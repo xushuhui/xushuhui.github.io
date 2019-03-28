@@ -1,7 +1,7 @@
 ---
 title: docker+mysql主从配置
 date: 2019-03-28 16:15:38
-tags:
+tags: [docker, mysql]
 ---
 ### 1.安装启动docker
 

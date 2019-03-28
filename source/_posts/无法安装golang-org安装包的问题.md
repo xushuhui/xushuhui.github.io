@@ -1,0 +1,32 @@
+---
+layout: vscode
+title: 无法安装golang.org安装包的问题
+date: 2019-03-28 16:44:37
+tags: [vscode,golang]
+---
+### 一、问题
+今天在安装vscode时，报错
+```
+github.com/ramya-rao-a/go-outline (download)
+Fetching https://golang.org/x/tools/go/buildutil?go-get=1
+https fetch failed: Get https://golang.org/x/tools/go/buildutil?go-get=1: dial tcp 216.239.37.1:443: connect: connection refused
+```
+golang.org在国内被墙了，根本无法下载golang.org的安装包和源码包，以及类库。
+### 二、解决方式
+在[github](https://github.com/golang/lint/issues/288)中找到解决方法，
+
+```
+mkdir -p $GOPATH/src/golang.org/x/  
+cd $GOPATH/src/golang.org/x/
+git clone https://github.com/golang/tools.git
+```
+然后可以安装了
+```
+go get -v -u github.com/ramya-rao-a/go-outline
+```
+
+
+### 欢迎扫描下方二维码，持续关注：
+![](https://user-gold-cdn.xitu.io/2019/3/17/1698b447d75fb9bb?w=258&h=258&f=jpeg&s=28010)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步
