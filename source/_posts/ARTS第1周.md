@@ -25,4 +25,5 @@ function twoSum( $target,$nums) {
 ```
 ### Review
 ### Tip
+[AMDcpu安装ubuntu/deepin](https://www.phpst.cn/2019/04/20/AMDcpu安装ubuntu-deepin/ "AMDcpu安装ubuntu-deepin")
 ### Share
