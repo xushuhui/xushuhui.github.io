@@ -5,7 +5,7 @@ tags:
 ---
 ### 建表
 
-```
+```sql
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(10) DEFAULT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `user` (
 
 #### 第一种
 
-```
+```sql
 mysql> explain  SELECT * FROM `user` where name="tom" \G
 *************************** 1. row ***************************
            id: 1
@@ -42,7 +42,7 @@ possible_keys: Index_user
 
 第二种
 
-```
+```sql
 mysql> explain  SELECT * FROM `user` where age=18 and name="tom" \G
 *************************** 1. row ***************************
            id: 1
@@ -62,7 +62,7 @@ possible_keys: Index_user
 
 第三种
 
-```
+```sql
 mysql> explain  SELECT * FROM `user` where age=18 \G
 *************************** 1. row ***************************
            id: 1
@@ -83,7 +83,7 @@ possible_keys: NULL
 
 第四种
 
-```
+```sql
 mysql> explain  SELECT * FROM `user` where name="tom" and age=18 \G
 *************************** 1. row ***************************
            id: 1

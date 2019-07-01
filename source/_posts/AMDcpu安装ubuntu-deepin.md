@@ -13,8 +13,8 @@ tags: [tool]
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g24hz7s6t5j20g40c3aa9.jpg)
 
 在linux行的末尾加上这三个参数：
-```
-ivrs=ioapic[32]=00:14.0 spec_store_bypass_disable=prctl iommu=soft
+```bash
+ivrs_ioapic[32]=00:14.0 spec_store_bypass_disable=prctl iommu=soft
 ```
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g24i6l52vwj20g40c3q36.jpg)
 

@@ -5,7 +5,7 @@ tags:
 ---
 ### 问题
 写日志的方法中用到 file_put_contents 这个方法，今天在执行回调方法的写日志的时候提示没有写入文件权限，报错提示
-```
+```php
 file_put_contents: failed to open stream: Permission denied
 ```
 ### 解决过程
@@ -17,7 +17,7 @@ file_put_contents: failed to open stream: Permission denied
 ```
 如果目录不存在，创建目录，但是在php的mkdir函数创建文件夹设置777权限，实际上创建的文件还是755的权限。
 在linux系统中在创建文件/文件夹时有一个默认权限，此权限受 umask 设置影响，在/etc/bashrc配置文件中我们可以找到如下配置：
-```
+```shell
 if [ $UID -gt 99 ] && [ "`id -gn`" = "`id -un`" ]; then
         umask 002
 else

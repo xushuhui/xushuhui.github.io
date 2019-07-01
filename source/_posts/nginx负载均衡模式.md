@@ -9,7 +9,7 @@ Nginx的几种负载均衡模式
 
 把每个请求逐一分配到不同的server，如果分配到的server不可用，则分配到下一个，直到可用。
 
-```
+```shell
  upstream ng {
         server 127.0.0.1:83;
         server 127.0.0.1:82;

@@ -4,7 +4,7 @@ date: 2019-05-07 07:57:34
 tags:
 ---
 nginx配置
-```
+```shell
 upstream nodes {
             ip_hash;
        		server 192.168.1.114:3000;
@@ -29,7 +29,7 @@ server {
 }
 ```
 socket.io
-```
+```js
 var express = require('express');
 var app = express();
 var path = require('path');

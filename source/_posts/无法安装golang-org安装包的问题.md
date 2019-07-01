@@ -6,7 +6,7 @@ tags: [vscode,golang]
 ---
 ### 一、问题
 今天在安装vscode时，报错
-```
+``` 
 github.com/ramya-rao-a/go-outline (download)
 Fetching https://golang.org/x/tools/go/buildutil?go-get=1
 https fetch failed: Get https://golang.org/x/tools/go/buildutil?go-get=1: dial tcp 216.239.37.1:443: connect: connection refused
@@ -15,13 +15,13 @@ golang.org在国内被墙了，根本无法下载golang.org的安装包和源码
 ### 二、解决方式
 在[github](https://github.com/golang/lint/issues/288)中找到解决方法，
 
-```
+``` bash
 mkdir -p $GOPATH/src/golang.org/x/  
 cd $GOPATH/src/golang.org/x/
 git clone https://github.com/golang/tools.git
 ```
 然后可以安装了
-```
+``` go
 go get -v -u github.com/ramya-rao-a/go-outline
 ```
 

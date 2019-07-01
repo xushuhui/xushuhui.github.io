@@ -12,9 +12,9 @@ tags: [php,php-fpm,apache,nginx]
 - 其他(continuity,embed,litespeed,milter等)
 
 本地查看运行模式的方法
-```
+```php
 phpinfo()
- php -r "echo php_sapi_name()"
+php -r "echo php_sapi_name()"
 ```
 
 

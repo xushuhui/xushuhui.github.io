@@ -10,14 +10,14 @@ yum install docker
 systemctl start docker
 ```
 ### 2.启动docker容器
-```
+```bash
 git clone https://github.com/xushuhui/docker-server.git
 cd docker-server/mysql/compose
 docker-compose up -d
 ```
 ### 3.修改mysql配置文件
 这时已经可以看到容器中有一个主数据库和两个从数据库,在从库的配置文件中写入
-```
+```sql
 [mysqld]
 log-bin=mysql-bin
 server-id=2 #不能重复
@@ -27,7 +27,7 @@ replicate-ignore-db= mysql,information_schema,performance_schema #[必须]不需
 重启从库容器
 ### 4.配置mysql主从
 远程连接主库和从库
-```
+```sql
 主库中执行，创建同步用户
 show master status
 GRANT REPLICATION SLAVE ON *.* to 'backup'@'%' identified by 'backup';

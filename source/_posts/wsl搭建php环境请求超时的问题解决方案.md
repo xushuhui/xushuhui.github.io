@@ -11,12 +11,12 @@ tags: [wsl,nginx,php-fpm]
 ```
 nginx和fastcgi的通信方式有两种，一种是TCP socket的方式，一种是unix socket方式,因为wsl安装的php-fpm默认是unix socket，我就没改动了
 1.TCP是使用TCP端口连接127.0.0.1:9000
-```
+``` bash
  fastcgi_pass 127.0.0.1:9000;
 ```
 2.Socket是使用unix domain socket连接套接字php-fpm.sock
 
-```
+``` bash
  fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
 ```
 
@@ -28,7 +28,7 @@ nginx和fastcgi的通信方式有两种，一种是TCP socket的方式，一种�
 
 ### 三、解决方案
 在nginx的配置文件中加入
-```
+```bash
  fastcgi_buffering off;
 ```
 这个配置是否启用读取fastcgi服务器消息的缓冲功能。 如果配置为on，nginx在接收到fastcgi服务器的响应结果时尽快将响应写到缓冲区（由fastcgi_buffer_size和fastcgi_buffering指令控制）中，如果响应结果超过了缓冲区的大小，nginx会将超出部分写到临时文件（由fastcgi_max_temp_file_size和fastcgi_temp_file_write_size指令控制）中。 如果配置为off，nginx在接收到fastcgi服务器的响应结果时，会将结果同步发送给客户端，不等到所有的响应结果接收完成时，一次性读取响应结果的最大值为fastcgi_buffer_size配置的大小

@@ -6,7 +6,7 @@ tags: [python]
 ### 问题
 Python中没有switch的语法，但是很多时候需要多重条件判断，又不想写多个if，那只能手动实现了。
 实现代码
-```
+```python
 class RunMethod:
     def post(self,url=None,data=None,header=None):
         print(url)
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     client.main("post")("http://www.baidu.com")
 ```
 其中主要用到getattr这个函数，用于返回一个对象属性值。
-```
+```python
 getattr(object, name[, default])
 ```
 - object -- 对象。
