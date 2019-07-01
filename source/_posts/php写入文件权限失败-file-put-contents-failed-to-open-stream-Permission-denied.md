@@ -1,7 +1,8 @@
 ---
 title: 'php写入文件权限失败 file_put_contents: failed to open stream: Permission denied'
 date: 2019-06-08 18:16:44
-tags:
+tags: [php]
+categories: "php"
 ---
 ### 问题
 写日志的方法中用到 file_put_contents 这个方法，今天在执行回调方法的写日志的时候提示没有写入文件权限，报错提示

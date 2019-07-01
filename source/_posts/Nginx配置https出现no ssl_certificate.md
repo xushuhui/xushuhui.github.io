@@ -2,7 +2,7 @@
 title: Nginx配置https出现no"ssl_certificate" is defined
 date: 2019-03-28 16:43:50
 tags: [nginx, https, ssl]
-
+categories: "nginx"
 ---
 ### 一、问题
 今天在配置nginx的https发现报错：

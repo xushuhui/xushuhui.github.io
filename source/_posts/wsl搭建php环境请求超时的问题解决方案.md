@@ -2,6 +2,7 @@
 title: wsl搭建php环境请求超时的问题解决方案
 date: 2019-03-28 16:42:53
 tags: [wsl,nginx,php-fpm]
+categories: "php"
 ---
 ### 一、出现问题
 今天在公司电脑安装了wsl,在部署php环境的时候发现由nginx转发到php-fpm的请求非常慢，查看nginx错误日志显示
@@ -34,6 +35,3 @@ nginx和fastcgi的通信方式有两种，一种是TCP socket的方式，一种�
 这个配置是否启用读取fastcgi服务器消息的缓冲功能。 如果配置为on，nginx在接收到fastcgi服务器的响应结果时尽快将响应写到缓冲区（由fastcgi_buffer_size和fastcgi_buffering指令控制）中，如果响应结果超过了缓冲区的大小，nginx会将超出部分写到临时文件（由fastcgi_max_temp_file_size和fastcgi_temp_file_write_size指令控制）中。 如果配置为off，nginx在接收到fastcgi服务器的响应结果时，会将结果同步发送给客户端，不等到所有的响应结果接收完成时，一次性读取响应结果的最大值为fastcgi_buffer_size配置的大小
 
 
-### 欢迎扫描下方二维码，持续关注：
-![](https://user-gold-cdn.xitu.io/2019/3/17/1698b447d75fb9bb?w=258&h=258&f=jpeg&s=28010)
-互联网工程师（id:phpstcn），我们一起学习，一起进步

@@ -2,6 +2,7 @@
 title: mysql索引最左原则问题
 date: 2019-05-07 07:52:59
 tags:
+categories: "mysql"
 ---
 ### 建表
 

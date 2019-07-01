@@ -2,6 +2,7 @@
 title: swoole异步task
 date: 2019-03-29 14:41:35
 tags: [swoole]
+categories: "php"
 ---
 ### 记录
 今天做了项目异常监控，本来是用nodejs调用企业微信sdk,后来发现发送http请求到腾讯接口总是报错，就换成用swoole投递异步任务处理项目异常监控，记录一下代码。
