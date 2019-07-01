@@ -20,6 +20,15 @@ menu:
   th-list:
     text: 分类
     url: /categories
+  book:
+    text: 读书
+    url: /books/
+  film:
+    text: 影视
+    url: /movies/
+  gamepad:
+    text: 游戏
+    url: /games/
   user:
     text: 关于
     url: /about
@@ -109,7 +118,7 @@ less:
 
 # 以下评论插件开启一个即可
 # 是否开启 disqus
-disqus_shortname: true
+disqus_shortname: false
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
 # 是否使用 gitment，https://github.com/imsun/gitment
