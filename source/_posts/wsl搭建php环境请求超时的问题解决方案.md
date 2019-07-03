@@ -3,6 +3,7 @@ title: wsl搭建php环境请求超时的问题解决方案
 date: 2019-03-28 16:42:53
 tags: [wsl,nginx,php-fpm]
 categories: "php"
+top: 0
 ---
 ### 一、出现问题
 今天在公司电脑安装了wsl,在部署php环境的时候发现由nginx转发到php-fpm的请求非常慢，查看nginx错误日志显示

@@ -3,6 +3,7 @@ title: python在类中实现swith功能
 date: 2019-03-29 14:51:12
 tags: [python]
 categories: "python"
+top: 0
 ---
 ### 问题
 Python中没有switch的语法，但是很多时候需要多重条件判断，又不想写多个if，那只能手动实现了。

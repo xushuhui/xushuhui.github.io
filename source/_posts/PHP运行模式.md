@@ -3,6 +3,7 @@ title: PHP运行模式
 date: 2019-03-29 14:52:24
 tags: [php,php-fpm,apache,nginx]
 categories: "php"
+top: 0
 ---
 ### php分为五大运行模式
 - cgi(通用网关接口 Common Gateway Interface)

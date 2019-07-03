@@ -3,6 +3,7 @@ title: nginx配置文件
 date: 2019-04-03 09:40:29
 tags: [nginx]
 categories: "nginx"
+top: 0
 ---
 ### nginx配置文件
 ```

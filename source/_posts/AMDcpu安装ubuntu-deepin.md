@@ -2,6 +2,7 @@
 title: AMDcpu安装ubuntu/deepin
 date: 2019-04-20 09:45:35
 tags: [tool]
+top: 0
 ---
 ### 1、问题
 电脑是thinkpad e485，cpu 锐龙2500u，安装ubuntu系统黑屏

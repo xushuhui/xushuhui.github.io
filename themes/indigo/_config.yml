@@ -20,15 +20,6 @@ menu:
   th-list:
     text: 分类
     url: /categories
-  book:
-    text: 读书
-    url: /books/
-  film:
-    text: 影视
-    url: /movies/
-  gamepad:
-    text: 游戏
-    url: /games/
   user:
     text: 关于
     url: /about

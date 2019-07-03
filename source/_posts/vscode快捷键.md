@@ -2,6 +2,7 @@
 title: vscode快捷键和扩展
 date: 2019-04-03 14:39:39
 tags: [vscode]
+top: 2
 ---
 ### 快捷键
 - 跳转单词     Ctrl + ← / Ctrl + →
