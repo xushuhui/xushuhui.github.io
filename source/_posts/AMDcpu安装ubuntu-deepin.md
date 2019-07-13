@@ -28,3 +28,8 @@ ctrl+x就可以直接启动了
 修改 /etc/default/grub文件
 在GRUB_CMDLINE_LINUX_DEFAULT="在这里加内容" 里面添加上刚才的三个参数，这样每次开机直接按回车启动就可以了
 记得update-grub来更新下grub的菜单以生效
+
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

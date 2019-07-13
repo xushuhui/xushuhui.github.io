@@ -36,3 +36,7 @@ nginx和fastcgi的通信方式有两种，一种是TCP socket的方式，一种�
 这个配置是否启用读取fastcgi服务器消息的缓冲功能。 如果配置为on，nginx在接收到fastcgi服务器的响应结果时尽快将响应写到缓冲区（由fastcgi_buffer_size和fastcgi_buffering指令控制）中，如果响应结果超过了缓冲区的大小，nginx会将超出部分写到临时文件（由fastcgi_max_temp_file_size和fastcgi_temp_file_write_size指令控制）中。 如果配置为off，nginx在接收到fastcgi服务器的响应结果时，会将结果同步发送给客户端，不等到所有的响应结果接收完成时，一次性读取响应结果的最大值为fastcgi_buffer_size配置的大小
 
 
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步
