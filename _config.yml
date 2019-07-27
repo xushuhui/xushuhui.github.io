@@ -86,6 +86,7 @@ deploy:
   repo:
     github: git@github.com:xushuhui/xushuhui.github.io.git,master
     gitee: git@gitee.com:xushuhui/xushuhui.git,master
+    coding: git@git.coding.net:xushuhui/xushuhui.coding.me.git,master
 
 # 自动生成sitemap
 sitemap:
