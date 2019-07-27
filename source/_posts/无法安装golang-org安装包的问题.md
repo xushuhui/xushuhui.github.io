@@ -8,7 +8,7 @@ top: 0
 ---
 ### 一、问题
 今天在安装vscode时，报错
-``` 
+```bash 
 github.com/ramya-rao-a/go-outline (download)
 Fetching https://golang.org/x/tools/go/buildutil?go-get=1
 https fetch failed: Get https://golang.org/x/tools/go/buildutil?go-get=1: dial tcp 216.239.37.1:443: connect: connection refused

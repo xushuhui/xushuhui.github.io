@@ -8,10 +8,10 @@ top: 0
 nginx配置
 ```shell
 upstream nodes {
-            ip_hash;
-       		server 192.168.1.114:3000;
-            server 192.168.1.114:3001;
-            server 192.168.1.114:3002;
+  ip_hash;
+  server 192.168.1.114:3000;
+  server 192.168.1.114:3001;
+  server 192.168.1.114:3002;
 }
 server {
     listen 80;

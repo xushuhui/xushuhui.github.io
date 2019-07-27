@@ -7,7 +7,7 @@ top: 0
 ---
 ### 一、出现问题
 今天在公司电脑安装了wsl,在部署php环境的时候发现由nginx转发到php-fpm的请求非常慢，查看nginx错误日志显示
-```
+```bash
 [error] 3383#3383: *74 upstream timed out (110: Connection timed out) while reading upstream, client: 127.0.0.1, server: demo, request: "POST /pms/login HTTP/1.1", upstream: "fastcgi://
     unix:/var/run/php/php7.2-fpm.sock:", host: "demo"
 ```

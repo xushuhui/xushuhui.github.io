@@ -43,8 +43,6 @@ class Server
 
     public function onReceive(\swoole_server $server, $fd, $from_id, $data)
     {
-
-        //echo "message: {$data} form Client: {$fd} \n";
         // 投递异步任务
         $task_id = $server->task($data);
         // echo "Dispath AsyncTask: id={$task_id}\n";

@@ -6,7 +6,7 @@ top: 0
 ---
 ### 1.安装启动docker
 
-```
+```bash
 yum install docker
 systemctl start docker
 ```
