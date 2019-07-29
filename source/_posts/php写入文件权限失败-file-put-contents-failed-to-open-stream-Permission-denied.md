@@ -1,5 +1,5 @@
 ---
-title: 'php写入文件权限失败 file_put_contents: failed to open stream: Permission denied'
+title: 'PHP写入文件权限失败 file_put_contents: failed to open stream: Permission denied'
 date: 2019-06-08 18:16:44
 tags: [php]
 categories: "php"

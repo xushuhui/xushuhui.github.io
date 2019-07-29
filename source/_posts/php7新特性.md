@@ -1,41 +1,41 @@
 ---
-title: php7新特性
+title: PHP7新特性
 date: 2019-04-03 09:03:42
 tags: [php]
 categories: "php"
 top: 0
 ---
-#### 太空船运算符
+#### 1.太空船运算符
 ```php
 echo 1<=>1; //0
 echo 2<=>1; //1
 echo 1<=>2; //-1
 ```
-#### 类型声明
+#### 2.类型声明
 ```php
 declare(strict_type=1)//strict_type=1表示开启严格模式
 function sumOfInts(int ...$ints):int{
     return array_sum($ints);
 }
 ```
-#### null合并操作符
+#### 3.null合并操作符
 ```php
 $page = isset($_GET['page']) ? $_GET['page'] : 0;
 $page = $_GET['page'] ?? 0;
 ```
-#### 常量数组
+#### 4.常量数组
 ```php
 define('ANIMALS',['dog','cat']);
 ```
-#### namespace批量导入
+#### 5.namespace批量导入
 ```php
 use Space\{ClassA,ClassB as B,ClassC}
 ```
-#### intdiv函数
+#### 6.intdiv函数
 ```php
 intdiv(10,3);
 ```
-#### list方括号
+#### 7.list方括号
 ```php
 $arr = [1,2,3];
 list($a,$b,$c) = $arr;

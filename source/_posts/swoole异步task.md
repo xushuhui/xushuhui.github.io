@@ -1,16 +1,15 @@
 ---
-title: swoole异步task
+title: swoole 异步 task
 date: 2019-03-29 14:41:35
 tags: [swoole]
 categories: "php"
 top: 0
 ---
 ### 记录
-今天做了项目异常监控，本来是用nodejs调用企业微信sdk,后来发现发送http请求到腾讯接口总是报错，就换成用swoole投递异步任务处理项目异常监控，记录一下代码。
+今天做了项目异常监控，本来是用 nodejs 调用企业微信 sdk, 后来发现发送 http 请求到腾讯接口总是报错，就换成用 swoole 投递异步任务处理项目异常监控，记录一下代码。
 
 服务端
 ```PHP
-
 class Server
 {
     private $server;
@@ -33,14 +32,13 @@ class Server
     // 主进程启动时回调函数
     public function onStart(\swoole_server $server)
     {
-        echo "开始\n";
+        echo "开始、n";
     }
     // 建立连接时回调函数
     public function onConnect(\swoole_server $server, $fd, $from_id)
     {
-        echo "连接上了\n";
+        echo "连接上了、n";
     }
-
     public function onReceive(\swoole_server $server, $fd, $from_id, $data)
     {
         // 投递异步任务
@@ -50,12 +48,10 @@ class Server
         $server->send($fd, "Message form Server: {$data}, task_id: {$task_id}");
     }
 
-
     // 异步任务处理函数
     public function onTask(\swoole_server $server, $task_id, $from_id, $data)
     {
         echo " \n {$task_id}, start task \n";
-        //$data = json_decode($data,true);
         sleep(5);
         echo " \n {$task_id}, end task  \n";
         $server->finish('t');
@@ -63,10 +59,8 @@ class Server
 
     public function onFinish(\swoole_server $server, $task_id, $data)
     {
-        l("asyc task finish$data",'asycTask');
         echo "finish";
     }
-
     // 关闭连时回调函数
     public function onClose(\swoole_server $server, $fd, $from_id)
     {
@@ -82,13 +76,10 @@ class Client
 {
 
     private $client;
-
     function __construct()
     {
         $this->client = new \swoole_client(SWOOLE_SOCK_TCP);
-
     }
-
     public function send($data)
     {
         if (!$this->client->connect('127.0.0.1', 9501)) {
