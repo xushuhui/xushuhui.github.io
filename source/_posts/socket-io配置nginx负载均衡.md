@@ -1,11 +1,12 @@
 ---
-title: socket.io配置nginx负载均衡
+title: socket.io 配置 nginx 负载均衡
 date: 2019-05-07 07:57:34
 tags: ["node","nginx"]
 categories: "node"
 top: 0
 ---
-nginx配置
+nginx 配置
+
 ```shell
 upstream nodes {
   ip_hash;
@@ -30,7 +31,9 @@ server {
     }
 }
 ```
+
 socket.io
+
 ```js
 var express = require('express');
 var app = express();
@@ -43,7 +46,9 @@ server.listen(port, () => {
 });
 
 ```
+
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

@@ -5,10 +5,13 @@ tags: [swoole]
 categories: "php"
 top: 0
 ---
+
 ### 记录
+
 今天做了项目异常监控，本来是用 nodejs 调用企业微信 sdk, 后来发现发送 http 请求到腾讯接口总是报错，就换成用 swoole 投递异步任务处理项目异常监控，记录一下代码。
 
 服务端
+
 ```PHP
 class Server
 {
@@ -70,7 +73,9 @@ class Server
 $server = new Server();
 
 ```
+
 客户端
+
 ```PHP
 class Client
 {
@@ -91,6 +96,7 @@ class Client
 ```
 
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

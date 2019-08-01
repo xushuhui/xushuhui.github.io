@@ -1,11 +1,13 @@
 ---
-title: nginx配置文件
+title: nginx 配置文件
 date: 2019-04-03 09:40:29
 tags: [nginx]
 categories: "nginx"
 top: 0
 ---
-### nginx配置文件
+
+### nginx 配置文件
+
 ```
 #定义Nginx运行的用户和用户组
 user www www;
@@ -151,15 +153,17 @@ server
     }
 #所有静态文件由nginx直接读取不经过tomcat或resin
     location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt
-|flv|mid|doc|ppt|pdf|xls|mp3|wma)${ 
-        expires 15d; 
+|flv|mid|doc|ppt|pdf|xls|mp3|wma)${
+        expires 15d;
     }
-    location ~ .*.(js|css)?${ 
+    location ~ .*.(js|css)?${
         expires 1h; }
     }
 }
 ```
+
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

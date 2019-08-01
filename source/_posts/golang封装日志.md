@@ -1,12 +1,13 @@
 ---
-title: golang封装日志
+title: golang 封装日志
 top: 1
 date: 2019-07-03 17:54:20
 tags: ["golang"]
 ---
 
 ### 问题
-golang自带的日志log无法满足框架层的日志记录需求，需要单独实现几项功能
+
+golang 自带的日志 log 无法满足框架层的日志记录需求，需要单独实现几项功能
 - 按天记录日志
 - 日志按不同级别分开
 - 日志放到统一的文件夹
@@ -42,6 +43,7 @@ func newLogFile(level string) *os.File {
 ```
 
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

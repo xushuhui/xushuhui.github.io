@@ -1,15 +1,17 @@
 ---
-title: vscode快捷键和扩展
+title: vscode 快捷键和扩展
 date: 2019-04-03 14:39:39
 tags: [vscode]
 top: 2
 ---
+
 ### 快捷键
+
 - 跳转单词     Ctrl + ← / Ctrl + →
-- 跳转行首/行末     Home / End
+- 跳转行首 / 行末     Home / End
 - 代码块之间移动    Ctrl + Shift + \
-- 跳转首行/末行    Ctrl + Home/End
-- 选中字符到左边/右边   Ctrl + Shift + <- /  Ctrl + Shift + ->
+- 跳转首行 / 末行    Ctrl + Home/End
+- 选中字符到左边 / 右边   Ctrl + Shift + <- /  Ctrl + Shift + ->
 - 删除字符右边 Ctrl + Delete
 - 删除字符左边 Ctrl + Backspace
 - 删除一行代码 Ctrl + Shift + K
@@ -26,9 +28,10 @@ top: 2
 - 隐藏面板  Ctrl + J
 - 切换活动栏可见性（Toggle Activity Bar Visibility ）
 - 切换状态栏可见性（Toggle Status Bar Visibility ）
-- 切换禅模式(Toggle Zen Mode)
+- 切换禅模式 (Toggle Zen Mode)
 
 ### 插件
+
 - Code Runner
 - SSH FS
 - One Dark Pro
@@ -40,6 +43,7 @@ top: 2
 - Python
 
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
