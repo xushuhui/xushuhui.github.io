@@ -33,7 +33,6 @@ top: 2
 ### 插件
 
 - Code Runner
-- SSH FS
 - One Dark Pro
 - GitLens — Git supercharged
 - Markdown Preview Enhanced
