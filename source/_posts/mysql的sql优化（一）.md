@@ -1,7 +1,7 @@
 ---
 title: mysql的sql优化（一）
 top: 1
-date: 2019-08-16 11:06:21
+date: 2019-08-26 11:06:21
 tags: ["mysql"]
 categories: "mysql"
 ---
@@ -63,6 +63,7 @@ explain sql
 * 对于非分区表，显示null
 
 #### type
+
 性能由高到低
 
 |值|说明|
@@ -74,24 +75,34 @@ explain sql
 |ref |非唯一索引查找，返回匹配某个单独值的所有行|
 |ref_or_null |类似与ref类型查询，但是附加了对null值列的查询|
 |index_merge |使用了索引合并优化|
-|range |索引范围扫描，常见于between,>,<这样的查询条件|
+|range |索引范围扫描，常见于between, >, <这样的查询条件|
 |index |全索引扫描，遍历索引树|
 |all |全表扫描，效率最差|
 
 #### possible_keys
+
 * 查询时可能使用的索引
 
 #### key
+
 * 查询时实际使用的索引
+
 #### key_len
+
 * 实际使用索引的最大长度
 
 #### ref
+
 * 哪些列或产量用于索引查找
+
 #### rows
+
 * 根据统计信息预估扫描行数
+
 #### filtered
+
 * 返回结果行数占读取行数的百分比
+
 #### extra
 
 |值|说明|

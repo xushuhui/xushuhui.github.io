@@ -7,11 +7,10 @@ top: 0
 
 ### Algorithm
 
-[7. Reverse Integer](https://leetcode.com/problems/reverse-integer/).
 
 [整数反转](https://leetcode-cn.com/problems/reverse-integer/ "整数反转")
 
-Given a 32-bit signed integer, reverse digits of an integer.
+
 
 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
 
