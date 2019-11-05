@@ -6,6 +6,7 @@ tags: ["mysql"]
 categories: "mysql"
 ---
 ### MySQL常用日志类型
+
 |日志名称|作用|
 |--|--|
 |错误日志（error_log）|记录mysql在启动、运行或停止时候出现的问题|
@@ -15,6 +16,7 @@ categories: "mysql"
 |中继日志（relay_log）|用于主从复制、临时存储从主库同步的二进制日志|
 
 ### 错误日志（error_log）
+
 - 分析排除MySQL运行错误
 - 记录未经授权的访问
 - log_error=$mysql/sql_log/mysql-error.log
@@ -36,10 +38,12 @@ categories: "mysql"
 |log_sink_syseventlog|将错误日志输出到系统日志文件|
 
 ### 常规日志（general_log）
+
 - 分析客户端发送到MySQL的实际请求
 - general_log=[ON|OFF]
 - general_log_file=$mysql/sql_log/general.log
 - log_output=[FILE|TABLE|NONE]
+
 ### 慢查询日志（slow_query_log）
 - 将执行成功并符合条件的查询记录到日志
 - 找到需要优化的SQL
@@ -49,6 +53,7 @@ categories: "mysql"
 - log_queries_not_using_indexes=[ON|OFF]
 - log_slow_admin_statements=[ON|OFF]
 - log_slow_slave_statements=[ON|OFF]
+
 ### 二进制日志（binary_log）
 - 记录所有对数据库的数据修改
 - 基于时间点的备份和恢复
@@ -61,6 +66,7 @@ categories: "mysql"
 - expire_logs_days=days
 - PURGE BINARY LOGS TO 'mysql-bin.010'
 - PURGE BINARY LOGS BEFORE '2008-04-02 22:46:24'
+
 ### 中继日志（relay_log）
 - relay_log=filename
 - relay_log_purge=[ON|OFF]
