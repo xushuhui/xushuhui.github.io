@@ -47,3 +47,8 @@ categories: "mysql"
 ||innodb_buffer_pool_size|设置innodb缓冲池大小，应为系统可用内存的75%|
 ||innodb_buffer_pool_instances|Innodb缓冲池的实例个数，每个实例大小为总缓冲池大小/实例个数|
 ||innodb_file_per_table|设置每个表独立使用一个表空间文件|
+
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

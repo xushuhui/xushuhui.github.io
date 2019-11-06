@@ -115,3 +115,7 @@ explain sql
 |Using where|使用where条件过滤数据|
 |select tables optimized away|直接通过索引获取数据，不用访问表|
 
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

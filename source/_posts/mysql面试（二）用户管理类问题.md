@@ -45,3 +45,8 @@ revoke delete on db.tb from user@ip
 ```
 pt-show-grants u=root,p=123456,h=localhost
 ```
+
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

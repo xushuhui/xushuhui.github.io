@@ -94,3 +94,8 @@ set global innodb_print_all_deadlocks=on;
 #### 解决死锁
 - 数据库自行回滚占用资源少的事务
 - 并发事务按相同顺序占用资源
+
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

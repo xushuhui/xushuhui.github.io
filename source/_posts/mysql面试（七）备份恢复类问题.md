@@ -69,3 +69,8 @@ categories: "mysql"
 - mysqlbinlog命令在线实时备份
   - mysqlbinlog --raw --read-from-remote-server --stop-never --host 备份ip --port 端口 -u 用户名 -p 密码 启动二进制日志文件名
 用户具有 replication slave权限
+
+### 欢迎扫描下方二维码，持续关注：
+![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步
