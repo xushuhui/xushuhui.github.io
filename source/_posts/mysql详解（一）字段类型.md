@@ -1,5 +1,5 @@
 ---
-title: mysql字段类型详解
+title: mysql详解（一）字段类型
 top: 1
 date: 2019-08-15 16:35:38
 tags: ["mysql"]

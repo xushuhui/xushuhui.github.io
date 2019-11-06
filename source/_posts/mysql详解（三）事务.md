@@ -1,5 +1,5 @@
 ---
-title: mysql事务
+title: mysql详解（三）事务
 top: 1
 date: 2019-08-10 11:18:32
 tags: ["mysql"]

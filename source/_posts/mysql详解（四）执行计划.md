@@ -1,5 +1,5 @@
 ---
-title: mysql的sql优化（一）
+title: mysql详解（四）执行计划
 top: 1
 date: 2019-08-26 11:06:21
 tags: ["mysql"]
