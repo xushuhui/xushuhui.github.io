@@ -1,18 +1,11 @@
 ---
-title: 数据结构之链表
+title: 数据结构之集合AVL树集合
 top: 1
-date: 2019-06-02 11:45:38
-tags: ["数据结构"]
-categories: "数据结构"
+date: 2019-11-06 16:39:53
+tags:
+categories:
 ---
-### 定义
 
-### 代码
-
-github 地址：(https://github.com/xushuhui/data-structures)
-
-
-### 总结
 
 ### 欢迎扫描下方二维码，持续关注：
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
