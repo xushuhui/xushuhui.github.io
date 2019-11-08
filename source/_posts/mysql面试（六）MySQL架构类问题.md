@@ -10,6 +10,16 @@ categories: "mysql"
 
 * 开启二进制日志
 
+* 步骤一：主库db的更新事件(update、insert、delete)被写到binlog
+
+* 步骤二：从库发起连接，连接到主库
+
+* 步骤三：此时主库创建一个binlog dump thread，把binlog的内容发送到从库
+
+* 步骤四：从库启动之后，创建一个I/O线程，读取主库传过来的binlog内容并写入到relay log
+
+* 步骤五：还会创建一个SQL线程，从relay log里面读取内容，从Exec_Master_Log_Pos位置开始执行读取到的更新事件，将更新内容写入到slave的db
+
 #### 异步复制
 
 * master修改后写入binary_log（execute-binlog-commit）

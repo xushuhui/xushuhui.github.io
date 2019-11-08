@@ -23,7 +23,7 @@ menu:
   github:
     text: 代码
     url: https://github.com/xushuhui
-  timeline:
+  sticky-note:
     text: 时间
     url: /timeline/
   # book:
