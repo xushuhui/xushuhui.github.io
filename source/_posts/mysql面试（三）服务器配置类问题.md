@@ -5,10 +5,12 @@ date: 2019-09-12 16:39:30
 tags: ["mysql"]
 categories: "mysql"
 ---
+
 ### SQL_MODE
-- 配置MySQL处理SQL方式
-- set [session/global/persisi] sql_model='xxxx'
-- [mysqld] sql_model=xxx
+
+* 配置MySQL处理SQL方式
+* set [session/global/persisi] sql_model='xxxx'
+* [mysqld] sql_model=xxx
 
 |SQL_MODE|说明|
 |---|---|
@@ -23,14 +25,17 @@ categories: "mysql"
 |NO_ENGINE_SUBSTITUTION|当指定存储引擎不可用时报错|
 
 ### 使用set命令配置动态参数
-- set[session|@@session.]system_var_name=expr
-- set[global|@@global.]system_var_name=expr
-- set[persist|@@persist.]system_var_name=expr
+
+* set[session|@@session.]system_var_name=expr
+* set[global|@@global.]system_var_name=expr
+* set[persist|@@persist.]system_var_name=expr
 
 ### 使用pt-config-diff工具比较配置文件
-- pt-config-diff u=root,p=,h=localhost /etc/my.cnf
+
+* pt-config-diff u=root, p=, h=localhost /etc/my.cnf
 
 ### 常用性能参数
+
 ||参数|说明|
 |--|---|--|
 |服务器配置参数|max_connections|设置MySQL允许访问的最大连接数量|
@@ -49,6 +54,8 @@ categories: "mysql"
 ||innodb_file_per_table|设置每个表独立使用一个表空间文件|
 
 ### 欢迎扫描下方二维码，持续关注：
+
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
+
