@@ -1,9 +1,9 @@
 ---
-title: 数据结构之线段树
+title: 数据结构之集合AVL树集合
 top: 1
-date: 2019-06-14 15:58:25
-tags: ["数据结构"]
-categories: "数据结构"
+date: 2019-11-06 16:39:53
+tags:
+categories:
 ---
 
 ### 代码
