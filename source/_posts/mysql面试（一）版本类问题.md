@@ -1,5 +1,5 @@
 ---
-title: mysql面试（一）版本类问题
+title: mysql 面试（一）版本类问题
 top: 1
 date: 2019-09-02 14:53:46
 tags: ["mysql"]
@@ -15,7 +15,7 @@ categories: "mysql"
 ||InnoDB |XtraDB|XtraDB|
 ||企业版监控工具，社区版不提供 |Percon Monitor|Monyog|
 |高可用特性|基于日志点复制 |基于日志点复制|基于日志点复制|
-||基于Gtid复制 |基于Gtid复制|基于Gtid复制，但Gtid与MySQL不兼容|
+||基于 Gtid 复制 |基于 Gtid 复制|基于 Gtid 复制，但 Gtid 与 MySQL 不兼容|
 ||MGR |MGR & PXC|Galera Cluster|
 ||MySQL Router|Proxy SQL|MaxScale|
 |安全特性|企业版防火墙 |ProxySQL FireWall|MaxScale FireWall|
@@ -25,7 +25,7 @@ categories: "mysql"
 |开发及管理|窗口函数（8.0） |窗口函数（8.0）|窗口函数（10.2）|
 ||Super read_only |Super read_only|支持基于日志回滚，支持修改日志表中记录|
 
-### MySQL升级
+### MySQL 升级
 
 #### 升级前考虑问题
 
@@ -48,26 +48,26 @@ categories: "mysql"
 #### 升级步骤
 
 * 对升级数据库进行备份
-* 升级slave服务器版本
+* 升级 slave 服务器版本
 * 手动进行主从切换
-* 升级master服务器版本
+* 升级 master 服务器版本
 * 升级完成后进行业务检查
 
-### MySQL8.0新特性
+### MySQL8.0 新特性
 
-* 所有元数据使用InnoDB引擎存储，无frm文件
-* 系统表采用InnoDB存储并采用独立表空间
-* 支持定义资源管理组（目前仅支持CPU资源）
+* 所有元数据使用 InnoDB 引擎存储，无 frm 文件
+* 系统表采用 InnoDB 存储并采用独立表空间
+* 支持定义资源管理组（目前仅支持 CPU 资源）
 * 支持不可见索引和降序索引，支持直方图优化
 * 支持窗口函数
 * 支持在线修改全局参数持久化
-* 默认使用caching_sha2_password认证插件
+* 默认使用 caching_sha2_password 认证插件
 * 新增支持定义角色（role）
 * 新增密码历史记录功能，限制重复使用密码
-* InnoDB DDL语句支持原子操作
-* 支持在线修改UNDO表空间
-* 新增管理视图用于监控InnoDB表状态
-* 新增innodb_dedicated_server配置 
+* InnoDB DDL 语句支持原子操作
+* 支持在线修改 UNDO 表空间
+* 新增管理视图用于监控 InnoDB 表状态
+* 新增 innodb_dedicated_server 配置 
 
 ### 欢迎扫描下方二维码，持续关注：
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)

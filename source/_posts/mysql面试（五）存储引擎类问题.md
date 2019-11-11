@@ -1,21 +1,21 @@
 ---
-title: mysql面试（五）存储引擎类问题
+title: mysql 面试（五）存储引擎类问题
 top: 1
 date: 2019-09-15 13:28:16
 tags: ["mysql"]
 categories: "mysql"
 ---
 
-### MySQL常用存储引擎
+### MySQL 常用存储引擎
 
 |引擎名称|事务|说明|
 |-|-|-|
-|MYISAM|N|MySQL5.6之前的默认引擎，最常用的非事务型存储引擎|
-|CSV|N|以CSV格式存储的非事务型存储引擎|
+|MYISAM|N|MySQL5.6 之前的默认引擎，最常用的非事务型存储引擎|
+|CSV|N|以 CSV 格式存储的非事务型存储引擎|
 |Archive|N|只运行查询和新增数据不允许修改的非事务型存储引擎|
 |Memory|N|是一种易失性非事务型存储引擎|
 |InnoDB|Y|最常用事务性存储引擎|
-|NDB|Y|MySQL集群使用的内存型事务存储引擎|
+|NDB|Y|MySQL 集群使用的内存型事务存储引擎|
 
 ### MYISAM
 
@@ -24,7 +24,7 @@ categories: "mysql"
 * 非事务存储引擎
 * 以堆表方式存储
 * 使用表级锁
-* 支持BTree索引，空间索引，全文索引
+* 支持 BTree 索引，空间索引，全文索引
 
 #### 使用场景
 
@@ -36,8 +36,8 @@ categories: "mysql"
 #### 特点
 
 * 非事务型存储引擎
-* 数据以CSV格式存储
-* 所有列都不能为NULL
+* 数据以 CSV 格式存储
+* 所有列都不能为 NULL
 * 不支持索引
 
 #### 使用场景
@@ -49,9 +49,9 @@ categories: "mysql"
 #### 特点
 
 * 非事务型存储引擎
-* 表数据使用zlib压缩
-* 只支持Insert和Select
-* 只允许在自增ID上建立索引
+* 表数据使用 zlib 压缩
+* 只支持 Insert 和 Select
+* 只允许在自增 ID 上建立索引
 
 #### 使用场景
 
@@ -65,7 +65,7 @@ categories: "mysql"
 * 非事务型存储引擎
 * 数据保存在内存中
 * 所有字段长度固定
-* 支持Btree和Hash索引
+* 支持 Btree 和 Hash 索引
 
 #### 使用场景
 
@@ -78,13 +78,13 @@ categories: "mysql"
 
 * 事务型存储引擎
 * 数据按主键聚集存储
-* 支持行级锁和MVCC
-* 支持Btree和自适应Hash索引
+* 支持行级锁和 MVCC
+* 支持 Btree 和自适应 Hash 索引
 * 支持全文和空间索引
 
 #### 使用场景
 
-* 大多数OLTP场景
+* 大多数 OLTP 场景
 
 ### NDB
 
@@ -94,13 +94,13 @@ categories: "mysql"
 * 数据保存在内存中
 * 支持行级锁
 * 支持高可用集群
-* 支持Ttree索引
+* 支持 Ttree 索引
 
 #### 使用场景
 
 * 需要数据完全同步的高可用场景
 
-### 什么情况下InnoDB无法在线修改表
+### 什么情况下 InnoDB 无法在线修改表
 
 |操作|语法|
 |-|-|
@@ -111,18 +111,17 @@ categories: "mysql"
 |修改列类型|alter table t change c1 c1 NEW_TYPE|
 |修改字符集|alter table t character set = charset_name|
 
+#### 在线 DDL 存在的问题
 
-#### 在线DDL存在的问题
+* 有部分语句不支持在线 DDL
+* 长时间 DDL 操作会引起严重主从延迟
+* 无法对 DDL 操作进行资源限制
 
-* 有部分语句不支持在线DDL
-* 长时间DDL操作会引起严重主从延迟
-* 无法对DDL操作进行资源限制
-
-#### 如何更安全执行DDL
+#### 如何更安全执行 DDL
 
 * pt-online-shema-change [OPTIONS]DSN
 
-### InnoDB如何实现事务
+### InnoDB 如何实现事务
 
 #### 原理
 
@@ -140,9 +139,9 @@ categories: "mysql"
 |原子性（A）|回滚日志（Undo log）: 用于记录数据修改前的状态|
 |一致性（C）|重作日志（Redo log）: 用于记录数据修改后的状态|
 |隔离性（I）|锁：用于资源隔离，分为共享锁和排他锁|
-|持久性（D）|重作日志（Redo log）+回滚日志（Undo log）
+|持久性（D）|重作日志（Redo log）+ 回滚日志（Undo log）
 
-### INNODB锁
+### INNODB 锁
 
 * 查询需要对资源加共享锁（S）
 * 修改需要对资源加排他锁（X）
@@ -157,4 +156,3 @@ categories: "mysql"
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
-

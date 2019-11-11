@@ -1,20 +1,20 @@
 ---
-title: mysql面试（二）用户管理类问题
+title: mysql 面试（二）用户管理类问题
 top: 1
 date: 2019-09-10 16:04:47
 tags: ["mysql"]
 categories: "mysql"
 ---
 
-### 如何定义MySQL数据库账号
+### 如何定义 MySQL 数据库账号
 
-* 用户名@可访问控制列表
+* 用户名 @可访问控制列表
   + % 可以从所有外部主机访问
-  + 192.168.1.%可以从192.168.1网段访问
+  + 192.168.1.% 可以从 192.168.1 网段访问
   + localhost 从服务器本地访问
-* 使用CREATE USER 建立用户
+* 使用 CREATE USER 建立用户
 
-### MySQL常用用户权限
+### MySQL 常用用户权限
 
 ||语句|说明|
 |----|---- |-----|
@@ -34,7 +34,7 @@ categories: "mysql"
 ### 为用户授权
 
 * 遵循最小权限原则
-* 使用grant命令授权，revoke收回权限
+* 使用 grant 命令授权，revoke 收回权限
 
 ``` 
 grant select,insert,update on db.tb to user@ip
@@ -59,4 +59,3 @@ pt-show-grants u=root,p=123456,h=localhost
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
-

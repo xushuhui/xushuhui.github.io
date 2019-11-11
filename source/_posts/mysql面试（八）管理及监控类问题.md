@@ -1,5 +1,5 @@
 ---
-title: mysql面试（八）管理及监控类问题
+title: mysql 面试（八）管理及监控类问题
 top: 1
 date: 2019-09-18 13:52:54
 tags: ["mysql"]
@@ -12,7 +12,7 @@ categories: "mysql"
 |TPS|数据库每秒处理的事务数量|
 |并发数|数据库实例当前并行处理的会话数量|
 |连接数|连接到数据库会话的数量|
-|缓存命中率|Innodb缓存命中率|
+|缓存命中率|Innodb 缓存命中率|
 
 ### 功能类指标
 |名称|说明|
@@ -28,7 +28,7 @@ categories: "mysql"
 - show global status like 'Com%'
 - Sum(Com_XXX)
 - show global status like 'Queries'
-- QOS=(Queries2-Queries1)/时间间隔
+- QOS=(Queries2-Queries1)/ 时间间隔
 
 ### TPS
 - show global status where Variable_name in ('com_insert','com_delete','com_update')
@@ -42,25 +42,25 @@ categories: "mysql"
 - show global status like 'threads_connected'
 - 报警阈值 threads_connected/max_connection>0.8
 
-### Innodb缓存命中率
+### Innodb 缓存命中率
 - (Innodb_buffer_pool_read_requests-Innodb_buffer_pool_reads)/Innodb_buffer_pool_read_requests*100%
-- Innodb_buffer_pool_read_requests:从缓冲池读取的次数
-- Innodb_buffer_pool_reads:从物理磁盘读取的次数
+- Innodb_buffer_pool_read_requests: 从缓冲池读取的次数
+- Innodb_buffer_pool_reads: 从物理磁盘读取的次数
 
 ### 数据库可用性
-- 周期性连接数据库服务器并执行select @@version;
+- 周期性连接数据库服务器并执行 select @@version;
 - Nysqladmin -uxxx -pxxx -hxxx ping
 
 #### 阻塞
 - < MySQL5.7
-SELECT b.trx_mysql_thread_id AS '被阻塞线程',b.trx_query AS '被阻塞SQL',c.trx_mysql_thread_id AS '阻塞线程',c.trx_query AS
-'阻塞SQL',(UNIX_TIMESTAMP()-UNIX_TIMESTAMP(c.trx_started)) AS '阻塞时间' FROM information_schema.innodb_lock_waits a 
+SELECT b.trx_mysql_thread_id AS '被阻塞线程',b.trx_query AS '被阻塞 SQL',c.trx_mysql_thread_id AS '阻塞线程',c.trx_query AS
+'阻塞 SQL',(UNIX_TIMESTAMP()-UNIX_TIMESTAMP(c.trx_started)) AS '阻塞时间' FROM information_schema.innodb_lock_waits a 
 JOIN information_schema.innodb_trx b ON a.requesting_trx_id=b.trx_id
 JOIN information_schema.innodb_trx c ON a.blocking_trx_id=c.trx_id
 WHERE (UNIX_TIMESTAMP()-UNIX_TIMESTAMP(c.trx_started))>30
 
 - > = MySQL5.7
-SELECT waiting_pid AS '被阻塞线程',waiting_query AS '被阻塞SQL',blocking_pid AS '阻塞线程',blocking_query AS '阻塞SQL',wait_age AS '阻塞时间',sql_kill_blocking_query AS '建议操作' FROM sys.innodb_lock_waits WHERE (UNIX_TIMESTAMP()-UNIX_TIMESTAMP(wait_started))>30
+SELECT waiting_pid AS '被阻塞线程',waiting_query AS '被阻塞 SQL',blocking_pid AS '阻塞线程',blocking_query AS '阻塞 SQL',wait_age AS '阻塞时间',sql_kill_blocking_query AS '建议操作' FROM sys.innodb_lock_waits WHERE (UNIX_TIMESTAMP()-UNIX_TIMESTAMP(wait_started))>30
 
 ### 死锁
 - show engine innodb status
@@ -70,7 +70,7 @@ SELECT waiting_pid AS '被阻塞线程',waiting_query AS '被阻塞SQL',blocking
 
 ### 监控慢查询
 - 通过慢查询日志监控
-- 通过information_schema.`PROCESSLIST`表实时监控
+- 通过 information_schema.`PROCESSLIST`表实时监控
 
 ### 监控主从延时
 - show slave status (Seconds_Behind_Master)

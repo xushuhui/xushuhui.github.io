@@ -40,7 +40,6 @@ possible_keys: Index_user
      filtered: 100.00
         Extra: NULL
 
-
 ```
 
 第二种
