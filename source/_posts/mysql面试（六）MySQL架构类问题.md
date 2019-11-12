@@ -94,8 +94,16 @@ categories: "mysql"
 - 使用MySQL5.7以后的多线程复制
 - 使用MGR复制架构
 
+### 读写负载大
+#### 读负载大
+- 为原DB增加slave服务器
+- 进行读写分离，读分担到slave
+- 增加数据库中间层，进行负载均衡
+#### 写负载大
+- 分库分表
+
 ### 欢迎扫描下方二维码，持续关注：
 
-![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

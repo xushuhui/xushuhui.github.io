@@ -1,5 +1,5 @@
 ---
-title: mysql 面试（九）异常处理问题
+title: mysql面试（九）异常处理问题
 top: 1
 date: 2019-09-20 14:01:43
 tags: ["mysql"]
@@ -74,6 +74,6 @@ Slave_SQL_Running： NO
 
 ### 欢迎扫描下方二维码，持续关注：
 
-![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

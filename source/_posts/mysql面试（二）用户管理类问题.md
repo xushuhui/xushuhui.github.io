@@ -1,5 +1,5 @@
 ---
-title: mysql 面试（二）用户管理类问题
+title: mysql面试（二）用户管理类问题
 top: 1
 date: 2019-09-10 16:04:47
 tags: ["mysql"]
@@ -56,6 +56,6 @@ pt-show-grants u=root,p=123456,h=localhost
 
 ### 欢迎扫描下方二维码，持续关注：
 
-![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

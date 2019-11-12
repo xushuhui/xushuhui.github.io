@@ -1,5 +1,5 @@
 ---
-title: mysql 面试（八）管理及监控类问题
+title: mysql面试（八）管理及监控类问题
 top: 1
 date: 2019-09-18 13:52:54
 tags: ["mysql"]
@@ -83,6 +83,6 @@ SELECT waiting_pid AS '被阻塞线程',waiting_query AS '被阻塞 SQL',blockin
 - show slave status (Slave_IO_Running,Slave_SQL_Running,Last_Errno,Last_Error)
 
 ### 欢迎扫描下方二维码，持续关注：
-![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

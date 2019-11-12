@@ -1,5 +1,5 @@
 ---
-title: mysql 面试（三）服务器配置类问题
+title: mysql面试（三）服务器配置类问题
 top: 1
 date: 2019-09-12 16:39:30
 tags: ["mysql"]
@@ -55,6 +55,6 @@ categories: "mysql"
 
 ### 欢迎扫描下方二维码，持续关注：
 
-![](http://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
