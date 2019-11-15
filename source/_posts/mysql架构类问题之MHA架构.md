@@ -1,7 +1,7 @@
 ---
 title: mysql架构类问题之MHA架构
 top: 1
-date: 2019-09-18 17:15:04
+date: 2019-09-21 17:15:04
 tags: ["mysql"]
 categories: "mysql"
 ---

@@ -1,7 +1,7 @@
 ---
 title: mysql 架构类问题之 MGR 架构
 top: 1
-date: 2019-09-19 17:15:04
+date: 2019-09-22 17:15:04
 tags: ["mysql"]
 categories: "mysql"
 ---
@@ -11,7 +11,7 @@ categories: "mysql"
 - 官方退出的一种基于 paxos 协议的复制
 - 是一种不同于异步复制的多 master 复制集群
 
-####　两种模式
+#### 两种模式
 ##### 单主模式
      app 
     / | \
