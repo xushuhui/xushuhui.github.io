@@ -1,6 +1,6 @@
 <%
 if(type === 'categories' || type === 'tags'){ %>
-<div class="tabs-bar container">
+<div class="tabs-bar container expand">
     <nav class="tags-list">
         <a href="<%= url_for('/' + type) %>" style="-webkit-order:-1;order:-1" class="tags-list-item waves-effect waves-button waves-light
             <% if(path === type + '/index.html'){%> active<%}%>"><%= __('tag.all') %></a>
