@@ -1,14 +1,10 @@
 ---
-title: 数据结构之字典树
+title: http协议（二）基础
 top: 1
-date: 2019-06-22 15:58:59
-tags: ["数据结构","编程基础"]
-categories: "数据结构"
+date: 2016-11-18 14:00:45
+tags: ["http","网络协议","编程基础"]
+categories: "http"
 ---
-
-### 代码
-
-github 地址：(https://github.com/xushuhui/data-structures)
 
 
 ### 欢迎扫描下方二维码，持续关注：

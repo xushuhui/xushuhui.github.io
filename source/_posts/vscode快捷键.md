@@ -1,6 +1,6 @@
 ---
 title: vscode 快捷键和扩展
-date: 2019-04-03 14:39:39
+date: 2017-04-03 14:39:39
 tags: [vscode]
 top: 2
 ---
@@ -33,7 +33,6 @@ top: 2
 ### 插件
 
 - Code Runner
-- One Dark Pro
 - GitLens — Git supercharged
 - Markdown Preview Enhanced
 - PHP Intelephense

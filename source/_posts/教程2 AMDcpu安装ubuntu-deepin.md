@@ -1,5 +1,5 @@
 ---
-title: AMDcpu 安装 ubuntu/deepin
+title: 教程2 AMDcpu 安装 ubuntu/deepin
 date: 2019-04-20 09:45:35
 tags: [tool]
 top: 0

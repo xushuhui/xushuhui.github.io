@@ -1,6 +1,6 @@
 ---
 title: PHP 运行模式
-date: 2019-03-29 14:52:24
+date: 2016-03-29 14:52:24
 tags: [php,php-fpm,apache,nginx]
 categories: "php"
 top: 0

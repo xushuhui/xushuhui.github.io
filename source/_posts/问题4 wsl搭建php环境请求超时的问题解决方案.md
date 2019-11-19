@@ -1,6 +1,6 @@
 ---
-title: wsl 搭建 php 环境请求超时的问题解决方案
-date: 2019-03-28 16:42:53
+title: 问题4 wsl 搭建 php 环境请求超时的问题解决方案
+date: 2018-03-28 16:42:53
 tags: [wsl,nginx,php-fpm]
 categories: "php"
 top: 0

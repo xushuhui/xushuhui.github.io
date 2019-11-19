@@ -1,6 +1,6 @@
 ---
-title: docker+mysql 主从配置
-date: 2019-03-28 16:15:38
+title: 教程1 docker+mysql 主从配置
+date: 2016-03-28 16:15:38
 tags: [docker, mysql]
 top: 0
 ---

@@ -1,7 +1,7 @@
 ---
 layout: vscode
-title: golang无法安装golang.org安装包的问题
-date: 2019-03-28 16:44:37
+title: 问题1 golang无法安装golang.org安装包
+date: 2018-03-28 16:44:37
 tags: [vscode,golang]
 categories: "golang"
 top: 0

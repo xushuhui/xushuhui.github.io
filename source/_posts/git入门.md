@@ -1,6 +1,6 @@
 ---
 title: git 入门
-date: 2019-04-20 10:25:48
+date: 2016-04-20 10:25:48
 tags:
 top: 0
 ---
@@ -56,14 +56,14 @@ ssh -T git@github.com
   绑定远程仓库
 
   ```bash
-  git remote add origin git@github.com:xushuhui/lin-cms-lumen.git
+  git remote add origin git@github.com:xushuhui/xxx.git
   git pull origin master
   ```
 
 - 从现有仓库克隆
 
   ```bash
-  git clone git@github.com:xushuhui/lin-cms-lumen.git
+  git clone git@github.com:xushuhui/xxx.git
   ```
 
 #### 提交本地文件到远程仓库

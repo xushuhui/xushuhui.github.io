@@ -1,6 +1,6 @@
 ---
-title: nginx 配置 https 出现 no"ssl_certificate" is defined
-date: 2019-03-28 16:43:50
+title: 问题2 nginx 配置 https 出现 no"ssl_certificate" is defined
+date: 2018-03-28 16:43:50
 tags: [nginx, https, ssl]
 categories: "nginx"
 top: 0

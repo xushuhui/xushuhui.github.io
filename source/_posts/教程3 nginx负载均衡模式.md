@@ -1,5 +1,5 @@
 ---
-title: nginx 负载均衡模式
+title: 教程3 nginx 负载均衡模式
 date: 2019-03-29 14:48:42
 tags: [nginx]
 categories: "nginx"
