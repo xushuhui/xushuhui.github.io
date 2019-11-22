@@ -1,9 +1,9 @@
 ---
-title: http协议（一）定义
+title: mysql进阶（四）mysql数据库结构优化
 top: 1
-date: 2016-11-18 13:59:58
-tags: ["http","网络协议","编程基础"]
-categories: "http"
+date: 2016-05-18 15:02:12
+tags: ["mysql"]
+categories: "mysql"
 ---
 
 

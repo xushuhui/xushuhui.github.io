@@ -1,9 +1,9 @@
 ---
-title: http协议（二）基础
+title: mysql进阶（三）mysql基准测试
 top: 1
-date: 2016-11-18 14:00:45
-tags: ["http","网络协议","编程基础"]
-categories: "http"
+date: 2016-05-15 15:01:47
+tags: ["mysql"]
+categories: "mysql"
 ---
 
 

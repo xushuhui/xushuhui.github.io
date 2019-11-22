@@ -1,9 +1,9 @@
 ---
-title: 操作系统之提升篇
+title: mysql进阶（九）mysql监控
 top: 1
-date: 2016-02-10 14:39:56
-tags: ["编程基础","操作系统"]
-categories: "编程基础"
+date: 2016-06-05 15:06:39
+tags: ["mysql"]
+categories: "mysql"
 ---
 
 

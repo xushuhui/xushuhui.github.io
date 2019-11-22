@@ -2,7 +2,7 @@
 title: mysql 面试（四）日志类问题
 top: 1
 date: 2019-09-14 10:49:21
-tags: ["mysql"]
+tags: ["mysql","面试"]
 categories: "mysql"
 ---
 

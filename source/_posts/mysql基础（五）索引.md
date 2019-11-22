@@ -1,5 +1,5 @@
 ---
-title: mysql 详解（五）索引
+title: mysql基础（五）索引
 top: 1
 date: 2019-08-17 18:01:44
 tags: ["mysql"]

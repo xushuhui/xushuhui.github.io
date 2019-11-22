@@ -49,7 +49,7 @@ brand: /img/back_blue.png
 favicon: /img/favicon.ico
 
 # email
-email: 474497097@qq.com
+email: xushuhui@qq.com
 
 # 设置 Android L Chrome 浏览器状态栏颜色
 color: '#3F51B5'
@@ -87,7 +87,7 @@ hideMenu: true
 # 是否开启toc
 # toc: false
 toc:
-  list_number: false  # 是否显示数字排序
+  list_number: true  # 是否显示数字排序
 
 # 文章页留言内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
 postMessage: 文章发布地址：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- page.permalink.replace(/index\.html$/, '') %></a>

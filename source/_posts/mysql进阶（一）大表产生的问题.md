@@ -1,9 +1,9 @@
 ---
-title: 操作系统之提升篇
+title: mysql进阶（一）大表产生的问题
 top: 1
-date: 2016-02-10 14:39:56
-tags: ["编程基础","操作系统"]
-categories: "编程基础"
+date: 2016-05-01 15:00:55
+tags: ["mysql"]
+categories: "mysql"
 ---
 
 

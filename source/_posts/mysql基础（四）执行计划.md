@@ -1,5 +1,5 @@
 ---
-title: mysql 详解（四）执行计划
+title: mysql基础（四）执行计划
 top: 1
 date: 2019-08-16 11:06:21
 tags: ["mysql"]

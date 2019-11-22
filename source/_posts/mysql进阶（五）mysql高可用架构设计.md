@@ -1,9 +1,9 @@
 ---
-title: 操作系统之提升篇
+title: mysql进阶（五）mysql高可用架构设计
 top: 1
-date: 2016-02-10 14:39:56
-tags: ["编程基础","操作系统"]
-categories: "编程基础"
+date: 2016-05-22 15:02:31
+tags: ["mysql"]
+categories: "mysql"
 ---
 
 

@@ -1,9 +1,9 @@
 ---
-title: 操作系统之提升篇
+title: http协议（八）Web安全
 top: 1
-date: 2016-02-10 14:39:56
-tags: ["编程基础","操作系统"]
-categories: "编程基础"
+date: 2016-08-15 16:06:19
+tags: ["http","网络协议","编程基础"]
+categories: "http"
 ---
 
 

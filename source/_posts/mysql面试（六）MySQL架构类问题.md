@@ -2,7 +2,7 @@
 title: mysql 面试（六）MySQL 架构类问题
 top: 1
 date: 2019-09-17 13:28:35
-tags: ["mysql"]
+tags: ["mysql","面试"]
 categories: "mysql"
 ---
 

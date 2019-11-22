@@ -1,16 +1,11 @@
 ---
-title: mysql 详解（二）存储引擎
+title: mysql进阶（八）mysql分库分表
 top: 1
-date: 2019-08-11 16:38:43
+date: 2016-06-03 15:06:15
 tags: ["mysql"]
 categories: "mysql"
 ---
 
-### InnoDB
-
-### MyIASM
-
-### Memory
 
 ### 欢迎扫描下方二维码，持续关注：
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)

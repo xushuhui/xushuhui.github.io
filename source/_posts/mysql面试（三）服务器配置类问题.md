@@ -2,7 +2,7 @@
 title: mysql面试（三）服务器配置类问题
 top: 1
 date: 2019-09-12 16:39:30
-tags: ["mysql"]
+tags: ["mysql","面试"]
 categories: "mysql"
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: 操作系统之提升篇
+title: http协议（四）HTTP特性和使用方法
 top: 1
-date: 2016-02-10 14:39:56
-tags: ["编程基础","操作系统"]
-categories: "编程基础"
+date: 2016-07-22 16:04:01
+tags: ["http","网络协议","编程基础"]
+categories: "http"
 ---
 
 
