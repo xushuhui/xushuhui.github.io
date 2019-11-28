@@ -1,7 +1,7 @@
 ---
 title: redis 详解（二）API
 top: 1
-date: 2018-03-12 14:51:29
+date: 2018-01-12 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---
@@ -22,38 +22,46 @@ categories: "redis"
 
 #### 数据结构和内部编码
 ##### redis object
+
 - 数据类型（type）
 string hash list set sorted set
 - 编码方式（encoding）
 raw int ziplist linkedlist hashmap intset
 - 数据指针（ptr）
 - 虚拟内存（vm）
+
 #### 单线程架构
 ##### 单线程为什么快
+
 - 纯内存
 - 非阻塞 IO
 - 避免线程切换和竞态切换
+
 ##### 注意
+
 - 一次只运行一条命令 
 - 拒绝长（慢）命令
 keys,flushall,flushdb,slow lua script,muti/exec,operate big value(colletion)
 - 实际上不是真正的单线程
 fysnc file descriptor
 close file descriptor
-### 字符串
+
+### 字符串(最大限制 512M)
 #### 结构
+
 |key| value|
 |-|-|
 |ke|val|
 |count|1|
 |bits|1011101|
 
-- 最大限制 512M
 #### 场景
+
 - 缓存
 - 计数器
 - 分布式锁
 - 分布式id生成器
+
 #### 命令
 
 |命令|说明|时间复杂度|
@@ -79,6 +87,7 @@ close file descriptor
 
 ### 哈希
 #### 结构
+
 |key|field| value|
 |-|-|-|
 |user:1|name|tom|
@@ -86,6 +95,7 @@ close file descriptor
 ||sex|male|
 
 #### 命令
+
 |命令|说明|时间复杂度|
 |-|-|-|
 |hget key field|获取hash key对应field的value|O(1)|
@@ -104,6 +114,7 @@ close file descriptor
 |hincrbyfloat key field floatcounter|hincrby浮点数版本|O(1)|
 
 #### 方案比较
+
 string v1
 - user:1=> {"name":tom,"age":20}
 
@@ -123,14 +134,19 @@ hash
 
 ### 列表
 #### 结构
+
 |key| elements|
 |-|-|
 |user:1:msg|a,b,c,d|
+
 #### 特点
+
 - 有序
 - 可以重复
 - 左右两边插入弹出
+
 #### 命令
+
 |命令|说明|时间复杂度|
 |-|-|-|
 |rpush key value1 value2...|从列表右端插入值（1-N个）|O(1-n)|
@@ -151,13 +167,17 @@ lrem key count value
 - count>0，从左到右删除最多count个value相等的项
 - count<0，从右到左删除最多math.abs(count)个value相等的项
 - count=0，删除所有value相等的项
+
 #### 应用场景
+
 - lpush+lpop=stack
 - lpush+rpop=queue
 - lpush+ltrim=capped collection
 - lpush+brpop=message queue
+
 ### 集合
 #### 结构
+
 |key| elements|
 |-|-|
 |user:1:follow|music,sport,read|
@@ -168,6 +188,7 @@ lrem key count value
 - 集合间操作
 
 #### 命令
+
 |命令|说明|时间复杂度|
 |-|-|-|
 |sadd key element|向集合key添加element(如果已存在，添加失败)|O(1)|
@@ -183,18 +204,21 @@ lrem key count value
 |sdiff/sinter/sunion + store destkey|将差集、交集、并集结果报错在destkey中||
 
 #### 应用场景
+
 sadd=tagging
 spop/srandmember=randon item
 sadd+sinter=social graph
 
 ### 有序集合
 #### 结构
+
 |key| score|value|
 |-|-|-|
 |user:rank|1|tom|
 |user:rank|5|peter|
 
 #### 比较
+
 |有序集合|集合|
 |-|-|
 |无重复元素|无重复元素|
@@ -208,6 +232,7 @@ sadd+sinter=social graph
 |element+score|element|
 
 #### 命令
+
 |命令|说明|时间复杂度|
 |-|-|-|
 |zadd key score element|添加score和element（可以多对）|O(logN)|

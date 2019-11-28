@@ -1,7 +1,7 @@
 ---
 title: redis 详解（四）持久化
 top: 1
-date: 2018-03-12 14:51:29
+date: 2018-02-10 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---

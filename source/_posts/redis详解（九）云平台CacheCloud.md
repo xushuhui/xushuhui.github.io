@@ -1,7 +1,7 @@
 ---
 title: redis详解（九）云平台CacheCloud
 top: 1
-date: 2018-03-12 14:51:29
+date: 2018-04-01 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---

@@ -1,7 +1,7 @@
 ---
 title: redis详解（八）缓存设计和优化
 top: 1
-date: 2018-03-12 14:51:29
+date: 2018-03-28 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---

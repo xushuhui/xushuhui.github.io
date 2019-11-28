@@ -1,7 +1,7 @@
 ---
 title: redis详解（五）主从复制
 top: 1
-date: 2018-03-12 14:51:29
+date: 2018-02-20 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---
