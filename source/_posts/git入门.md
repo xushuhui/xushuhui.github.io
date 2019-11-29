@@ -5,7 +5,7 @@ tags:
 top: 0
 ---
 
-### 安装
+## 安装
 
 - Windows
 
@@ -23,9 +23,9 @@ yum install git / apt-get install git
 git --version
 ```
 
-### 使用
+## 使用
 
-#### 生成 ssh
+### 生成 ssh
 
 ```bash
 git config --global user.name "xxx"
@@ -45,7 +45,7 @@ cat ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 ```
 
-#### 关联 git 仓库
+### 关联 git 仓库
 
 - 在工作目录中初始化新仓库
 
@@ -66,7 +66,7 @@ ssh -T git@github.com
   git clone git@github.com:xushuhui/xxx.git
   ```
 
-#### 提交本地文件到远程仓库
+### 提交本地文件到远程仓库
 
   ```bash
   git add .
@@ -74,7 +74,7 @@ ssh -T git@github.com
   git push origin master
   ```
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

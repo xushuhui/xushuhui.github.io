@@ -6,7 +6,7 @@ categories: "nginx"
 top: 0
 ---
 
-### 一、问题
+## 一、问题
 
 今天在配置 nginx 的 https 发现报错：
 
@@ -18,7 +18,7 @@ top: 0
 
 意思是 ssl_certificate 没有配置，可是 ssl_certificate 和 ssl_certificate_key 都已经配置，网上搜索 ssl_certificate 必须在 http 段中先定义， 在 server 段才配置 ssl_certificate 已经来不及了， 检查我的 nginx 配置，ssl_certificate 确实只在 server 段定义，而在 http 段未定义，加到 http 段即可。
 
-### 二、解决方案
+## 二、解决方案
 
 nginx 的配置文件中 nginx.conf 中加入
 
@@ -30,7 +30,7 @@ http {
 
 ```
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

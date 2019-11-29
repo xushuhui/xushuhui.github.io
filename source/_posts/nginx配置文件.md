@@ -6,7 +6,7 @@ categories: "nginx"
 top: 0
 ---
 
-### nginx 配置文件
+## nginx 配置文件
 
 ```
 #定义Nginx运行的用户和用户组
@@ -162,7 +162,7 @@ server
 }
 ```
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

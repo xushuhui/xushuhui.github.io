@@ -5,7 +5,7 @@ tags:
 top: 0
 ---
 
-### Algorithm
+## Algorithm
 
 
 
@@ -31,15 +31,15 @@ function twoSum( $target,$nums) {
 }
 ```
 
-### Review
+## Review
 
-### Tip
+## Tip
 
 [AMDcpu安装ubuntu/deepin](https://www.phpst.cn/2019/04/20/AMDcpu安装ubuntu-deepin/ "AMDcpu安装ubuntu-deepin")
 
-### Share
+## Share
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

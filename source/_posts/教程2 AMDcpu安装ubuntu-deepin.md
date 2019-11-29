@@ -5,11 +5,11 @@ tags: [tool]
 top: 0
 ---
 
-### 1、问题
+## 1、问题
 
 电脑是 thinkpad e485，cpu 锐龙 2500u，安装 ubuntu 系统黑屏
 
-### 2、安装
+## 2、安装
 
 开机狂按 F1，进 BIOS，记得在 security 的选项里找到 secure boot，关掉。
 ![](http://ww1.sinaimg.cn/large/a616b9a4gy1g24hxxj2asj20g40c3t9h.jpg)
@@ -27,7 +27,7 @@ ivrs_ioapic[32]=00:14.0 spec_store_bypass_disable=prctl iommu=soft
 
 ctrl+x 就可以直接启动了
 
-### 3、开机启动
+## 3、开机启动
 
 按 E 编辑输入上面的参数
 
@@ -37,7 +37,7 @@ ctrl+x 就可以直接启动了
 在 GRUB_CMDLINE_LINUX_DEFAULT="在这里加内容" 里面添加上刚才的三个参数，这样每次开机直接按回车启动就可以了
 记得 update-grub 来更新下 grub 的菜单以生效
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

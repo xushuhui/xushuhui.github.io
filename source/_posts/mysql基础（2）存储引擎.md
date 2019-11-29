@@ -1,0 +1,18 @@
+---
+title: mysql基础（2）存储引擎
+top: 1
+date: 2019-08-11 16:38:43
+tags: ["mysql"]
+categories: "mysql"
+---
+
+## InnoDB
+
+## MyIASM
+
+## Memory
+
+## 欢迎扫描下方二维码，持续关注：
+![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
+
+互联网工程师（id:phpstcn），我们一起学习，一起进步

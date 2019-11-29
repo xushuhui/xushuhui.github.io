@@ -6,7 +6,7 @@ categories: "python"
 top: 0
 ---
 
-### 问题
+## 问题
 
 Python 中没有 switch 的语法，但是很多时候需要多重条件判断，又不想写多个 if，那只能手动实现了。
 实现代码
@@ -37,7 +37,7 @@ getattr(object, name[, default])
 - name -- 字符串，对象属性。
 - default -- 默认返回值，如果不提供该参数，在没有对应属性时，将触发 AttributeError。
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

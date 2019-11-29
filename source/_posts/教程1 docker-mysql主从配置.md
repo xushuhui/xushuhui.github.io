@@ -5,14 +5,14 @@ tags: [docker, mysql]
 top: 0
 ---
 
-### 1. 安装启动 docker
+## 1. 安装启动 docker
 
 ```bash
 yum install docker
 systemctl start docker
 ```
 
-### 2. 启动 docker 容器
+## 2. 启动 docker 容器
 
 ```bash
 git clone https://github.com/xushuhui/docker-server.git
@@ -20,7 +20,7 @@ cd docker-server/mysql/compose
 docker-compose up -d
 ```
 
-### 3. 修改 mysql 配置文件
+## 3. 修改 mysql 配置文件
 
 这时已经可以看到容器中有一个主数据库和两个从数据库，在从库的配置文件中写入
 
@@ -34,7 +34,7 @@ replicate-ignore-db= mysql,information_schema,performance_schema #[必须]不需
 
 重启从库容器
 
-### 4. 配置 mysql 主从
+## 4. 配置 mysql 主从
 
 远程连接主库和从库
 
@@ -54,11 +54,11 @@ START SLAVE;
 show slave status;
 ```
 
-### 5. 测试接口
+## 5. 测试接口
 
 主库中添加表，查看从库是否同步
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

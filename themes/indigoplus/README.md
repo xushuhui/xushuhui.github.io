@@ -46,7 +46,7 @@
 
 ## 快速开始
 
-### 1. 安装 Hexo
+## 1. 安装 Hexo
 
 ```bash
 npm install hexo-cli -g
@@ -56,7 +56,7 @@ npm install
 hexo server
 ```
 
-### 2. 设置语言并禁用 highlight.js
+## 2. 设置语言并禁用 highlight.js
 
 修改**博客根目录**下的`_config.yml`，设置`language`为`zh-CN`，并将`highlight`设置为`false`：
 
@@ -84,7 +84,7 @@ highlight:
 ...
 ```
 
-### 3. 主题安装
+## 3. 主题安装
 
 安装需确认你的 **Hexo** 版本在`3.0`以上，以及 **Node** 版本为`6.x`以上，在**博客根目录**，执行以下命令：
 
@@ -101,11 +101,11 @@ git clone https://github.com/abelsu7/hexo-theme-indigo-plus.git themes/indigo-pl
 theme: indigo-plus
 ```
 
-### 4. 依赖安装
+## 4. 依赖安装
 
 还是在**博客根目录**下，如果以下插件已安装过，则无需再次安装。
 
-#### Less
+### Less
 
 主题默认使用`less`作为`css`**预处理工具**：
 
@@ -113,7 +113,7 @@ theme: indigo-plus
 npm install hexo-renderer-less --save
 ```
 
-#### Feed
+### Feed
 
 用于生成`rss`：
 
@@ -121,7 +121,7 @@ npm install hexo-renderer-less --save
 npm install hexo-generator-feed --save
 ```
 
-#### JSON-Content
+### JSON-Content
 
 用于生成静态站点数据，用作**站内搜索**的数据源：
 
@@ -129,7 +129,7 @@ npm install hexo-generator-feed --save
 npm install hexo-generator-json-content --save
 ```
 
-#### QR-Code
+### QR-Code
 
 > **可选**，不安装时会请求`jiathis API`生成二维码
 
@@ -139,7 +139,7 @@ npm install hexo-generator-json-content --save
 npm install hexo-helper-qrcode --save
 ```
 
-#### Deploy
+### Deploy
 
 可以使用`hexo deploy`命令**部署博客**：
 
@@ -167,7 +167,7 @@ deploy:
 > **注意**：若同时安装了`hexo-douban`插件，则无法使用`hexo d`这种缩写形式，而必须指明`hexo deploy`或`hexo douban`
 
 
-#### Kramed
+### Kramed
 
 使用`hexo-renderer-kramed`替换默认的`hexo-renderer-marked`渲染引擎，否则使用`prism.js`高亮代码时会出现问题：
 
@@ -176,7 +176,7 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-kramed --save
 ```
 
-#### Asset（可选）
+### Asset（可选）
 
 使用 [hexo-asset-image](https://github.com/dangxuandev/hexo-asset-image) 自动生成文章对应的同名**图片 asset 目录**。
 
@@ -229,7 +229,7 @@ MacGesture2-Publish.md
 只需要文章中使用`![logo](logo.jpg)`，即可引用图片。
 
 
-#### Recommend（可选）
+### Recommend（可选）
 
 使用 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts) 生成**相关文章推荐列表**。
 
@@ -262,7 +262,7 @@ recommended_posts:
 hexo recommend
 ```
 
-#### Douban（可选）
+### Douban（可选）
 
 使用 [hexo-douban](https://github.com/mythsman/hexo-douban) 生成**豆瓣电影、读书、游戏**展示页面。
 
@@ -572,7 +572,7 @@ douban:
 };
 ```
 
-#### Baidu URL Submit（可选）
+### Baidu URL Submit（可选）
 
 使用 [hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit) 将**博客新链接**主动推送至**百度搜索引擎**。
 
@@ -607,7 +607,7 @@ deploy:
 ...
 ```
 
-#### Sitemap（可选）
+### Sitemap（可选）
 
 自动生成`sitemap.xml`以及`baidusitemap.xml`。
 
@@ -629,7 +629,7 @@ baidusitemap:
 ```
 
 
-### 5. 修改 scaffolds
+## 5. 修改 scaffolds
 
 初始化 Hexo 博客后，默认会在`scaffolds`目录下创建`draft.md`、`page.md`、`post.md`三个模板文件，使用`hexo new`命令新建页面时就会基于上述模板文件生成对应的 Markdown 文件。为了方便使用，建议将`scaffolds`下的模板文件修改如下：
 
@@ -675,7 +675,7 @@ top: 1
 这里添加了`top: 1`属性，是为了实现文章置顶功能，参见 [Hexo 实现自定义文章置顶 | 苏易北](https://abelsu7.top/2019/02/28/hexo-pin-top/)。
 
 
-### 6. 文章置顶
+## 6. 文章置顶
 
 修改博客根目录下`_config.yml`文件：
 
@@ -700,7 +700,7 @@ index_generator:
 
 > 注意：需要确保所有的`post`都有`top`和`date`属性，否则会导致排序失败。可在每次新建文章时使用`hexo new post <post_title>`创建，即可根据`post.md`模板生成对应的文章文件
 
-### 7. 按需开启 MathJax
+## 7. 按需开启 MathJax
 
 可以按需开启`MathJax`支持。首先确保`themes/indigo-plus/_config.yml`中，`mathjax`设置为`true`：
 
@@ -738,7 +738,7 @@ mathjax: true
 > **注意**：可能会遇到行内公式的渲染问题，参见 [在 Hexo 中使用 MathJax 渲染数学公式 | 苏易北](https://abelsu7.top/2018/10/29/hexo-mathjax/)
 
 
-### 8. 开启标签页
+## 8. 开启标签页
 
 ```bash
 hexo new page tags
@@ -754,7 +754,7 @@ comments: false
 ---
 ```
 
-### 9. 开启分类页
+## 9. 开启分类页
 
 ```bash
 hexo new page categories
@@ -770,7 +770,7 @@ comments: false
 ---
 ```
 
-### 10. 开启关于页
+## 10. 开启关于页
 
 ```bash
 hexo new page about
@@ -778,7 +778,7 @@ hexo new page about
 
 关于`page`页面的语法规则，具体参见 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 文档。
 
-### 11. 使用示例
+## 11. 使用示例
 
 ```bash
 hexo clean     # 清除 public 目录下的静态文件

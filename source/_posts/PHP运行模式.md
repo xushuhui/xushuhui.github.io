@@ -6,7 +6,7 @@ categories: "php"
 top: 0
 ---
 
-### 运行模式
+## 运行模式
 
 php 分为五大运行模式
 - cgi（通用网关接口 Common Gateway Interface)
@@ -27,7 +27,7 @@ php -r "echo php_sapi_name()"
 - 了解运行模式优缺点和应用场景
 - 根据业务本身结合上一条
 
-### CLI 模式
+## CLI 模式
 
 - Command Line Interface 的简称，支持 windows 和 Linux 平台
 - 直接在命令行运行，不需要 http server, 例如 php test.php
@@ -35,7 +35,7 @@ php -r "echo php_sapi_name()"
     - 定时任务
     - 开发桌面应用使用 PHP-CLI 和 GTK 包
 
-### CGI 模式
+## CGI 模式
 
 - Common Gateway Interface 的简称，连接网页和 web 服务器执行程序，把 http 服务器接受指令传给执行程序，把执行程序的结果返回给 http 服务器，支持跨平台
 - 执行过程
@@ -50,7 +50,7 @@ php -r "echo php_sapi_name()"
     - 性能比较差，每一个请求 fork 一个进程，消耗资源比较多 (fork-and-execute 模式）
     - 逐渐少见
 
-### FastCGI 模式
+## FastCGI 模式
 
 - 快速通用网关接口 (Fast Common Gateway Interface) 是 CGI 的增强版本，是一种让交互程序和 web 服务器通信的协议，致力于减少 web 服务器和 CGI 程序之间互动开销，使服务器可以同时处理更多的网页请求
 - 执行过程
@@ -66,7 +66,7 @@ php -r "echo php_sapi_name()"
     - 支持大并发
     - 多进程，消耗较多内存
 
-### 模块模式
+## 模块模式
 
 - 模块模式指把 PHP 作为 web 服务器的一个模块运行
 - IIS 的 ISAPI 和 Apache 的 apache2handler
@@ -85,7 +85,7 @@ apache2handler
     - 支持多线程，占用资源少
     - 支持大并发
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

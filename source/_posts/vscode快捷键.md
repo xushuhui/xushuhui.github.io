@@ -5,7 +5,7 @@ tags: [vscode]
 top: 2
 ---
 
-### 快捷键
+## 快捷键
 - 文件资源管理器 Ctrl + Shift + E
 - 跨文件搜索 Ctrl + Shift + F
 - 源代码管理 Ctrl + Shift + G
@@ -50,7 +50,7 @@ top: 2
 - 切换状态栏可见性（Toggle Status Bar Visibility ）
 - 切换禅模式 (Toggle Zen Mode)
 
-### 插件
+## 插件
 
 - Code Runner
 - GitLens — Git supercharged
@@ -59,7 +59,7 @@ top: 2
 - PHP Namespace Resolver
 - Python
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

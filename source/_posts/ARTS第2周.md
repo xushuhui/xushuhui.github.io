@@ -5,7 +5,7 @@ tags:
 top: 0
 ---
 
-### Algorithm
+## Algorithm
 
 
 [整数反转](https://leetcode-cn.com/problems/reverse-integer/ "整数反转")
@@ -19,13 +19,13 @@ top: 0
 
 ```
 
-### Review
+## Review
 
-### Tip
+## Tip
 
-### Share
+## Share
 
-### 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
