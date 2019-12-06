@@ -37,12 +37,38 @@ categories: "mysql"
 **内核参数最重要参数之一，定义单个共享内存段的最大值**
 **这个参数应该设置足够大，以便能够在一个共享内存段下容纳整个 Innodb 缓冲池大小**
 **建议取值大于物理内存的一半，一般取值 Innodb 缓冲池大小**
+- vm.swappiness=0
+**这个参数当内存不足对性能产生比较明显的影响**
+**除非虚拟内存完全满了，否则不要使用交换区**
 
-## 数据库存储引擎
+#### 资源限制相关参数（/etc/security/limit.conf）
 
-## 数据库参数配置
+##### 打开文件限制（加到 limit.conf 文件末尾）
 
-## 数据库结构设计和 SQL 语句
+```shell
+* soft nofile 65535
+* hard nofile 65535
+```
+
+- 保证可以打开足够多的文件句柄
+- 修改后需要重启系统生效
+
+#### 磁盘调度策略（/sys/block/devname/queue/scheduler）
+```shell
+cat /sys/block/sda/queue/scheduler
+noop anticipatory deadline [cfq]
+echo deadline > /sys/block/sda/queue/scheduler
+```
+#### 文件系统对性能影响
+- 优先XFS
+##### EXT3/4系统挂载参数（/etc/fstab）
+```shell
+data=writeback|ordered|journal
+noatime,nodiratime
+```
+```shell
+/dev/sda1/ext4 noatime,nodiratime,data=writeback 1 1
+```
 
 ## 欢迎扫描下方二维码，持续关注：
 
