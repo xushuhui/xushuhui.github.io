@@ -1,5 +1,5 @@
 ---
-title: 问题4 wsl 搭建 php 环境请求超时的问题解决方案
+title: 问题 4 wsl 搭建 php 环境请求超时的问题解决方案
 date: 2018-03-28 16:42:53
 tags: [wsl,nginx,php-fpm]
 categories: "php"
@@ -44,7 +44,7 @@ nginx 和 fastcgi 的通信方式有两种，一种是 TCP socket 的方式，�
 
 这个配置是否启用读取 fastcgi 服务器消息的缓冲功能。 如果配置为 on，nginx 在接收到 fastcgi 服务器的响应结果时尽快将响应写到缓冲区（由 fastcgi_buffer_size 和 fastcgi_buffering 指令控制）中，如果响应结果超过了缓冲区的大小，nginx 会将超出部分写到临时文件（由 fastcgi_max_temp_file_size 和 fastcgi_temp_file_write_size 指令控制）中。 如果配置为 off，nginx 在接收到 fastcgi 服务器的响应结果时，会将结果同步发送给客户端，不等到所有的响应结果接收完成时，一次性读取响应结果的最大值为 fastcgi_buffer_size 配置的大小
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

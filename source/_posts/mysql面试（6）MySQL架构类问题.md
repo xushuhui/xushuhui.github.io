@@ -30,21 +30,21 @@ categories: "mysql"
 
 * master 修改后写入 binary_log（execute-binlog）
 * slave 开启 io 线程，读取 master binlog_dump，写入 relaylog
-* slave 发送 ACK 到 master，master commit（阻塞) 提交
+* slave 发送 ACK 到 master，master commit（阻塞） 提交
 * slave 的 sql 线程，读取 relaylog，重新执行到从库
 
 ## MySQL 主从复制配置步骤
 
 ### master 服务器操作
 
-1. 开启 binlog（必须) 开启 gtid（可选)
+1. 开启 binlog（必须） 开启 gtid（可选）
 2. 建立同步所用的数据库账号
 3. 使用 master_data 参数备份数据库
 4. 备份数据传到 slave 服务器
 
 ### slave 服务器操作
 
-1. 开启 binlog（可选) 开启 gtid（可选)
+1. 开启 binlog（可选） 开启 gtid（可选）
 2. 恢复 master 上的备份数据库
 3. 使用 change master 配置链路
 4. 使用 startslave 启动复制
@@ -82,27 +82,35 @@ categories: "mysql"
 |需要使用 MMM 架构||
 
 ## 主从延迟
+
 ### 原因
-- 大事务：数万行的数据更新和对大表的DDL操作
+
+- 大事务：数万行的数据更新和对大表的 DDL 操作
 - 网络延迟
-- 由master多线程写入，slave单线程恢复引起的延迟
+- 由 master 多线程写入，slave 单线程恢复引起的延迟
+
 ### 解决方法
+
 - 化大事务为小事务，分批更新数据
-- 使用pt-online-schema-change工具进行DDL操作
+- 使用 pt-online-schema-change 工具进行 DDL 操作
 - 减小单次事务处理的数据量以减少产生的日志文件大小
-- 减少master同步的slave数量
-- 使用MySQL5.7以后的多线程复制
-- 使用MGR复制架构
+- 减少 master 同步的 slave 数量
+- 使用 MySQL5.7 以后的多线程复制
+- 使用 MGR 复制架构
 
 ## 读写负载大
+
 ### 读负载大
-- 为原DB增加slave服务器
-- 进行读写分离，读分担到slave
+
+- 为原 DB 增加 slave 服务器
+- 进行读写分离，读分担到 slave
 - 增加数据库中间层，进行负载均衡
+
 ### 写负载大
+
 - 分库分表
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

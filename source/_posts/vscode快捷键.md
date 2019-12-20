@@ -6,6 +6,7 @@ top: 2
 ---
 
 ## 快捷键
+
 - 文件资源管理器 Ctrl + Shift + E
 - 跨文件搜索 Ctrl + Shift + F
 - 源代码管理 Ctrl + Shift + G
@@ -28,13 +29,13 @@ top: 2
 - 格式化代码 Alt + Shift + F
 - 列出最近文件 Ctrl + Tab
 - 跳转行 Ctrl + g
-- 跳转定义 F12/ Alt + -> 
-- 跳转后回退 Alt + <- 
+- 跳转定义 F12/ Alt + ->
+- 跳转后回退 Alt + <-
 - 跳转引用 Shift + F12
-- 折叠/展开括号 Ctrl + Shift + [ / Ctrl + Shift + ]
-- 折叠/展开所有括号 Ctrl + K , Ctrl + 0 / Ctrl + K , Ctrl + J
-- 搜索当前页,由上往下跳转 F3
-- 搜索当前页,由上往下跳转  Shift + F3
+- 折叠 / 展开括号 Ctrl + Shift + [ / Ctrl + Shift + ]
+- 折叠 / 展开所有括号 Ctrl + K , Ctrl + 0 / Ctrl + K , Ctrl + J
+- 搜索当前页，由上往下跳转 F3
+- 搜索当前页，由上往下跳转  Shift + F3
 - 当前页搜索 Ctrl + F
 - 全局搜索  Ctrl + Shift + F
 - 当前页替换 Ctrl + H
@@ -59,7 +60,7 @@ top: 2
 - PHP Namespace Resolver
 - Python
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

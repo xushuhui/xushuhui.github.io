@@ -1,5 +1,5 @@
 ---
-title: mysql面试（2）用户管理类问题
+title: mysql 面试（2）用户管理类问题
 top: 1
 date: 2019-09-10 16:04:47
 tags: ["mysql","面试"]
@@ -36,7 +36,7 @@ categories: "mysql"
 * 遵循最小权限原则
 * 使用 grant 命令授权，revoke 收回权限
 
-``` 
+```
 grant select,insert,update on db.tb to user@ip
 revoke delete on db.tb from user@ip
 ```
@@ -50,11 +50,11 @@ revoke delete on db.tb from user@ip
 
 ## 导出用户建立和授权语句
 
-``` 
+```
 pt-show-grants u=root,p=123456,h=localhost
 ```
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

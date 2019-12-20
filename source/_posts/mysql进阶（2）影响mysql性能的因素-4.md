@@ -127,7 +127,7 @@ ALL: 对所有 MyISAM 表都是使用延迟键写入
 - 系统选择和优化
 - 硬件升级
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

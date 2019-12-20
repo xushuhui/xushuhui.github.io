@@ -1,5 +1,5 @@
 ---
-title: 教程1 docker+mysql 主从配置
+title: 教程 1 docker+mysql 主从配置
 date: 2016-03-28 16:15:38
 tags: [docker, mysql]
 top: 0
@@ -58,7 +58,7 @@ show slave status;
 
 主库中添加表，查看从库是否同步
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

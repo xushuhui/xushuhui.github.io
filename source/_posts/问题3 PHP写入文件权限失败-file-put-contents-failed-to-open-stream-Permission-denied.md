@@ -1,5 +1,5 @@
 ---
-title: 问题3 PHP 写入文件权限失败 "file_put_contents failed to open stream Permission denied"
+title: 问题 3 PHP 写入文件权限失败 "file_put_contents failed to open stream Permission denied"
 date: 2018-06-08 18:16:44
 tags: [php]
 categories: "php"
@@ -47,7 +47,7 @@ mkdir('test', 0777);
 chmod('test', 0777);
 ```
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

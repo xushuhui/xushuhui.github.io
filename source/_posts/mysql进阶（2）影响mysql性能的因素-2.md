@@ -54,23 +54,29 @@ categories: "mysql"
 - 修改后需要重启系统生效
 
 #### 磁盘调度策略（/sys/block/devname/queue/scheduler）
+
 ```shell
 cat /sys/block/sda/queue/scheduler
 noop anticipatory deadline [cfq]
 echo deadline > /sys/block/sda/queue/scheduler
 ```
+
 #### 文件系统对性能影响
-- 优先XFS
-##### EXT3/4系统挂载参数（/etc/fstab）
+
+- 优先 XFS
+
+##### EXT3/4 系统挂载参数（/etc/fstab）
+
 ```shell
 data=writeback|ordered|journal
 noatime,nodiratime
 ```
+
 ```shell
 /dev/sda1/ext4 noatime,nodiratime,data=writeback 1 1
 ```
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

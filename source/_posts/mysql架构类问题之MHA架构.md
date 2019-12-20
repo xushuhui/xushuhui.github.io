@@ -60,7 +60,7 @@ categories: "mysql"
 - 使用一主多从的复制架构
 - 希望更少数据丢失的场景
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

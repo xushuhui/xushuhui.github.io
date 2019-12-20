@@ -166,7 +166,9 @@ show engin innodb status
 ```
 mysql://user_name[:password]@host_name[:port]/db_name/table_name
 ```
+
 #### 适用场景
+
 - 偶尔的统计分析和手工查询
 
 ### 如何选择正确存储引擎
@@ -177,7 +179,7 @@ mysql://user_name[:password]@host_name[:port]/db_name/table_name
 - 存储引擎特性
 - 不要混合使用存储引擎
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

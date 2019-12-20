@@ -1,5 +1,5 @@
 ---
-title: mysql面试（9）异常处理问题
+title: mysql 面试（9）异常处理问题
 top: 1
 date: 2019-09-19 14:01:43
 tags: ["mysql","面试"]
@@ -72,7 +72,7 @@ Slave_SQL_Running： NO
 * 使用 reset skave 删除 relay_log
 * 在正确同步日志点后重新同步日志
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

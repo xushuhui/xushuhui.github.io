@@ -7,13 +7,9 @@ top: 0
 
 ## Algorithm
 
-
 [整数反转](https://leetcode-cn.com/problems/reverse-integer/ "整数反转")
 
-
-
 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
-
 
 ```
 
@@ -25,7 +21,7 @@ top: 0
 
 ## Share
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

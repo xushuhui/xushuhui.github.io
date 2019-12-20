@@ -1,5 +1,5 @@
 ---
-title: 数据结构之映射AVL树映射
+title: 数据结构之映射 AVL 树映射
 top: 1
 date: 2019-06-18 16:04:18
 tags: ["数据结构","编程基础"]
@@ -10,9 +10,8 @@ categories: "数据结构"
 
 github 地址：(https://github.com/xushuhui/data-structures)
 
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
-
-## 欢迎扫描下方二维码，持续关注：
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

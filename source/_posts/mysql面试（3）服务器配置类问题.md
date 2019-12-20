@@ -53,7 +53,7 @@ categories: "mysql"
 ||innodb_buffer_pool_instances|Innodb 缓冲池的实例个数，每个实例大小为总缓冲池大小 / 实例个数|
 ||innodb_file_per_table|设置每个表独立使用一个表空间文件|
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

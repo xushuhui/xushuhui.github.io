@@ -1,5 +1,5 @@
 ---
-title: 教程2 AMDcpu 安装 ubuntu/deepin
+title: 教程 2 AMDcpu 安装 ubuntu/deepin
 date: 2019-04-20 09:45:35
 tags: [tool]
 top: 0
@@ -37,7 +37,7 @@ ctrl+x 就可以直接启动了
 在 GRUB_CMDLINE_LINUX_DEFAULT="在这里加内容" 里面添加上刚才的三个参数，这样每次开机直接按回车启动就可以了
 记得 update-grub 来更新下 grub 的菜单以生效
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

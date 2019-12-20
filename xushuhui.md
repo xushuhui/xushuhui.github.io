@@ -9,7 +9,7 @@
  - 徐曙辉/男/1992~~~~
  - 本科
  - 工作年限：4年
- - 技术博客：https://my.oschina.net/xushuhui
+ - 技术博客：https://www.phpst.cn
  - Github：http://github.com/xushuhui
  - 期望职位：后端工程师
 

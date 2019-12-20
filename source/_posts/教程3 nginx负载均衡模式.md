@@ -1,5 +1,5 @@
 ---
-title: 教程3 nginx 负载均衡模式
+title: 教程 3 nginx 负载均衡模式
 date: 2019-03-15 14:48:42
 tags: [nginx]
 categories: "nginx"
@@ -64,7 +64,7 @@ upstream test.cc {
 }
 ```
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 

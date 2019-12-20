@@ -1,13 +1,13 @@
 ---
-title: redis详解（8）缓存设计和优化
+title: redis 详解（8）缓存设计和优化
 top: 1
 date: 2018-03-28 14:51:29
 tags: ["redis","NoSQL"]
 categories: "redis"
 ---
 
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
 
-## 欢迎扫描下方二维码，持续关注：
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步

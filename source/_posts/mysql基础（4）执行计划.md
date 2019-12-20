@@ -1,5 +1,5 @@
 ---
-title: mysql基础（4）执行计划
+title: mysql 基础（4）执行计划
 top: 1
 date: 2019-08-16 11:06:21
 tags: ["mysql"]
@@ -115,7 +115,8 @@ explain sql
 |Using where|使用 where 条件过滤数据|
 |select tables optimized away|直接通过索引获取数据，不用访问表|
 
-## 欢迎扫描下方二维码，持续关注：
+## 欢迎扫描下方二维码，[个人博客](https://www.phpst.cn)，持续关注：
+
 ![](https://ww1.sinaimg.cn/large/a616b9a4gy1g4xzv954a4j20760763yo.jpg)
 
 互联网工程师（id:phpstcn），我们一起学习，一起进步
