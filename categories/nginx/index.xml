@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 老徐说</title>
+    <link>http://blog.phpst.cn/categories/nginx/</link>
+    <description>Recent content in Nginx on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Apr 2019 09:40:29 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 配置文件</title>
+      <link>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 03 Apr 2019 09:40:29 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>nginx 配置文件 #定义Nginx运行的用户和用户组 user www www; #nginx进程数，建议设置为等于CPU总核心数。 worker_processes 8; #全局错误日志定义类型，[ debug | info | notice</description>
+    </item>
+    
+  </channel>
+</rss>

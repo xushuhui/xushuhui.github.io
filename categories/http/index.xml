@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on 老徐说</title>
+    <link>http://blog.phpst.cn/categories/http/</link>
+    <description>Recent content in HTTP on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 05 Jul 2016 14:00:45 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>http 协议（2）了解 HTTP 协议</title>
+      <link>http://blog.phpst.cn/posts/http/http%E5%8D%8F%E8%AE%AE2%E4%BA%86%E8%A7%A3http%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Tue, 05 Jul 2016 14:00:45 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/http/http%E5%8D%8F%E8%AE%AE2%E4%BA%86%E8%A7%A3http%E5%8D%8F%E8%AE%AE/</guid>
+      <description>浏览器请求过程 用户在浏览器输入域名 浏览器把域名发送给 DNS 服务器 DNS 服务器返回 IP 地址给浏览器 浏览器根据 IP 地址发送到 web 服务器 web 服务器返回页面内容给浏</description>
+    </item>
+    
+    <item>
+      <title>Error Type</title>
+      <link>http://blog.phpst.cn/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 01 Jul 2016 13:59:58 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+      <description>Sentinel Error 预定义的特定错误，我们叫为 sentinel error，这个名字来源于计算机编程中使用一个特定值来表示不可能进行进一步处理的做法。所以对于 Go，我们使用</description>
+    </item>
+    
+    <item>
+      <title>http 协议（1）介绍 HTTP 协议</title>
+      <link>http://blog.phpst.cn/posts/http/http%E5%8D%8F%E8%AE%AE1%E4%BB%8B%E7%BB%8Dhttp%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Fri, 01 Jul 2016 13:59:58 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/http/http%E5%8D%8F%E8%AE%AE1%E4%BB%8B%E7%BB%8Dhttp%E5%8D%8F%E8%AE%AE/</guid>
+      <description>HTTP/1.1 无状态 长连机制 缓存 MIME RFC 文档 RFC2616 RFC7230 请求 / 应答 请求方法 GET HEAD POST 请求头 + 请求体 响应头 + 响应体 状态码 HTTPS 对称加密 AES ChaCha 非对称加密 RSA DH 摘要算法 SHA-2 证书 X.509 CA SSL/TLS SNI</description>
+    </item>
+    
+  </channel>
+</rss>

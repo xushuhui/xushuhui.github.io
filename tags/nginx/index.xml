@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 老徐说</title>
+    <link>http://blog.phpst.cn/tags/nginx/</link>
+    <description>Recent content in Nginx on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 07 May 2019 07:57:34 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 配置 Socket.IO 负载均衡</title>
+      <link>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AEsocket.io%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <pubDate>Tue, 07 May 2019 07:57:34 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AEsocket.io%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <description>nginx 配置 upstream nodes { ip_hash; server 192.168.1.114:3000; server 192.168.1.114:3001; server 192.168.1.114:3002; } server { listen 80; server_name ws; index index.html index.htm index.php; location /{ proxy_pass http://nodes; #反向代理集群 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginX-Proxy true; proxy_redirect off; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &amp;#34;upgrade&amp;#34;; } } socket.io var express = require(&amp;#39;express&amp;#39;); var app = express(); var path = require(&amp;#39;path&amp;#39;); var</description>
+    </item>
+    
+    <item>
+      <title>Nginx 配置文件</title>
+      <link>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 03 Apr 2019 09:40:29 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>nginx 配置文件 #定义Nginx运行的用户和用户组 user www www; #nginx进程数，建议设置为等于CPU总核心数。 worker_processes 8; #全局错误日志定义类型，[ debug | info | notice</description>
+    </item>
+    
+  </channel>
+</rss>

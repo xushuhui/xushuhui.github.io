@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>mysql 进阶（2）影响 mysql 性能的因素 (4) | 老徐说</title>
+    <meta property="og:title" content="mysql 进阶（2）影响 mysql 性能的因素 (4) - 老徐说">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2016-05-17T15:55:20&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2016-05-17T15:55:20&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,徐曙辉,java,PHP,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="mysql 进阶（2）影响 mysql 性能的因素 (4)">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="http://blog.phpst.cn/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-4/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.phpst.cn">
+                        老徐说
+                    </a>
+                
+                <p class="description">专注于PHP、Java、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://blog.phpst.cn">首页</a>
+                    
+                    <a  href="http://blog.phpst.cn/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://blog.phpst.cn/about/" title="关于">关于</a>
+                    
+                    <a  href="https://gitee.com/xushuhui" title="Gitee">Gitee</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">mysql 进阶（2）影响 mysql 性能的因素 (4)</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2016年5月17日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/mysql'>MySQL</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <h2 id="数据库服务器参数">数据库服务器参数</h2>
+<h3 id="获取配置信息路径">获取配置信息路径</h3>
+<ul>
+<li>命令行参数</li>
+</ul>
+<pre><code>mysqld_safe --datadir=/data/sql_data
+</code></pre><ul>
+<li>配置文件</li>
+</ul>
+<pre><code>mysqld --help  --verbose | grep -A 1 'Default options'
+</code></pre><h3 id="配置参数作用域">配置参数作用域</h3>
+<ul>
+<li>全局参数</li>
+</ul>
+<pre><code>set global  参数名=参数值
+set @@global.参数名:=参数值
+</code></pre><ul>
+<li>会话参数</li>
+</ul>
+<pre><code>set session  参数名=参数值
+set @@session.参数名:=参数值
+</code></pre><h3 id="内核相关配置参数">内核相关配置参数</h3>
+<ul>
+<li>确定可以使用的内存上限</li>
+<li>确定 MySQL 每个连接使用的内存</li>
+</ul>
+<pre><code>sort_buffer_size
+join_buffer_size
+read_buffer_size
+read_rnd_buffer_size
+</code></pre><ul>
+<li>确定需要为操作系统保留多少内存</li>
+<li>如何为缓冲池分配内存
+缓冲池内存 = 总内存 -（每个线程需要的内存*连接数）- 系统保留内存</li>
+</ul>
+<pre><code>Innodb_buffer_pool_size
+key_buffer_size
+select sum(index_length) from information_schema.tables where engine='myisam'
+</code></pre><h3 id="io-相关配置参数">IO 相关配置参数</h3>
+<h4 id="innodb">Innodb</h4>
+<pre><code>Innodb_log_file_size
+Innodb_log_files_in_group
+事务日志总大小 Innodb_log_files_in_group*Innodb_log_file_size
+Innodb_log_buffer_size
+</code></pre><ul>
+<li>
+<p>Innodb_flush_log_at_trx_commit
+0: 每秒进行一次，log 写入 cache, 并 flush log 到磁盘
+1:【默认】，每次事务提交，执行 log 写入 cache, 并 flush log 到磁盘
+2: 【建议】每次事务提交，执行 log 写入 cache, 每秒执行一次 flush log 到磁盘</p>
+</li>
+<li>
+<p>Innodb_flush_method=O_DIRECT</p>
+</li>
+<li>
+<p>Innodb_file_per_table=1</p>
+</li>
+<li>
+<p>Innodb_doublewrite=1</p>
+</li>
+</ul>
+<h4 id="myisam">MyISAM</h4>
+<ul>
+<li>delay_key_write
+OFF: 每次写操作偶刷新键缓冲中的脏块到磁盘
+ON: 只对建表时候指定了 delay_key_write 选项的表使用延迟刷新
+ALL: 对所有 MyISAM 表都是使用延迟键写入</li>
+</ul>
+<h3 id="安全相关配置参数">安全相关配置参数</h3>
+<ul>
+<li>expire_logs_days
+指定自动清理 binlog 天数</li>
+<li>max_allow_packet
+控制 MySQL 可以接收包的大小</li>
+<li>skip_name_resolve
+禁用 DNS 查找</li>
+<li>sysdate_is_now
+确保 sysdate() 返回正确日期</li>
+<li>read_only
+禁止非 super 权限用户写权限</li>
+<li>skip-slave_start
+禁用 slave 自动恢复</li>
+<li>sql_mode
+设置 MySQL 所使用的 SQL 模式</li>
+</ul>
+<h3 id="其他常用配置参数">其他常用配置参数</h3>
+<ul>
+<li>sync_binlog
+控制 MySQL 如何向磁盘刷新 binlog</li>
+<li>tmp_table_size 和 max_heap_table_size
+控制内存临时表大小</li>
+<li>max_connections
+控制允许的最大连接数</li>
+</ul>
+<h3 id="数据库结构设计和-sql-优化">数据库结构设计和 SQL 优化</h3>
+<ul>
+<li>过分的反范式化为表建立太多列</li>
+<li>过分的范式化造成太多表关联</li>
+<li>在 OLTP 环境使用不恰当的分区表</li>
+<li>使用外键保证数据完整性</li>
+</ul>
+<h2 id="性能优化顺序">性能优化顺序</h2>
+<ul>
+<li>数据库结构设计和 SQL 语句</li>
+<li>数据库存储引擎的选择和参数配置</li>
+<li>系统选择和优化</li>
+<li>硬件升级</li>
+</ul>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="http://blog.phpst.cn">徐曙辉</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="http://blog.phpst.cn/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-4/">http://blog.phpst.cn/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-4/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-3/">mysql 进阶（2）影响 mysql 性能的因素 (3)</a></li>
+        
+        <li><a href="/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-2/">mysql 进阶（2）影响 mysql 性能的因素 (2)</a></li>
+        
+        <li><a href="/posts/mysql/mysql%E8%BF%9B%E9%98%B62%E5%BD%B1%E5%93%8Dmysql%E6%80%A7%E8%83%BD%E7%9A%84%E5%9B%A0%E7%B4%A0-1/">mysql 进阶（2）影响 mysql 性能的因素 (1)</a></li>
+        
+        <li><a href="/posts/mysql/mysql%E8%BF%9B%E9%98%B61%E5%A4%A7%E8%A1%A8%E4%BA%A7%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98/">mysql 进阶（1）大表产生的问题</a></li>
+        
+        <li><a href="/posts/php/php7%E6%96%B0%E7%89%B9%E6%80%A7/">PHP 7 新特性</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/mysql'>MySQL</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://blog.phpst.cn">老徐说 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://blog.phpst.cn/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.phpst.cn">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/think/%E7%90%86%E6%83%B3%E7%9A%84%E5%B9%BB%E7%81%AD%E5%92%8C%E7%8E%B0%E5%AE%9E%E7%9A%84%E6%8C%A3%E6%89%8E/" title="理想的幻灭和现实的挣扎">理想的幻灭和现实的挣扎</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" title="Rsa 通信原理">Rsa 通信原理</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E5%BC%80%E5%8F%91cms/" title="Node 开发 cms">Node 开发 cms</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE19%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E9%83%A8%E7%BD%B2/" title="Node 新手课（19）项目打包和部署">Node 新手课（19）项目打包和部署</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE18%E9%A6%96%E9%A1%B5%E5%88%97%E8%A1%A8/" title="Node 新手课（18）首页列表">Node 新手课（18）首页列表</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE17%E7%82%B9%E8%B5%9E/" title="Node 新手课（17）点赞">Node 新手课（17）点赞</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE16%E6%89%93%E5%8D%A1/" title="Node 新手课（16）打卡">Node 新手课（16）打卡</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE15%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="Node 新手课（15）图片上传">Node 新手课（15）图片上传</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE14%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/" title="Node 新手课（14）修改用户信息">Node 新手课（14）修改用户信息</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.phpst.cn/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE13%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/" title="Node 新手课（13）用户信息">Node 新手课（13）用户信息</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://blog.phpst.cn/categories/http/">HTTP (3)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/mysql/">MySQL (24)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/nginx/">Nginx (1)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/node/">Node (22)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/python/">Python (1)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/redis/">Redis (6)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础 (9)</a></li>
+    
+    <li><a href="http://blog.phpst.cn/categories/%E9%9A%8F%E7%AC%94/">随笔 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.phpst.cn/tags/go/">Go</a>
+    
+    <a href="http://blog.phpst.cn/tags/http/">HTTP</a>
+    
+    <a href="http://blog.phpst.cn/tags/mysql/">MySQL</a>
+    
+    <a href="http://blog.phpst.cn/tags/nginx/">Nginx</a>
+    
+    <a href="http://blog.phpst.cn/tags/node/">Node</a>
+    
+    <a href="http://blog.phpst.cn/tags/nosql/">NoSQL</a>
+    
+    <a href="http://blog.phpst.cn/tags/php/">PHP</a>
+    
+    <a href="http://blog.phpst.cn/tags/python/">Python</a>
+    
+    <a href="http://blog.phpst.cn/tags/redis/">Redis</a>
+    
+    <a href="http://blog.phpst.cn/tags/vscode/">vscode</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+    
+    <a href="http://blog.phpst.cn/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.phpst.cn/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

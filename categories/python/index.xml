@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 老徐说</title>
+    <link>http://blog.phpst.cn/categories/python/</link>
+    <description>Recent content in Python on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 29 Mar 2019 14:51:12 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 在类中实现 swith 功能</title>
+      <link>http://blog.phpst.cn/posts/python%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%AE%9E%E7%8E%B0swith%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 29 Mar 2019 14:51:12 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/python%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%AE%9E%E7%8E%B0swith%E5%8A%9F%E8%83%BD/</guid>
+      <description>问题 Python 中没有 switch 的语法，但是很多时候需要多重条件判断，又不想写多个 if，那只能手动实现了。 实现代码 class RunMethod: def post(self,url=None,data=None,header=None): print(url) def get(self,url=None,data=None,header=None): print(&amp;#34;get&amp;#34;) def main(self,method): method = getattr(self, method) return method if __name__ == &amp;#39;__main__&amp;#39;: client =</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>书籍 on 老徐说</title>
+    <link>http://blog.phpst.cn/tags/%E4%B9%A6%E7%B1%8D/</link>
+    <description>Recent content in 书籍 on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 07 Jan 2016 13:41:08 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/tags/%E4%B9%A6%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编程书籍推荐</title>
+      <link>http://blog.phpst.cn/posts/basic/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Thu, 07 Jan 2016 13:41:08 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/basic/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</guid>
+      <description>《编码：隐匿在计算机软硬件背后的语言》 书中有非常丰富和连贯的例子去讲述计算机的工作原理，用来辅助课程第一部分的学习，以及深化对课程内容的理解</description>
+    </item>
+    
+  </channel>
+</rss>

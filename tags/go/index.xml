@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 老徐说</title>
+    <link>http://blog.phpst.cn/tags/go/</link>
+    <description>Recent content in Go on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 01 Aug 2019 16:19:27 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP 和 Go 通过 jsonrpc 通信</title>
+      <link>http://blog.phpst.cn/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Thu, 01 Aug 2019 16:19:27 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</guid>
+      <description>说明 PHP 和 GO 通过 jsonrpc 通信 代码 package main import ( &amp;#34;errors&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;log&amp;#34; &amp;#34;net&amp;#34; &amp;#34;net/rpc&amp;#34; &amp;#34;net/rpc/jsonrpc&amp;#34; &amp;#34;os&amp;#34; ) // 算数运算结构体 type Arith struct { } // 算数运算请求结构体 type ArithRequest struct { A int B int } // 算数运算响应结构体 type ArithResponse struct {</description>
+    </item>
+    
+  </channel>
+</rss>

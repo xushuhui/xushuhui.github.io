@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on 老徐说</title>
+    <link>http://blog.phpst.cn/tags/php/</link>
+    <description>Recent content in PHP on 老徐说</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 01 Aug 2019 16:19:27 +0000</lastBuildDate><atom:link href="http://blog.phpst.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP 和 Go 通过 jsonrpc 通信</title>
+      <link>http://blog.phpst.cn/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Thu, 01 Aug 2019 16:19:27 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</guid>
+      <description>说明 PHP 和 GO 通过 jsonrpc 通信 代码 package main import ( &amp;#34;errors&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;log&amp;#34; &amp;#34;net&amp;#34; &amp;#34;net/rpc&amp;#34; &amp;#34;net/rpc/jsonrpc&amp;#34; &amp;#34;os&amp;#34; ) // 算数运算结构体 type Arith struct { } // 算数运算请求结构体 type ArithRequest struct { A int B int } // 算数运算响应结构体 type ArithResponse struct {</description>
+    </item>
+    
+    <item>
+      <title>swoole 异步 task</title>
+      <link>http://blog.phpst.cn/posts/php/swoole%E5%BC%82%E6%AD%A5task/</link>
+      <pubDate>Wed, 29 Mar 2017 14:41:35 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/php/swoole%E5%BC%82%E6%AD%A5task/</guid>
+      <description>记录 今天做了项目异常监控，本来是用 nodejs 调用企业微信 sdk, 后来发现发送 http 请求到腾讯接口总是报错，就换成用 swoole 投递异步任务处理项目异常监控，记录一下代码</description>
+    </item>
+    
+    <item>
+      <title>PHP 7 新特性</title>
+      <link>http://blog.phpst.cn/posts/php/php7%E6%96%B0%E7%89%B9%E6%80%A7/</link>
+      <pubDate>Sun, 03 Apr 2016 09:03:42 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/php/php7%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
+      <description>1. 太空船运算符 echo 1&amp;lt;=&amp;gt;1; //0 echo 2&amp;lt;=&amp;gt;1; //1 echo 1&amp;lt;=&amp;gt;2; //-1 2. 类型声明 declare(strict_type=1)//strict_type=1表示开启严格模式 function sumOfInts(int ...$ints):int{ return</description>
+    </item>
+    
+    <item>
+      <title>PHP 运行模式</title>
+      <link>http://blog.phpst.cn/posts/php/php%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 29 Mar 2016 14:52:24 +0000</pubDate>
+      
+      <guid>http://blog.phpst.cn/posts/php/php%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</guid>
+      <description>运行模式 php 分为五大运行模式 cgi（通用网关接口 Common Gateway Interface) fast-cgi(cgi 升级版本） cli（命令行模式 Command Line Interface) isapi(Internet Server Application Program Interface, 是微软提供的一套面向 Internet 服务的 API 接口） apa</description>
+    </item>
+    
+  </channel>
+</rss>
