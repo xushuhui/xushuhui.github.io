@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Redis哈希表 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="Redis哈希表 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-06-10T19:01:42&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-06-10T19:01:42&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="Redis哈希表">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/redis/4.redis%E5%93%88%E5%B8%8C%E8%A1%A8/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Redis哈希表</h1>
+        </header>
+        
+  <time datetime="2020-06-10T19:01:42Z" class="post-meta meta-date dt-published">
+    2020年6月10日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/redis' target="_blank">Redis</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <h2 id="前言">前言</h2>
+<p>我们对 Redis 的深刻印象就是&quot;快&quot;，它在接收到一个键值对操作指令后在微妙内完成操作。
+为什么它能这么快，一方面它是在内存中进行操作，内存访问本身速度快，另一方面是它有高效的数据结构。键值对是按一定的数据结构存储，操作键值对就是对数据结构增删改查，高效的数据结构是 Redis 快速处理数据的基础。</p>
+<h2 id="底层数据结构">底层数据结构</h2>
+<p>
+        <img class="mx-auto" alt="底层数据结构" src="https://cdn.guojiang.club/FrtB8lP_rbaqaxk3hcOfmbo01TFY" />   
+    
+Redis 的底层数据结构有六种，简单动态字符串、双向链表、压缩列表、哈希表、跳表和整数数组，String 的底层实现是简单动态字符串，List、Hash、Set 和 SortedSet 都有两种底层实现结构，这四种类型被称为集合类型，特点是一个 key 对应一个集合数据</p>
+<h3 id="键和值的数据结构是什么">键和值的数据结构是什么</h3>
+<p>Redis 用一个哈希表保存所有键值对，实现 key-value 快速访问。</p>
+<p>一个哈希表就是一个数组，数组每个元素叫哈希桶，每个哈希桶保存键值对数据。然而哈希桶中的元素不是 value 本身，而是指向 value 的指针，即 value 存储的内存地址。</p>
+<p>
+        <img class="mx-auto" alt="全局哈希表" src="https://cdn.guojiang.club/Fuu5tihTIyL9ypByeYs3ZitCCIQG" />   
+    </p>
+<p>如图，这个哈希表保存了所有键值对，哈希桶中的 entry 元素保存<em>key 和</em>value 指针，哈希表能在 O(1) 时间复杂度快速查找键值对，所以我们只需要计算 key 的哈希值就能找到对应的哈希桶位置，进而找到对应的 entry 元素。不同类型的 value 都能被找到，不论是 String、List、Set、Hash。</p>
+<p>这种查找方式只需要进行一次哈希计算，不论数据规模多少，然而，在 Redis 中写入大量数据后，操作有时候会变慢，因为出现了哈希表的冲突以及 rehash 带来的操作阻塞。</p>
+<h3 id="哈希冲突">哈希冲突</h3>
+<p>当哈希表中数据增加，新增的数据 key 哈希计算出的哈希值和老数据 key 的哈希值会在同一个哈希桶中，也就是说多个 key 对应同一个哈希桶。</p>
+<h4 id="链式哈希">链式哈希</h4>
+<p>Redis 中，同一个哈希桶中多个元素用一个链表保存，它们之间用指针连接，这就是链式哈希。</p>
+<p>如图所示，entry1、entry2 和 entry3 都保存在哈希桶 3 中，导致哈希冲突。entry1 增加个<em>next 指针指向 entry2，entry2 增加</em>next 指针指向 entry3，不论哈希桶 3 元素有多少个，都可以通过指针连接起来，形成一个链表，叫做哈希冲突链。</p>
+<p>
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FtHcgEDV22B5bNyKPQnNDkkK_PPF" />   
+    </p>
+<p>链式哈希会产生一个问题，随着哈希表数据越来越多，哈希冲突越来越多，单个哈希桶链表上数据越来越多，查找时间复杂度退化到 O(n)，查找耗时增加，效率降低。</p>
+<h4 id="rehash">rehash</h4>
+<p>为解决这个问题，Redis 会对哈希表做 rehash 操作。rehash 也就是增加现有的哈希桶数量，让逐渐增多的 entry 元素能在更多的桶之间分散保存，减少单个桶中的元素数量，从而减少单个桶中的冲突。</p>
+<p>Redis 使用两个全局哈希表：哈希表 1 和哈希表 2，最开始新增数据默认存到哈希表 1，哈希表 2 没有被分配空间，当数据增加，Redis 开始执行 Rehash 操作：</p>
+<ol>
+<li>给哈希表 2 分配更大空间，可以是当前哈希表 1 大小的两倍</li>
+<li>把哈希表 1 的数据重新映射并拷贝到哈希表 2</li>
+<li>释放哈希表 1 空间</li>
+</ol>
+<p>rehash 后，从哈希表 1 切换到哈希表 2，哈希表 2 空间更多，哈希冲突更少，原来哈希表 1 留做下次 rehash 扩容备用，按同样的步骤把哈希表 2 的数据迁移到哈希表 1。</p>
+<p>在第二步涉及大量数据拷贝，如果一次性把哈希表 1 迁移完，耗时很长，会造成线程阻塞，无法处理其他请求，Redis 是怎么处理这个问题呢？它采用渐进式 rehash</p>
+<h4 id="渐进式-rehash">渐进式 rehash</h4>
+<p>在第二步中，Redis 正常处理客户端请求，每处理一个请求，从哪哈希表 1 的第一个索引位置开始，把这个位置上的所有 entry 拷贝到哈希表 2 中。处理下一个请求时，把下一个索引位置的 entry 做同样操作。</p>
+<p>
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FkWDvfrCfFPxwpAjC5p9luENfiN9" />   
+    </p>
+<p>渐进式 rehash 把一次性大量拷贝的开销，分摊到了多次处理请求的过程中，避免了耗时操作，保证了数据的快速访问。</p>
+<h2 id="总结">总结</h2>
+<p>今天我们学习了全局哈希表，哈希冲突和链式哈希，rehash 等，哈希表是 Redis 中一种非常重要的数据结构，掌握它对学习 Redis 有非常重要的作用。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/redis/3.redis%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE/">Redis查找数据</a></li>
+        
+        <li><a href="/posts/redis/2.redis%E6%93%8D%E4%BD%9C%E6%8E%A5%E5%8F%A3/">Redis操作接口</a></li>
+        
+        <li><a href="/posts/redis/1.redis%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">Redis基础架构</a></li>
+        
+        <li><a href="/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE17%E7%82%B9%E8%B5%9E/">Node 新手课（17）点赞</a></li>
+        
+        <li><a href="/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE16%E6%89%93%E5%8D%A1/">Node 新手课（16）打卡</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/redis' target="_blank">Redis</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

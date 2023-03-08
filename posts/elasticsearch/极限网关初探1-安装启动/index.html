@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>极限网关初探（1） 安装启动 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="极限网关初探（1） 安装启动 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-04-07T07:57:34&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-04-07T07:57:34&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="极限网关初探（1） 安装启动">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">极限网关初探（1） 安装启动</h1>
+        </header>
+        
+  <time datetime="2022-04-07T07:57:34Z" class="post-meta meta-date dt-published">
+    2022年4月7日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/elasticsearch' target="_blank">Elasticsearch</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <h2 id="产品介绍">产品介绍</h2>
+<p>极限网关（INFINI Gateway）是一个面向 Elasticsearch 的高性能应用网关。特性丰富，使用简单。</p>
+<p>它和其他业务型网关最大的区别是业务网关把请求转发给各个底层微服务，而它把请求转发给 Elasticsearch，更多是类似 Mycat 的中间件的作用。</p>
+<p>没有使用网关之前，服务端请求多个节点
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FkfvtsQD5vL5V8J8ybJGdzj5rNgV" />   
+    </p>
+<p>使用网关后
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FllBlUAEDwZpM5vcshRBHcJkCjFL" />   
+    </p>
+<h2 id="下载地址">下载地址</h2>
+<p>打开 <a href="http://release.infinilabs.com/gateway/stable/">下载地址</a>，根据操作系统版本选择。</p>
+<h2 id="windows-安装和启动">Windows 安装和启动</h2>
+<h3 id="安装">安装</h3>
+<p>下载 gateway-1.6.0_SNAPSHOT-597-windows-amd64.zip，解压如下。</p>
+<p>
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/Furrw9mEYvAPUqW19BK12XN9rc3Y" />   
+    
+gateway-windows-amd64.exe 是启动文件，gateway.yml 是默认配置文件。</p>
+<h3 id="启动失败">启动失败</h3>
+<p>当 gateway.yml 的 elasticsearch 选项中的 hosts 不能正常响应请求的时候，启动界面如下。
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FvYi1Alt0_X1koNPiS9ND4Iw0r-T" />   
+    </p>
+<blockquote>
+<p>为什么 elasticsearch 不能访问的时候，网关还要继续提供服务呢，为什么不像业务接口启动时在基础业务组件如 MySQL/Redis 不能正常响应就直接 panic？</p>
+</blockquote>
+<p>一方面网关作为 elasticsearch 抵挡流量冲击的城墙，在 elasticsearch 不能提供服务的时候，对之前成功的请求缓存结果，继续提供有限度的服务，为 elasticsearch 修复后上线争取时间。</p>
+<p>另一方面业务接口和基础组件是强耦合关系，没有基础组件就完全无法对外提供数据读写服务，而网关与 elasticsearch 是松耦合关系，网关在没有 elasticsearch 的情况下也能对外提供有限度的服务。</p>
+<p>在 gateway.yml 的 elasticsearch 选项中的 hosts 改成能够正常响应的 elasticsearch 请求地址。</p>
+<h3 id="启动成功">启动成功</h3>
+<p>双击 gateway-windows-amd64.exe 文件，启动成功界面如下</p>
+<p>
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FigtJ_OH0JwHuAPs3UQ_xmintqJr" />   
+    </p>
+<h3 id="访问">访问</h3>
+<h4 id="api-访问">API 访问</h4>
+<p>由启动后终端显示可知，网关的 API 接口地址是 http://localhost:2900</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>api.go:262<span style="color:#000;font-weight:bold">]</span> api listen at: http://0.0.0.0:2900
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>打开浏览器输入 http://localhost:2900，显示所有可以对外提供的 API 接口
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FuRrueNmzdYO6g3yAbCvDnpaD-7Y" />   
+    </p>
+<p>我们选择其中一个，在浏览器中输入 http://localhost:2900/_framework/api/_version 从路由上看该接口是查询产品的版本信息，显示如下
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FkOZf_2La7P6sDNH8ge7MOeVBXkR" />   
+    </p>
+<p>gateway.yml 中可以看到有被注释掉的一段配置，看起来应该是配置 api 地址的地方。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#api:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">#  enabled: true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">#  network:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#998;font-style:italic">#    binding: 127.0.0.1:2900</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>把注释去掉后尝试把端口改成 2901。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#000080">api</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">enabled</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080">network</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">binding</span>:<span style="color:#bbb"> </span><span style="color:#099">127.0.0.1</span>:<span style="color:#099">2901</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>改完后启动
+
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FkDOOUTSem4o-8nEylBUs9x5XwQT" />   
+    
+打开浏览器先输入 http://localhost:2900，无法正常响应请求，再输入 http://localhost:2901，可以正常响应，界面和修改配置前访问 http://localhost:2900 的界面一样，说明 API 请求地址成功修改</p>
+<h4 id="elasticsearch-访问">Elasticsearch 访问</h4>
+<p>启动日志中显示监听 8000 端口，猜测应该是 elasticsearch 请求地址，打开浏览器输入 http://127.0.0.1:8000/</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> entry <span style="color:#000;font-weight:bold">[</span>my_es_entry<span style="color:#000;font-weight:bold">]</span> listen at: http://0.0.0.0:8000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+        <img class="mx-auto" alt="" src="https://cdn.guojiang.club/FoxmU4ocbIiOd30NH9r67nDw9lzO" />   
+    
+gateway.yml 中可以看到 my_es_entry 的 network 绑定 8000 端口，显而易见的这部分就是配置代理转发给 elasticsearch 的地址，所以安装后只需要把以前请求 elasticsearch 的地址修改为该地址。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#000080">entry</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>my_es_entry<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">enabled</span>:<span style="color:#bbb"> </span><span style="color:#000;font-weight:bold">true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">router</span>:<span style="color:#bbb"> </span>my_router<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">max_concurrency</span>:<span style="color:#bbb"> </span><span style="color:#099">10000</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080">network</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#000080">binding</span>:<span style="color:#bbb"> </span><span style="color:#099">0.0.0.0</span>:<span style="color:#099">8000</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<p>我们成功安装和启动极限网关，接下来我们学习怎么根据需求修改配置。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">Go并发编程</a></li>
+        
+        <li><a href="/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">错误处理</a></li>
+        
+        <li><a href="/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">代码重构之图片上传</a></li>
+        
+        <li><a href="/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/">重学 C 语言 HelloWorld 篇</a></li>
+        
+        <li><a href="/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/">重学 C 语言</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/elasticsearch' target="_blank">Elasticsearch</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

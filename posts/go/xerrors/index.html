@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Go 1.13版本 xerrors 包装错误 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="Go 1.13版本 xerrors 包装错误 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-01-03T13:59:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-01-03T13:59:58&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="Go 1.13版本 xerrors 包装错误">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/go/xerrors/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Go 1.13版本 xerrors 包装错误</h1>
+        </header>
+        
+  <time datetime="2021-01-03T13:59:58Z" class="post-meta meta-date dt-published">
+    2021年1月3日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/go' target="_blank">Go</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <blockquote>
+<p>翻译自 <a href="https://crawshaw.io/blog/xerrors">https://crawshaw.io/blog/xerrors</a></p>
+</blockquote>
+<h1 id="go-113-xerrors">Go 1.13: xerrors</h1>
+<p>Go 2 系列语言更改的一部分是新的<a href="https://go.googlesource.com/proposal/+/master/design/29934-error-values.md">错误检查提案</a>。</p>
+<p>错误检查提案为其他地方（在 github.com/pkg/errors 等包中）尝试过的错误添加了几个功能，并带有一些新的实现技巧。 该提案已在提示中实施，为 Go 1.13 做准备。 您今天可以通过使用 Go from tip 或使用包 golang.org/x/xerrors 和 Go 1.12 来尝试一下。</p>
+<p>额外的功能完全基于库，不涉及对编译器或运行时的更改。 一个重要的新功能是错误包装。</p>
+<h2 id="一个工作示例包装key-not-found-错误">一个工作示例：包装“key not found” 错误</h2>
+<p>我们正在为 <a href="https://tailscale.io/">Tailscale</a>  构建的产品包括一个名为 taildb 的简单键值存储。 与许多简单的 KV 存储一样，您可以读取键值。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#998;font-style:italic">// Get fetches and unmarshals the JSON blob for the key k into v.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">// If the key is not found, Get reports a &#34;key not found&#34; error.
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span><span style="color:#000;font-weight:bold">func</span> (tx <span style="color:#000;font-weight:bold">*</span>Tx) <span style="color:#900;font-weight:bold">Get</span>(k <span style="color:#458;font-weight:bold">string</span>, v <span style="color:#000;font-weight:bold">interface</span>{}) (err <span style="color:#458;font-weight:bold">error</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>让我们来谈谈 &ldquo;key not found.&rdquo;</p>
+<h3 id="版本-1">版本 1</h3>
+<p>第一个 API 版本将&quot;key not found&quot;错误定义为：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> ErrNotFound = errors.<span style="color:#900;font-weight:bold">New</span>(<span style="color:#d14">&#34;taildb: key not found&#34;</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用taildb的代码可以轻松使用:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> val Value
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">:=</span> tx.<span style="color:#900;font-weight:bold">Get</span>(<span style="color:#d14">&#34;my-key&#34;</span>, <span style="color:#000;font-weight:bold">&amp;</span>val); err <span style="color:#000;font-weight:bold">==</span> taildb.ErrNotFound {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// no such key
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>} <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// something went very wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// use val
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这很好，直到我进行一些调试并遇到一个归结为:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>my_http_handler: taildb: key not found
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这不是一个非常有用的错误消息.</p>
+<h3 id="版本-2">版本 2</h3>
+<p>鉴于 <code>Get</code> 方法具有键名，最好将其包含在错误消息中。</p>
+<p>所以我遵循了 Go 中的一个常见策略，即在 taildb 包中引入错误类型：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">type</span> KeyNotFoundError <span style="color:#000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Name <span style="color:#458;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> (e KeyNotFoundError) <span style="color:#900;font-weight:bold">Error</span>() <span style="color:#458;font-weight:bold">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">return</span> fmt.<span style="color:#900;font-weight:bold">Errorf</span>(<span style="color:#d14">&#34;taildb: key %q not found&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这很好用！检查此特定错误的代码有点混乱，但它可以工作:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> val Value
+</span></span><span style="display:flex;"><span>err <span style="color:#000;font-weight:bold">:=</span> tx.<span style="color:#900;font-weight:bold">Get</span>(<span style="color:#d14">&#34;my-key&#34;</span>, <span style="color:#000;font-weight:bold">&amp;</span>val)
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">if</span> _, isNotFound <span style="color:#000;font-weight:bold">:=</span> err.(taildb.KeyNotFoundError); isNotFound {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// no such key
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// something went very wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	}
+</span></span><span style="display:flex;"><span>} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// use val
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但这种直接搭配的风格有一个缺陷。如果任何中间代码将信息添加到错误中，我们将无法再检查错误的类型。考虑如下函数:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">accessCheck</span>(tx <span style="color:#000;font-weight:bold">*</span>taildb.Tx, key <span style="color:#458;font-weight:bold">string</span>) <span style="color:#458;font-weight:bold">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">var</span> val Value
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">:=</span> tx.<span style="color:#900;font-weight:bold">Get</span>(key, <span style="color:#000;font-weight:bold">&amp;</span>val); err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#000;font-weight:bold">return</span> fmt.<span style="color:#900;font-weight:bold">Errorf</span>(<span style="color:#d14">&#34;access check: %v&#34;</span>, err)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">if</span> !val.AccessGranted {
+</span></span><span style="display:flex;"><span>		<span style="color:#000;font-weight:bold">return</span> errAccessDenied
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这里，我们在数据库之上实现逻辑，检查用户是否具有某种访问权限。报告 nil 错误将授予访问权限，否则访问将被拒绝。拒绝访问的原因可能是 <code>!AccessGranted</code> 或一些底层数据库错误。所有关于错误的文本信息都被保留了，但是使用 <code>fmt.Errorf</code> 意味着我们不能再检查访问错误是否是 <code>KeyNotFoundError</code>。</p>
+<h3 id="版本-3">版本 3</h3>
+<p>新的 xerrors 库通过提供一个版本的 Errorf 来解决此问题，该版本保留了新错误中的底层错误对象:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">:=</span> tx.<span style="color:#900;font-weight:bold">Get</span>(key, <span style="color:#000;font-weight:bold">&amp;</span>val); err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#000;font-weight:bold">return</span> xerrors.<span style="color:#900;font-weight:bold">Errorf</span>(<span style="color:#d14">&#34;access check: %w&#34;</span>, err)
+</span></span><span style="display:flex;"><span>	}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>%w for wrap.</p>
+<p>从表面上看，Errorf 的这种实现与 fmt 中的实现完全一样。在底层，保留类型意味着我们现在可以检查 KeyNotFoundError 的原因链:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> val Value
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">:=</span> <span style="color:#900;font-weight:bold">accessCheck</span>(tx, <span style="color:#d14">&#34;my-key&#34;</span>); err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">var</span> notFoundErr taildb.KeyNotFoundError
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">if</span> xerrors.<span style="color:#900;font-weight:bold">As</span>(err, <span style="color:#000;font-weight:bold">&amp;</span>notFoundErr) {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// no such key
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#998;font-style:italic">// something went very wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	}
+</span></span><span style="display:flex;"><span>} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// use val
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Great!</p>
+<h3 id="版本-4">版本 4</h3>
+<p>我们可以做得更好。我们替换导出的 KeyNotFoundError 的唯一原因是我们可以在错误消息中添加一些额外的文本，同时使类型可测试。新的 xerrors 为我们提供了一种更简单的方法来做到这一点。</p>
+<p>所以让我们回到第一个定义:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> ErrNotFound = errors.<span style="color:#900;font-weight:bold">New</span>(<span style="color:#d14">&#34;key not found&#34;</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在taildb里面我们可以写:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> (tx <span style="color:#000;font-weight:bold">*</span>Tx) <span style="color:#900;font-weight:bold">Get</span>(k <span style="color:#458;font-weight:bold">string</span>, v <span style="color:#000;font-weight:bold">interface</span>{}) (err <span style="color:#458;font-weight:bold">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>	<span style="color:#000;font-weight:bold">if</span> noSuchKey {
+</span></span><span style="display:flex;"><span>		<span style="color:#000;font-weight:bold">return</span> xerrors.<span style="color:#900;font-weight:bold">Errorf</span>(<span style="color:#d14">&#34;taildb: %q: %w&#34;</span>, k, ErrNotFound)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们想要的所有信息都在这里。当我们将错误打印到日志时，我们会看到 <code>taildb: &quot;my-key&quot;: key not found</code>。要检查从 <code>accessCheck</code> 返回的错误，我们可以编写:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> val Value
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">:=</span> <span style="color:#900;font-weight:bold">accessCheck</span>(tx, <span style="color:#d14">&#34;my-key&#34;</span>); xerrors.<span style="color:#900;font-weight:bold">Is</span>(err, taildb.ErrNotFound) {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// no such key
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>} <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">if</span> err <span style="color:#000;font-weight:bold">!=</span> <span style="color:#000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// something went very wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>} <span style="color:#000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#998;font-style:italic">// use val
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>简单！</p>
+<h2 id="go-113">Go 1.13</h2>
+<p>新的 xerrors 将在 Go 1.13 中升级到标准库的错误包中。</p>
+<p>链接不是 xerrors.Errorf，而是直接构建到我们今天使用的 <a href="https://tip.golang.org/pkg/fmt/#Errorf">fmt.Errorf</a> 函数中：</p>
+<p>如果最后一个参数是错误的并且格式字符串以“: %w”结尾，
+返回的错误实现 errors.Wrapper 并带有返回它的 Unwrap 方法。</p>
+<p>当然，这看起来不错。然而，距离 Go 1.13 仅三个月之遥！在那之后，所有这些新的变化（这篇文章只介绍一个）将在[Go 1 兼容性承诺]（https://golang.org/doc/go1compat）下的标准库中被永久冻结。对于如此高的标准，这个包[可悲地测试不足]（https://godoc.org/golang.org/x/xerrors?importers）。</p>
+<p>我鼓励你从今天开始使用 golang.org/x/xerrors，或者更好的是，通过 <a href="https://golang.org/doc/install/source">从源代码安装</a> 直接针对 Go 提示开始开发。更多的人需要尝试一下。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go/go%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E4%BB%A3%E7%90%86/">Go 搭建内网代理</a></li>
+        
+        <li><a href="/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/">PHP 和 Go 通过 jsonrpc 通信</a></li>
+        
+        <li><a href="/posts/redis/8.redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/">Redis非阻塞模式</a></li>
+        
+        <li><a href="/posts/redis/7.redis%E5%8D%95%E7%BA%BF%E7%A8%8B/">Redis单线程</a></li>
+        
+        <li><a href="/posts/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">Rsa 通信原理</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/go' target="_blank">Go</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

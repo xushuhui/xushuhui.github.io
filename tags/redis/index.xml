@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 徐曙辉个人博客</title>
+    <link>https://xushuhui.github.io/tags/redis/</link>
+    <description>Recent content in Redis on 徐曙辉个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 Feb 2023 16:12:55 +0800</lastBuildDate><atom:link href="https://xushuhui.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis源码解析SDS</title>
+      <link>https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/</link>
+      <pubDate>Mon, 13 Feb 2023 16:12:55 +0800</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/</guid>
+      <description>前言 字符串底层由简单动态字符串（Simple Dynamic Strings, SDS）是Redis的基本数据结构之一，用于存储字符串和整型数据。 SDS兼容C语言标准字符串</description>
+    </item>
+    
+    <item>
+      <title>Redis非阻塞模式</title>
+      <link>https://xushuhui.github.io/posts/redis/8.redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 11 Sep 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/8.redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/</guid>
+      <description>非阻塞模式 设置socket网络模型的非阻塞模式，需要三个关键函数socket()、listen()和accept() 在socket模型中，不</description>
+    </item>
+    
+    <item>
+      <title>Redis单线程</title>
+      <link>https://xushuhui.github.io/posts/redis/7.redis%E5%8D%95%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Sat, 01 Aug 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/7.redis%E5%8D%95%E7%BA%BF%E7%A8%8B/</guid>
+      <description>Redis 单线程本质 Redis 的单线程，指的是 Redis 的网络 IO 和键值对读写由一个线程完成，这是 Redis 对外提供键值存储服务的主要流程，但是 Redis 的其他功能，比如持久化、异步</description>
+    </item>
+    
+    <item>
+      <title>Redis集合操作</title>
+      <link>https://xushuhui.github.io/posts/redis/6.redis%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 20 Jul 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/6.redis%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</guid>
+      <description>不同操作的复杂度 集合类型的操作类型很多，有读写单个集合元素的，例如 HGET、HSET，也有操作多个元素的，例如 SADD，还有对整个集合进行遍</description>
+    </item>
+    
+    <item>
+      <title>Redis底层数据结构</title>
+      <link>https://xushuhui.github.io/posts/redis/5.redis%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 03 Jul 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/5.redis%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>数据操作效率 在 String 类型，查找到哈希桶就能直接对 value 增删改查，它的实际复杂度就是哈希表的时间复杂度 O(1)。而集合类型中找到哈希桶后还要在集合中进</description>
+    </item>
+    
+    <item>
+      <title>Redis哈希表</title>
+      <link>https://xushuhui.github.io/posts/redis/4.redis%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+      <pubDate>Wed, 10 Jun 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/4.redis%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+      <description>前言 我们对 Redis 的深刻印象就是&amp;quot;快&amp;quot;，它在接收到一个键值对操作指令后在微妙内完成操作。 为什么它能这么快，一方面它是在内存中进</description>
+    </item>
+    
+    <item>
+      <title>Redis查找数据</title>
+      <link>https://xushuhui.github.io/posts/redis/3.redis%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Fri, 01 May 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/3.redis%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE/</guid>
+      <description>如何查找键值对 Redis 网络访问模块解析客户端的请求，获得要执行的操作，针对键值对的操作就先要查找键值对是否存在。这就要用到 Redis 的索引模块。在索引模块</description>
+    </item>
+    
+    <item>
+      <title>Redis操作接口</title>
+      <link>https://xushuhui.github.io/posts/redis/2.redis%E6%93%8D%E4%BD%9C%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Wed, 15 Apr 2020 19:01:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/2.redis%E6%93%8D%E4%BD%9C%E6%8E%A5%E5%8F%A3/</guid>
+      <description>前言 上一节我们学习了系统学习法的原理和作用，后续 Redis 的学习我们将按照系统学习法的方式学习，提升学习效率。 我们还学习了键值数据库关键功能数据模型</description>
+    </item>
+    
+    <item>
+      <title>Redis基础架构</title>
+      <link>https://xushuhui.github.io/posts/redis/1.redis%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Fri, 03 Apr 2020 19:03:42 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/redis/1.redis%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</guid>
+      <description>前言 我们应该怎样学习 Redis，大部分网上的教程从安装部署、介绍 API 开始，字符串、列表、集合等等。然后是发布订阅、持久化，再到主从复制，集群部</description>
+    </item>
+    
+  </channel>
+</rss>

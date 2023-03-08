@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on 徐曙辉个人博客</title>
+    <link>https://xushuhui.github.io/tags/c/</link>
+    <description>Recent content in C on 徐曙辉个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 03 Mar 2021 13:59:58 +0000</lastBuildDate><atom:link href="https://xushuhui.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重学 C 语言 HelloWorld 篇</title>
+      <link>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/</link>
+      <pubDate>Wed, 03 Mar 2021 13:59:58 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/</guid>
+      <description>前言 按照编程界的惯例，学习一门语言第一件事就是输出“Hello World”，这大概是专属程序员的情节（类似格子衫和植发）。 以下就是各个主流编</description>
+    </item>
+    
+    <item>
+      <title>重学 C 语言</title>
+      <link>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 03 Feb 2021 13:59:58 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/</guid>
+      <description>前言 近几年一直在做 Web 开发，从PHP到Go，从数据库到缓存。随着技术的深入，越发感到非科班转行写代码的我在理解源码和技术细节的力不从心。万丈高</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>重学 C 语言 HelloWorld 篇 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="重学 C 语言 HelloWorld 篇 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-03-03T13:59:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-03-03T13:59:58&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="重学 C 语言 HelloWorld 篇">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">重学 C 语言 HelloWorld 篇</h1>
+        </header>
+        
+  <time datetime="2021-03-03T13:59:58Z" class="post-meta meta-date dt-published">
+    2021年3月3日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/c' target="_blank">C</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <h2 id="前言">前言</h2>
+<p>按照编程界的惯例，学习一门语言第一件事就是输出“Hello World”，这大概是专属程序员的情节（类似格子衫和植发）。</p>
+<p>以下就是各个主流编程语言的 HelloWorld 写法，为什么要列出各个语言的 HelloWorld？我们比较他们的不同之处，从中学到语言设计哲学和编程理念。</p>
+<p>网上各个入门教程中只会告诉你 HelloWorld 的每一行代码是什么意思，然后你一脸懵逼，为什么要这么写，为什么要引入包，而你的疑问得到的解答可能是以后学到了你就明白了。等你学完后上手实践一段时间你确实明白，开头要引入包，Java 要写 Class，你认为你明白了，但是你真的理解每一行代码后面得编程理念吗？</p>
+<h2 id="示例">示例</h2>
+<p>C</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>(<span style="color:#458;font-weight:bold">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;Hello, World! </span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Go</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#d14">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#d14">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Java</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import static</span> <span style="color:#555">java.lang.System.out</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">HelloWorld</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;Hello World&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PHP</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#34;Hello World!&#34;</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Python</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0086b3">print</span>(<span style="color:#d14">&#34;Hello, World!&#34;</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="说明">说明</h2>
+<p>以上主流编程语言大部分人都接触过，前 3 种都是编译型语言，后 2 种是解释型语言。</p>
+<p>我们观察下前 3 种第一行，Java 和 Go 都有 <code>import xx</code>，C 有<code>include</code>，都是包含、引入的意思。</p>
+<p>编程语言中，不同功能划分到不同模块中去，字符串、网络、http 等等，在不同的编程语言有不同的命名。Java 和 Go 中叫包，C 语言叫头文件。设计包目的是降低代码耦合度，提高代码复用性和可维护性。假设你要处理字符串，就只要在字符串的包中查找对应的方法。</p>
+<p>为什么 PHP 和 Python 没有 import 包呢，因为它们为了提高开发者开发效率，把很多函数在语言内部实现了，你可以直接调用。</p>
+<p>两者孰优孰劣，后面我们在讲编译型语言和解释型语言时会详细分析。</p>
+<h3 id="代码解析">代码解析</h3>
+<h4 id="第一行">第一行</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>C 语言后缀名 h 的文件就是头文件，它包含了函数声明和定义，没有具体实现的代码。</p>
+<p>这句话的意思是你不用管也不用看这个方法怎么实现，代码细节是什么。你只需要按头文件中指定的函数的名字，传入的参数，返回的结果调用。</p>
+<p>为什么要这样？比方说 A 写的函数 a 调用 B 写的的一个方法 b，</p>
+<ul>
+<li>a 直接依赖 b，如果 B 修改了 b 的返回结果类型，a 也需要修改。</li>
+<li>a 依赖 b 的头文件，b 修改返回结果类型后，为了兼容头文件，内部转换成头文件定义的返回类型，a 就不需要修改。</li>
+</ul>
+<h4 id="第二行">第二行</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>(<span style="color:#458;font-weight:bold">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>C 语言程序都需要包含 main() 函数， 代码从 main() 函数开始执行。main 函数就是进入一个房间的大门，所有函数执行的起点。Go 和 Java 也是这样设计的。</p>
+<p>为什么需要 main 函数？一个文件中可以定义多个函数，编程语言怎么知道要从哪个开始执行呢？就像进入一个房间，肯定要先找大门，从门进入（别抬杠走窗户）。</p>
+<p><code>int</code>是函数的返回值数据类型关键字，每个函数都要定义返回值类型，如果类型不符合要求，编译就无法通过，无法执行。有些函数执行所需的操作而不返回值，在这种情况下，关键字是<code>void</code>。</p>
+<p><code>main</code>是函数名，文件中函数名不能重复。</p>
+<p><code>void</code>是参数，当函数被调用时，向参数传递一个值，这个值被称为实际参数。如果函数不包含参数，就传入<code>void</code>。</p>
+<h4 id="第三行">第三行</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;Hello, World! </span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>printf</code> 用于格式化输出到屏幕。printf() 函数在 <code>&quot;stdio.h&quot;</code> 头文件中声明。</p>
+<h4 id="第四行">第四行</h4>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用于表示退出程序。在程序逻辑执行完后，如果返回类型不是<code>void</code>，就必须返回指定类型数据，这里要求必须返回<code>int</code>类型数据，就返回<code>0</code></p>
+<h2 id="总结">总结</h2>
+<p>在介绍 C 语言 HelloWorld 后，和其他语言 HelloWorld 比较。介绍了语言本身的设计理念。详细解释 HelloWorld 中每一行代码的意义。万丈高楼平地起，这还只是学习 C 语言的第一步。</p>
+<p>与君共勉。</p>
+<h2 id="微信公众号">微信公众号</h2>
+<p>
+        <img class="mx-auto" alt="扫码关注" src="https://tvax4.sinaimg.cn/large/a616b9a4gy1grl9d1rdpvj2076076wey.jpg" />   
+    </p>
+<blockquote>
+<p>加好友深入交流，解答问题。</p>
+</blockquote>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/">重学 C 语言</a></li>
+        
+        <li><a href="/posts/go/xerrors/">Go 1.13版本 xerrors 包装错误</a></li>
+        
+        <li><a href="/posts/redis/8.redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/">Redis非阻塞模式</a></li>
+        
+        <li><a href="/posts/redis/7.redis%E5%8D%95%E7%BA%BF%E7%A8%8B/">Redis单线程</a></li>
+        
+        <li><a href="/posts/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">Rsa 通信原理</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/c' target="_blank">C</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

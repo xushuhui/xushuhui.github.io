@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elasticsearch on 徐曙辉个人博客</title>
+    <link>https://xushuhui.github.io/categories/elasticsearch/</link>
+    <description>Recent content in Elasticsearch on 徐曙辉个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 May 2022 07:50:34 +0000</lastBuildDate><atom:link href="https://xushuhui.github.io/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>极限网关初探（2）配置</title>
+      <link>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 07 May 2022 07:50:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/</guid>
+      <description>配置 上一篇我们先学习了极限网关的安装和启动，今天学习配置。 读写分离 配置文档 现在我们遇到读写分离的需求，用网关该怎么做呢？ 假设服务端现在从 http://127.0.0.1:8000 写</description>
+    </item>
+    
+    <item>
+      <title>极限网关初探（1） 安装启动</title>
+      <link>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/</link>
+      <pubDate>Thu, 07 Apr 2022 07:57:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/</guid>
+      <description>产品介绍 极限网关（INFINI Gateway）是一个面向 Elasticsearch 的高性能应用网关。特性丰富，使用简单。 它和其他业务型网关最大的区别是业务网关把请求</description>
+    </item>
+    
+  </channel>
+</rss>

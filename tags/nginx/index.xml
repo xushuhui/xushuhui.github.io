@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 徐曙辉个人博客</title>
+    <link>https://xushuhui.github.io/tags/nginx/</link>
+    <description>Recent content in Nginx on 徐曙辉个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 07 May 2019 07:57:34 +0000</lastBuildDate><atom:link href="https://xushuhui.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 配置 Socket.IO 负载均衡</title>
+      <link>https://xushuhui.github.io/posts/node/nginx%E9%85%8D%E7%BD%AEsocket.io%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <pubDate>Tue, 07 May 2019 07:57:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/posts/node/nginx%E9%85%8D%E7%BD%AEsocket.io%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <description>nginx 配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 upstream nodes { ip_hash; server 192.168.1.114:3000; server 192.168.1.114:3001; server 192.168.1.114:3002; } server { listen 80; server_name ws; index index.html index.htm index.php; location /{ proxy_pass http://nodes; #反向代理集群 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginX-Proxy true; proxy_redirect off; proxy_http_version 1.1;</description>
+    </item>
+    
+  </channel>
+</rss>

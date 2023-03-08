@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>PHP 运行模式 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="PHP 运行模式 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2016-03-29T14:52:24&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2016-03-29T14:52:24&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="PHP 运行模式">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/php/php%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">PHP 运行模式</h1>
+        </header>
+        
+  <time datetime="2016-03-29T14:52:24Z" class="post-meta meta-date dt-published">
+    2016年3月29日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/php' target="_blank">PHP</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <h2 id="运行模式">运行模式</h2>
+<p>php 分为五大运行模式</p>
+<ul>
+<li>cgi（通用网关接口 Common Gateway Interface)</li>
+<li>fast-cgi(cgi 升级版本）</li>
+<li>cli（命令行模式 Command Line Interface)</li>
+<li>isapi(Internet Server Application Program Interface, 是微软提供的一套面向 Internet 服务的 API 接口）</li>
+<li>apache2handler（将 php 作为 apache 的模块）</li>
+<li>其他 (continuity, embed, litespeed, milter 等）</li>
+</ul>
+<p>本地查看运行模式的方法</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>phpinfo()
+</span></span><span style="display:flex;"><span>php <span style="color:#000;font-weight:bold">-</span>r <span style="color:#d14">&#34;echo php_sapi_name()&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>选择运行模式前提</p>
+<ul>
+<li>了解运行模式优缺点和应用场景</li>
+<li>根据业务本身结合上一条</li>
+</ul>
+<h2 id="cli-模式">CLI 模式</h2>
+<ul>
+<li>Command Line Interface 的简称，支持 windows 和 Linux 平台</li>
+<li>直接在命令行运行，不需要 http server, 例如 php test.php</li>
+<li>应用场景
+<ul>
+<li>定时任务</li>
+<li>开发桌面应用使用 PHP-CLI 和 GTK 包</li>
+</ul>
+</li>
+</ul>
+<h2 id="cgi-模式">CGI 模式</h2>
+<ul>
+<li>Common Gateway Interface 的简称，连接网页和 web 服务器执行程序，把 http 服务器接受指令传给执行程序，把执行程序的结果返回给 http 服务器，支持跨平台</li>
+<li>执行过程
+<ul>
+<li>http 服务器接收到用户请求，如 index.php，会通过它配置的 cgi 服务执行</li>
+<li>生成一个 php-cgi 进程，并执行 php 程序</li>
+<li>执行结果返回给 http 服务器</li>
+</ul>
+</li>
+<li>应用场景
+<ul>
+<li>提供 http 服务</li>
+</ul>
+</li>
+<li>优缺点
+<ul>
+<li>跨平台，几乎能在任何操作系统实现</li>
+<li>web 和 server 是独立的，结构清晰，可控性强</li>
+<li>性能比较差，每一个请求 fork 一个进程，消耗资源比较多 (fork-and-execute 模式）</li>
+<li>逐渐少见</li>
+</ul>
+</li>
+</ul>
+<h2 id="fastcgi-模式">FastCGI 模式</h2>
+<ul>
+<li>快速通用网关接口 (Fast Common Gateway Interface) 是 CGI 的增强版本，是一种让交互程序和 web 服务器通信的协议，致力于减少 web 服务器和 CGI 程序之间互动开销，使服务器可以同时处理更多的网页请求</li>
+<li>执行过程
+<ul>
+<li>web 服务器启动时载入 Fast CGI 进程管理器 (php-fpm)</li>
+<li>FastCGI 进程管理器会启动多个 CGI 进程等待 web 服务器的连接</li>
+<li>当客户端请求到达 web 服务器时，FastCGI 进程管理器选择并连接到一个 CGI 解释器。web 服务器把环境变量和标准输入发送到 FastCGI 子进程 php-cgi</li>
+<li>FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回 web 服务器。当 FastCGI 子进程关闭连接时，请求报告处理完成。FastCGI 子进程接着等待并处理来自 FastCGI 进程管理器的下一个连接。在 CGI 模式中，php-cgi 在此便退出了</li>
+</ul>
+</li>
+<li>应用场景
+<ul>
+<li>提供 http 服务</li>
+</ul>
+</li>
+<li>优缺点
+<ul>
+<li>跨平台，几乎能在任何操作系统实现</li>
+<li>web 和 server 是独立的，结构清晰，可控性强</li>
+<li>支持大并发</li>
+<li>多进程，消耗较多内存</li>
+</ul>
+</li>
+</ul>
+<h2 id="模块模式">模块模式</h2>
+<ul>
+<li>模块模式指把 PHP 作为 web 服务器的一个模块运行</li>
+<li>IIS 的 ISAPI 和 Apache 的 apache2handler</li>
+</ul>
+<p>apache2handler</p>
+<ul>
+<li>apache 监听一个用户请求 index.php</li>
+<li>apache 根据 conf 文件配置的 LoadModule php_module modules/mod_php5.so(windows 下面是 php5apache2_2.dll) 调用 PHP</li>
+<li>在 mod_php5.so 注册一个 php 的钩子 php_ap2_register_hook</li>
+<li>php_ap2_register_hook 钩子函数中包括 4 个挂钩以及对应的函数 ap_hook_pre_config，ap_hook_post_config，ap_hook_handler，ap_hook_child_init。其中 pre_config，post_config，child_init 是启动挂钩，在服务器启动时调用。handler 时请求挂钩，在服务器处理请求时调用。其中 post_config 挂钩中启动 php。</li>
+<li>php 执行完成后数据通过。so 或 dll 返回给 apache</li>
+<li>apache 将数据返回到客户端</li>
+<li>应用场景
+<ul>
+<li>提供 http 服务</li>
+</ul>
+</li>
+<li>优缺点
+<ul>
+<li>安装配置方便，不需要安装代码解析程序</li>
+<li>支持多线程，占用资源少</li>
+<li>支持大并发</li>
+</ul>
+</li>
+</ul>
+<h2 id="欢迎扫描下方二维码个人博客httpswwwphpstcn持续关注">欢迎扫描下方二维码，<a href="https://www.phpst.cn">个人博客</a>，持续关注：</h2>
+<p>互联网工程师（id:phpstcn），我们一起学习，一起进步</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/book/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/">编程书籍推荐</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/php' target="_blank">PHP</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>重学 C 语言 | 徐曙辉个人博客</title>
+    <meta property="og:title" content="重学 C 语言 - 徐曙辉个人博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-02-03T13:59:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-02-03T13:59:58&#43;08:00'>
+        
+    <meta name="Keywords" content="Golang,Go语言,徐曙辉,Java,PHP,博客,Python,软件架构,公众号,小程序">
+    <meta name="description" content="重学 C 语言">
+        
+    <meta name="author" content="徐曙辉">
+    <meta property="og:url" content="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://xushuhui.github.io">
+                        徐曙辉个人博客
+                    </a>
+                
+                <p class="description">专注于PHP、Go语言、移动互联网、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://xushuhui.github.io">首页</a>
+                    
+                    <a  href="https://xushuhui.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://xushuhui.github.io/about/" title="关于">关于</a>
+                    
+                    <a  href="https://github.com/xushuhui" title="GitHub">GitHub</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">重学 C 语言</h1>
+        </header>
+        
+  <time datetime="2021-02-03T13:59:58Z" class="post-meta meta-date dt-published">
+    2021年2月3日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/c' target="_blank">C</a>
+  
+</div>
+
+
+        
+        
+        <div class="post-content">
+            <h2 id="前言">前言</h2>
+<p>近几年一直在做 Web 开发，从<code>PHP</code>到<code>Go</code>，从数据库到缓存。随着技术的深入，越发感到非科班转行写代码的我在理解源码和技术细节的力不从心。万丈高楼平地起，基础知识不牢固很难继续提升。我计划近期重学 <code>C</code> 语言，夯实基础知识。</p>
+<h2 id="步骤">步骤</h2>
+<p>我不是为了应付学校考试，不会花太多时间在记忆语法上。过一遍语法后开始动手写代码，遇到问题后再去查资料解决。有其他语言语法基础不用在语法上过多纠结，专注于 <code>C</code> 语言和其他语言相比的不同特性上。</p>
+<ol>
+<li>视频教程
+可能有人觉得看视频比看书花时间更多，而我个人更喜欢看视频教程。</li>
+</ol>
+<p>一方面是因为看视频能产生具体形象，加深记忆。另一方面每天通勤时间很长，在地铁上近 50 分钟，这段时间不能浪费，我随身携带 <code>Kindle</code> 看电子书，但是嘈杂喧闹的地铁上无法集中注意力，尤其看比较枯燥的技术类书籍。当然并不只是看了视频就会了，书籍是后续补充。</p>
+<p>B 站各类自学视频资源非常多，可以充分利用起来。</p>
+<ol start="2">
+<li>
+<p>代码实战
+&ldquo;光说不念假把式&rdquo;。编程是一门偏实践的学科，只有在不断实践的过程中才能真正烂熟于心，不断挖坑踩坑填坑中成长。用 <code>C</code> 语言写个简单的 <code>web</code> 服务器，支持<code>HTTP</code>和<code>Tcp</code>协议。后续阅读开源项目比如<code>Redis</code>的源代码，加深理解。</p>
+</li>
+<li>
+<p>记录心得体会
+在实践和学习过程中，以文章的形式持续输出。把C语言的特点和高级语言做对比，也会推荐比价好的教程。</p>
+</li>
+</ol>
+<h2 id="重点目标">重点目标</h2>
+<h3 id="第一阶段内存分区函数调用模型">第一阶段：内存分区、函数调用模型</h3>
+<ul>
+<li>数据类型、变量的含义</li>
+<li>内存四区特点</li>
+<li>函数调用模型</li>
+<li>内存操作函数</li>
+<li>宏定义与预处理</li>
+</ul>
+<h3 id="第二阶段指针高级">第二阶段：指针高级</h3>
+<ul>
+<li>指针基本使用</li>
+<li>指针的步长的概念</li>
+<li>指针简介赋值</li>
+<li>指针以及多级指针做函数参数的特性与使用</li>
+<li>通过指针操作字符串</li>
+<li>const 类型修饰符</li>
+<li>位的逻辑运算符</li>
+<li>移位运算符</li>
+<li>数组指针与指针数组</li>
+<li>多维数组做函数参数</li>
+<li>结构体嵌套一级指针</li>
+<li>结构体嵌套二级指针浅</li>
+<li>拷贝深拷贝</li>
+</ul>
+<h3 id="第三阶段函数指针与回调函数">第三阶段：函数指针与回调函数</h3>
+<ul>
+<li>封装和设计思想</li>
+<li>函数指针定义的三种方式</li>
+<li>回调函数</li>
+</ul>
+<h3 id="第四阶段数据结构与链表">第四阶段：数据结构与链表</h3>
+<ul>
+<li>链表的基本概念</li>
+<li>单链表的相关操作</li>
+</ul>
+<h3 id="第五阶段递归函数">第五阶段：递归函数</h3>
+<ul>
+<li>递归函数的概念</li>
+<li>递归的使用</li>
+</ul>
+<h3 id="第六阶段数据结构与算法">第六阶段：数据结构与算法</h3>
+<ul>
+<li>大 O 表示法基本概念</li>
+<li>线性表顺序存储和链式存储概念</li>
+<li>线性表的顺序存储（数组）</li>
+<li>线性表的链式存储（链表）</li>
+<li>队列的顺序与链式存储</li>
+<li>栈的顺序与链式存储</li>
+<li>二叉树基本操作</li>
+<li>常用排序算法</li>
+</ul>
+<h3 id="第七阶段接口的封装和设计">第七阶段：接口的封装和设计</h3>
+<ul>
+<li>函数的封装设计</li>
+<li>解耦合的设计理念</li>
+<li>模块实现与业务分离的思想</li>
+</ul>
+<h3 id="本阶段可以掌握的核心能力">本阶段可以掌握的核心能力：</h3>
+<ol>
+<li>掌握 C 语言当中的字符串、一堆数组、二维数组的用法；</li>
+<li>掌握一级指针，二级指针，三级指针的高级用法，理解 N 级指针概念，指针数组和数组指针；</li>
+<li>学会结构体、文件的使用 C 语言接口封装设计</li>
+</ol>
+<h3 id="可解决的显示问题">可解决的显示问题：</h3>
+<ol>
+<li>可以实现自己开发小程序，例如贪吃蛇一类的用 C 语言写的程序；</li>
+<li>应用 C 语言接口封装设计的方法，进行企业项目开发</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>我学 C 语言的目的不是要在工作中用它开发web应用，而是要帮助我更加深刻理解计算机工作原理。以前的技术老大说过一句话，“C语言开发者看其他语言都是语法糖”。</p>
+<p>与君共勉。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go/xerrors/">Go 1.13版本 xerrors 包装错误</a></li>
+        
+        <li><a href="/posts/redis/8.redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/">Redis非阻塞模式</a></li>
+        
+        <li><a href="/posts/redis/7.redis%E5%8D%95%E7%BA%BF%E7%A8%8B/">Redis单线程</a></li>
+        
+        <li><a href="/posts/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">Rsa 通信原理</a></li>
+        
+        <li><a href="/posts/redis/6.redis%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/">Redis集合操作</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/c' target="_blank">C</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "xushuhui/hugo-comment"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://xushuhui.github.io">徐曙辉个人博客 By 徐曙辉</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://xushuhui.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://xushuhui.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/" title="怎么写简历" target="_blank">怎么写简历</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/redis%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90sds/" title="Redis源码解析SDS" target="_blank">Redis源码解析SDS</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/" title="程序员路在何方" target="_blank">程序员路在何方</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/" title="极限网关初探（2）配置" target="_blank">极限网关初探（2）配置</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/" title="极限网关初探（1） 安装启动" target="_blank">极限网关初探（1） 安装启动</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" title="Go并发编程" target="_blank">Go并发编程</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="错误处理" target="_blank">错误处理</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="代码重构之图片上传" target="_blank">代码重构之图片上传</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/" title="重学 C 语言 HelloWorld 篇" target="_blank">重学 C 语言 HelloWorld 篇</a>
+    </li>
+    
+    <li>
+        <a href="https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/" title="重学 C 语言" target="_blank">重学 C 语言</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://xushuhui.github.io/categories/c/">C (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/elasticsearch/">Elasticsearch (2)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/go/">Go (5)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/node/">Node (22)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/php/">PHP (4)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/python/">Python (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/redis/">Redis (9)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E4%B9%A6%E7%B1%8D/">书籍 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://xushuhui.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://xushuhui.github.io/tags/c/">C</a>
+    
+    <a href="https://xushuhui.github.io/tags/elasticsearch/">Elasticsearch</a>
+    
+    <a href="https://xushuhui.github.io/tags/go/">Go</a>
+    
+    <a href="https://xushuhui.github.io/tags/nginx/">Nginx</a>
+    
+    <a href="https://xushuhui.github.io/tags/node/">Node</a>
+    
+    <a href="https://xushuhui.github.io/tags/php/">PHP</a>
+    
+    <a href="https://xushuhui.github.io/tags/python/">Python</a>
+    
+    <a href="https://xushuhui.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://xushuhui.github.io/tags/vscode/">vscode</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/">书籍</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+    
+    <a href="https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/">职场</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://xushuhui.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

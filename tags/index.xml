@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 徐曙辉个人博客</title>
+    <link>https://xushuhui.github.io/tags/</link>
+    <description>Recent content in Tags on 徐曙辉个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 Feb 2023 16:12:55 +0800</lastBuildDate><atom:link href="https://xushuhui.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis</title>
+      <link>https://xushuhui.github.io/tags/redis/</link>
+      <pubDate>Mon, 13 Feb 2023 16:12:55 +0800</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>职场</title>
+      <link>https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/</link>
+      <pubDate>Sat, 07 Jan 2023 07:50:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/%E8%81%8C%E5%9C%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://xushuhui.github.io/tags/elasticsearch/</link>
+      <pubDate>Sat, 07 May 2022 07:50:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://xushuhui.github.io/tags/go/</link>
+      <pubDate>Mon, 03 Jan 2022 13:59:58 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://xushuhui.github.io/tags/c/</link>
+      <pubDate>Wed, 03 Mar 2021 13:59:58 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node</title>
+      <link>https://xushuhui.github.io/tags/node/</link>
+      <pubDate>Wed, 01 Jul 2020 07:57:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://xushuhui.github.io/tags/php/</link>
+      <pubDate>Thu, 01 Aug 2019 16:19:27 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://xushuhui.github.io/tags/nginx/</link>
+      <pubDate>Tue, 07 May 2019 07:57:34 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://xushuhui.github.io/tags/python/</link>
+      <pubDate>Fri, 29 Mar 2019 14:51:12 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://xushuhui.github.io/tags/vscode/</link>
+      <pubDate>Mon, 03 Apr 2017 14:39:39 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编程基础</title>
+      <link>https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 07 Jan 2016 13:41:08 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>书籍</title>
+      <link>https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/</link>
+      <pubDate>Thu, 07 Jan 2016 13:41:08 +0000</pubDate>
+      
+      <guid>https://xushuhui.github.io/tags/%E4%B9%A6%E7%B1%8D/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
