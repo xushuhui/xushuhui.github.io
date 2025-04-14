@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xushuhui.github.io/sitemap-index.xml

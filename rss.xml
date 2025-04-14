@@ -1,0 +1,3334 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/rss/rss-style.xsl" type="text/xsl"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>重新编排</title><description>Retypeset是一款基于Astro框架的静态博客主题，中文名为重新编排。本主题以活版印字为设计灵感，通过建立全新的视觉规范，对所有页面进行重新编排，打造纸质书页般的阅读体验，再现版式之美。所见皆为细节，方寸尽显优雅。</description><link>https://xushuhui.github.io/</link><copyright>Copyright © 2025 radishzz</copyright><language>zh</language><lastBuildDate>Mon, 14 Apr 2025 07:04:41 GMT</lastBuildDate><item><title>Markdown 样式指南</title><link>https://xushuhui.github.io/posts/markdown-style-guide/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/markdown-style-guide/</guid><description>以下是一些基本的 Markdown 语法示例，及其在 Retypeset 主题中的样式效果。 标题 在文本前添加井号 # 与空格，即可创建标...</description><pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;以下是一些基本的 Markdown 语法示例，及其在 Retypeset 主题中的样式效果。&lt;/p&gt;
+&lt;h2&gt;标题&lt;/h2&gt;
+&lt;p&gt;在文本前添加井号 &lt;code&gt;#&lt;/code&gt; 与空格，即可创建标题。井号数量对应标题等级。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;h1&gt;一级标题&lt;/h1&gt;
+&lt;h2&gt;二级标题&lt;/h2&gt;
+&lt;h3&gt;三级标题&lt;/h3&gt;
+&lt;h4&gt;四级标题&lt;/h4&gt;
+&lt;h5&gt;五级标题&lt;/h5&gt;
+&lt;h6&gt;六级标题&lt;/h6&gt;
+&lt;h2&gt;段落&lt;/h2&gt;
+&lt;p&gt;使用空行分隔文本，即可创建段落。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道：“孔乙己，你脸上又添上新伤疤了！”他不回答，对柜里说：“温两碗酒，要一碟茴香豆。”便排出九文大钱。他们又故意的高声嚷道：“你一定又偷了人家的东西了！”孔乙己睁大眼睛说：“你怎么这样凭空污人清白……”“什么清白？我前天亲眼见你偷了何家的书，吊着打。”孔乙己便涨红了脸，额上的青筋条条绽出，争辩道：“窃书不能算偷……窃书！……读书人的事，能算偷么？”接连便是难懂的话，什么“君子固穷”，什么“者乎”之类，引得众人都哄笑起来：店内外充满了快活的空气。
+
+听人家背地里谈论，孔乙己原来也读过书，但终于没有进学，又不会营生；于是愈过愈穷，弄到将要讨饭了。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;p&gt;孔乙己一到店，所有喝酒的人便都看着他笑，有的叫道：“孔乙己，你脸上又添上新伤疤了！”他不回答，对柜里说：“温两碗酒，要一碟茴香豆。”便排出九文大钱。他们又故意的高声嚷道：“你一定又偷了人家的东西了！”孔乙己睁大眼睛说：“你怎么这样凭空污人清白……”“什么清白？我前天亲眼见你偷了何家的书，吊着打。”孔乙己便涨红了脸，额上的青筋条条绽出，争辩道：“窃书不能算偷……窃书！……读书人的事，能算偷么？”接连便是难懂的话，什么“君子固穷”，什么“者乎”之类，引得众人都哄笑起来：店内外充满了快活的空气。&lt;/p&gt;
+&lt;p&gt;听人家背地里谈论，孔乙己原来也读过书，但终于没有进学，又不会营生；于是愈过愈穷，弄到将要讨饭了。&lt;/p&gt;
+&lt;h2&gt;图片&lt;/h2&gt;
+&lt;p&gt;使用感叹号 &lt;code&gt;!&lt;/code&gt; 方括号 &lt;code&gt;[]&lt;/code&gt; 与圆括号 &lt;code&gt;()&lt;/code&gt;，即可添加图片。这些符号都是英文半角符号，而非中文全角符号。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;![图片描述](./full/or/relative/path/of/image)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/image-placeholder&quot; alt=&quot;图片描述&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;块引用&lt;/h2&gt;
+&lt;p&gt;在段落前添加 &lt;code&gt;&amp;gt;&lt;/code&gt; 符号和空格，即可创建块引用。在段落间的空行添加 &lt;code&gt;&amp;gt;&lt;/code&gt; 符号，即可包含多个段落。若需标注引用来源，可使用 &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;  或 &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt; 标签添加文献来源，同时可通过 &lt;code&gt;[^1]&lt;/code&gt; 或 &lt;code&gt;[^note]&lt;/code&gt; 格式插入脚注。&lt;/p&gt;
+&lt;h3&gt;多个段落&lt;/h3&gt;
+&lt;h4&gt;语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 天地不仁，以万物为刍狗。
+&amp;gt;
+&amp;gt; **提示**：引用块内可使用 _Markdown 语法_。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;效果&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;天地不仁，以万物为刍狗。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示&lt;/strong&gt;：引用块内可使用 &lt;em&gt;Markdown 语法&lt;/em&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;标注引用来源&lt;/h3&gt;
+&lt;h4&gt;语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。
+&amp;gt;
+&amp;gt; —— &amp;lt;cite&amp;gt;《秋夜》[^1]&amp;lt;/cite&amp;gt;
+
+[^1]: [《秋夜》](https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85)) 是鲁迅散文诗集《野草》中的第一首散文诗，创作于1924年。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;效果&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。&lt;/p&gt;
+&lt;p&gt;—— &amp;lt;cite&amp;gt;《秋夜》[^1]&amp;lt;/cite&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[^1]: &lt;a href=&quot;https://zh.wikisource.org/wiki/%E7%A7%8B%E5%A4%9C_(%E9%AD%AF%E8%BF%85)&quot;&gt;《秋夜》&lt;/a&gt; 是鲁迅散文诗集《野草》中的第一首散文诗，创作于1924年。&lt;/p&gt;
+&lt;h2&gt;表格&lt;/h2&gt;
+&lt;p&gt;使用三个或多个连字符 &lt;code&gt;---&lt;/code&gt; 分隔标题，并使用管道符 &lt;code&gt;|&lt;/code&gt; 分隔每列，即可创建表格。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;| 斜体   | 粗体     | 代码   |
+| ----- | ------- | ------ |
+| _斜体_ | **粗体** | `代码` |
+| _斜体_ | **粗体** | `代码` |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;斜体&lt;/th&gt;
+&lt;th&gt;粗体&lt;/th&gt;
+&lt;th&gt;代码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;代码&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;代码块&lt;/h2&gt;
+&lt;p&gt;在代码的顶部与底部添加三个反引号 &lt;code&gt;```&lt;/code&gt;，即可创建代码块。在顶部的反引号后标注语言类型，例如 html、javascript、css、markdown 等，即可实现语法高亮。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;```html
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&quot;zh-CN&quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;
+    &amp;lt;title&amp;gt;HTML5 示例文档&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;测试&amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&quot;zh-CN&quot;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;
+    &amp;lt;title&amp;gt;HTML5 示例文档&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;p&amp;gt;测试&amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;列表&lt;/h2&gt;
+&lt;h3&gt;有序列表&lt;/h3&gt;
+&lt;h4&gt;语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1. 第一项
+2. 第二项
+3. 第三项
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;效果&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;第一项&lt;/li&gt;
+&lt;li&gt;第二项&lt;/li&gt;
+&lt;li&gt;第三项&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;无序列表&lt;/h3&gt;
+&lt;h4&gt;语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;- 列表项
+- 图表项
+- 更多项
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;效果&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;列表项&lt;/li&gt;
+&lt;li&gt;图表项&lt;/li&gt;
+&lt;li&gt;更多项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;嵌套列表&lt;/h3&gt;
+&lt;h4&gt;语法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;- 水果
+  - 苹果
+  - 橙子
+  - 香蕉
+- 蔬菜
+  - 青菜
+  - 萝卜
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;效果&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;水果
+&lt;ul&gt;
+&lt;li&gt;苹果&lt;/li&gt;
+&lt;li&gt;橙子&lt;/li&gt;
+&lt;li&gt;香蕉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;蔬菜
+&lt;ul&gt;
+&lt;li&gt;青菜&lt;/li&gt;
+&lt;li&gt;萝卜&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;其他元素&lt;/h2&gt;
+&lt;p&gt;包括 &lt;code&gt;&amp;lt;sup&amp;gt;&lt;/code&gt; 上标，&lt;code&gt;&amp;lt;sub&amp;gt;&lt;/code&gt; 下标，&lt;code&gt;&amp;lt;abbr&amp;gt;&lt;/code&gt; 缩写，&lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; 删除线，&lt;code&gt;&amp;lt;u&amp;gt;&lt;/code&gt; 波浪线，&lt;code&gt;&amp;lt;kbd&amp;gt;&lt;/code&gt; 键盘输入，&lt;code&gt;&amp;lt;mark&amp;gt;&lt;/code&gt; 高亮。&lt;/p&gt;
+&lt;h3&gt;语法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;H&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt;O
+
+X&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt; + Y&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt; = Z&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt;
+
+&amp;lt;abbr title=&quot;Graphics Interchange Format&quot;&amp;gt;GIF&amp;lt;/abbr&amp;gt; 是一种位图图像格式。
+
+书籍是人类进步的&amp;lt;del&amp;gt;楼梯&amp;lt;/del&amp;gt;阶梯。
+
+优秀的作者总是会仔细检查&amp;lt;u title=&quot;拼&quot;&amp;gt;拚&amp;lt;/u&amp;gt;写错误。
+
+按下 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Delete&amp;lt;/kbd&amp;gt; 以结束会话。
+
+大多数&amp;lt;mark&amp;gt;蝾螈&amp;lt;/mark&amp;gt;昼伏夜出，以昆虫、蠕虫等小生物为食。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;效果&lt;/h3&gt;
+&lt;p&gt;H&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt;O&lt;/p&gt;
+&lt;p&gt;X&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt; + Y&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt; = Z&amp;lt;sup&amp;gt;n&amp;lt;/sup&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;abbr title=&quot;Graphics Interchange Format&quot;&amp;gt;GIF&amp;lt;/abbr&amp;gt; 是一种位图图像格式。&lt;/p&gt;
+&lt;p&gt;书籍是人类进步的&amp;lt;del&amp;gt;楼梯&amp;lt;/del&amp;gt;阶梯。&lt;/p&gt;
+&lt;p&gt;优秀的作家总是会仔细检查&amp;lt;u title=&quot;拼写&quot;&amp;gt;拚写&amp;lt;/u&amp;gt;问题。&lt;/p&gt;
+&lt;p&gt;按下 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Delete&amp;lt;/kbd&amp;gt; 以结束会话。&lt;/p&gt;
+&lt;p&gt;大多数&amp;lt;mark&amp;gt;蝾螈&amp;lt;/mark&amp;gt;昼伏夜出，以昆虫、蠕虫等小生物为食。&lt;/p&gt;
+&lt;p&gt;&amp;lt;!-- &amp;lt;details&amp;gt;
+&amp;lt;summary&amp;gt;
+我有钥匙却无门，有空间却无房间。你能进入却无法离开。我是什么？
+&amp;lt;/summary&amp;gt;
+键盘。
+&amp;lt;/details&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;figure&amp;gt;
+&amp;lt;img src=&quot;https://image.radishzz.cc/picsmaller/03.webp&quot;&amp;gt;
+&amp;lt;figcaption text-center=&quot;&quot;&amp;gt;Node 模块检查器 - 概览&amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt; --&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>主题上手指南</title><link>https://xushuhui.github.io/posts/theme-guide/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/theme-guide/</guid><description>Retypeset 是一款基于 Astro 框架的静态博客主题，中文名为重新编排。本主题以 活版印字 为设计灵感，通过建立全新的视觉规范，对...</description><pubDate>Sun, 26 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Retypeset 是一款基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 框架的静态博客主题，中文名为重新编排。本主题以 &lt;a href=&quot;https://astro-theme-typography.vercel.app/&quot;&gt;活版印字&lt;/a&gt; 为设计灵感，通过建立全新的视觉规范，对所有页面进行重新编排，打造纸质书页般的阅读体验，再现版式之美。所见皆为细节，方寸尽显优雅。&lt;/p&gt;
+&lt;h2&gt;主题配置&lt;/h2&gt;
+&lt;p&gt;以下为 Retypeset 的主题配置介绍。通过修改配置文件 &lt;a href=&quot;https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts&quot;&gt;src/config.ts&lt;/a&gt; 来自定义你的博客。&lt;/p&gt;
+&lt;h3&gt;站点信息&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;site: {
+  // 站点标题
+  title: &apos;Retypeset&apos;
+  // 站点副标题
+  subtitle: &apos;Revive the beauty of typography&apos;
+  // 站点介绍
+  description: &apos;Retypeset is a static blog theme...&apos;
+  // 使用 src/i18n/ui.ts 中的多语言标题/副标题/站点描述，替换以上静态配置
+  i18nTitle: true // true, false
+  // 作者名称
+  author: &apos;radishzz&apos;
+  // 站点地址
+  url: &apos;https://retypeset.radishzz.cc&apos;
+  // 站点图标
+  // 推荐格式: svg, png, ico
+  favicon: &apos;/icon/favicon.svg&apos; // 或 https://example.com/favicon.svg
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;主题配色&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;color: {
+  // 默认主题
+  mode: &apos;light&apos; // light, dark, auto
+  // 亮色模式
+  light: {
+    // 高亮颜色
+    // 用于站点标题、鼠标悬停效果等
+    primary: &apos;oklch(25% 0.005 298)&apos;
+    // 次要颜色
+    // 用于普通文本
+    secondary: &apos;oklch(40% 0.005 298)&apos;
+    // 背景色
+    background: &apos;oklch(96% 0.005 298)&apos;
+  }
+  // 暗色模式
+  dark: {
+    // 高亮颜色
+    // 用于站点标题、鼠标悬停效果等
+    primary: &apos;oklch(92% 0.005 298)&apos;
+    // 次要颜色
+    // 用于普通文本
+    secondary: &apos;oklch(77% 0.005 298)&apos;
+    // 背景色
+    background: &apos;oklch(22% 0.005 298)&apos;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;全局设置&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;global: {
+  // 默认语言
+  // 站点根路径 ‘/’ 的语言
+  locale: &apos;zh&apos; // zh, zh-tw, ja, en, es, ru
+  // 更多语言
+  // 生成 ‘/ja/&apos; &apos;/en/’ 等多语言路径
+  // 不要重复填写默认语言，可以为空 []
+  moreLocales: [&apos;zh-tw&apos;, &apos;ja&apos;, &apos;en&apos;, &apos;es&apos;, &apos;ru&apos;] // [&apos;zh&apos;, &apos;zh-tw&apos;, &apos;ja&apos;, &apos;en&apos;, &apos;es&apos;, &apos;ru&apos;]
+  // 字体样式
+  fontStyle: &apos;sans&apos; // sans, serif
+  // 文章日期格式
+  dateFormat: &apos;YYYY-MM-DD&apos; // YYYY-MM-DD, MM-DD-YYYY, DD-MM-YYYY, MONTH DAY YYYY, DAY MONTH YYYY
+  // 标题与副标题之间的距离
+  titleGap: 2 // 1, 2, 3
+  // 启用 KaTeX 数学公式渲染
+  katex: true // true, false
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;评论服务&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;comment: {
+  // 开启评论
+  enabled: true // true, false
+  // waline 评论
+  waline: {
+    // 服务器地址
+    serverURL: &apos;https://retypeset-comment.radishzz.cc&apos;
+    // emoji 表情地址
+    emoji: [
+      &apos;https://unpkg.com/@waline/emojis@1.2.0/tw-emoji&apos;
+      // &apos;https://unpkg.com/@waline/emojis@1.2.0/bmoji&apos;
+      // 更多表情: https://waline.js.org/en/guide/features/emoji.html
+    ]
+    // gif 搜索
+    search: false // true, false
+    // 图片上传
+    imageUploader: false // true, false
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;搜索引擎优化&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;seo: {
+  // @twitter ID
+  twitterID: &apos;@radishzz_&apos;
+  // 站点验证
+  verification: {
+    // google 搜索控制台
+    google: &apos;AUCrz5F1e5qbnmKKDXl2Sf8u6y0kOpEO1wLs6HMMmlM&apos;
+    // bing 网站管理员工具
+    bing: &apos;64708CD514011A7965C84DDE1D169F87&apos;
+    // yandex 网站管理员
+    yandex: &apos;&apos;
+    // baidu 站长工具
+    baidu: &apos;&apos;
+  }
+  // google 网站分析
+  googleAnalyticsID: &apos;&apos;
+  // umami 网站分析
+  umamiAnalyticsID: &apos;520af332-bfb7-4e7c-9386-5f273ee3d697&apos;
+  // follow 验证
+  follow: {
+    // 订阅 ID
+    feedID: &apos;&apos;
+    // 用户 ID
+    userID: &apos;&apos;
+  }
+  // apiflash access key 访问密钥
+  // 自动生成网站截图用于 open graph
+  // 获取访问密钥: https://apiflash.com/
+  apiflashKey: &apos;&apos;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;自定义页脚&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;footer: {
+  // 社交链接
+  links: [
+    {
+      name: &apos;RSS&apos;,
+      url: &apos;/rss.xml&apos;, // rss.xml, atom.xml
+    },
+    {
+      name: &apos;GitHub&apos;,
+      url: &apos;https://github.com/radishzzz/astro-theme-retypeset&apos;,
+    },
+    {
+      name: &apos;Twitter&apos;,
+      url: &apos;https://x.com/radishzz_&apos;,
+    },
+    // {
+    //   name: &apos;Email&apos;,
+    //   url: &apos;https://example@gmail.com&apos;,
+    // }
+  ]
+  // 建站年份
+  startYear: 2024
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;资源预加载&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;preload: {
+  // 链接预加载策略
+  linkPrefetch: &apos;viewport&apos; // hover, tap, viewport, load
+  // 评论服务器地址
+  commentURL: &apos;https://retypeset-comment.radishzz.cc&apos;
+  // 图床地址
+  imageHostURL: &apos;https://image.radishzz.cc&apos;
+  // 定制 google analytics js
+  // 适用于路由 google analytics js 到自定义域名的用户
+  customGoogleAnalyticsJS: &apos;&apos;
+  // 定制 umami analytics js
+  // 适用于自部署 umami，或路由 umami analytics js 到自定义域名的用户
+  customUmamiAnalyticsJS: &apos;https://js.radishzz.cc/jquery.min.js&apos;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;创建新文章&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录中新建以 &lt;code&gt;.md&lt;/code&gt; 或 &lt;code&gt;.mdx&lt;/code&gt; 为后缀的文件，并在文件顶部添加 Front Matter 元数据。&lt;/p&gt;
+&lt;h3&gt;Front Matter&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;---
+# 必填
+title: 主题上手指南
+published: 2025-01-26
+
+# 可选
+description: 自动选取文章前 120 字作为描述。
+updated: 2025-03-26
+tags: [博客主题, 指南]
+
+# 进阶，可选
+draft: true/false
+pin: 1-99
+toc: true/false
+lang: zh/zh-tw/ja/en/es/ru
+abbrlink: theme-guide
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;进阶配置介绍&lt;/h3&gt;
+&lt;h4&gt;draft&lt;/h4&gt;
+&lt;p&gt;是否标记文章为草稿。设为 true 时无法发布文章，仅供本地开发预览。默认为 false。&lt;/p&gt;
+&lt;h4&gt;pin&lt;/h4&gt;
+&lt;p&gt;是否置顶文章。数字越大，文章的置顶优先级越高。默认为 0，即不置顶。&lt;/p&gt;
+&lt;h4&gt;toc&lt;/h4&gt;
+&lt;p&gt;是否生成目录。默认为 true。&lt;/p&gt;
+&lt;h4&gt;lang&lt;/h4&gt;
+&lt;p&gt;指定文章语言。只能指定一种语言，不指定则默认显示在所有语言路径下。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# src/config.ts
+# locale: &apos;en&apos;
+# moreLocales: [&apos;es&apos;, &apos;ru&apos;]
+
+# lang: &apos;&apos;
+src/content/posts/apple.md   -&amp;gt; example.com/posts/apple/
+                             -&amp;gt; example.com/es/posts/apple/
+                             -&amp;gt; example.com/ru/posts/apple/
+# lang: en
+src/content/posts/apple.md   -&amp;gt; example.com/posts/apple/
+# lang: es
+src/content/posts/apple.md   -&amp;gt; example.com/es/posts/apple/
+# lang: ru
+src/content/posts/apple.md   -&amp;gt; example.com/ru/posts/apple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;abbrlink&lt;/h4&gt;
+&lt;p&gt;自定义文章 URL。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# src/config.ts
+# locale: &apos;en&apos;
+# moreLocales: [&apos;es&apos;, &apos;ru&apos;]
+# lang: &apos;es&apos;
+
+# abbrlink: &apos;&apos;
+src/content/posts/apple.md           -&amp;gt;  example.com/es/posts/apple/
+src/content/posts/guide/apple.md     -&amp;gt;  example.com/es/posts/guide/apple/
+src/content/posts/2025/03/apple.md   -&amp;gt;  example.com/es/posts/2025/03/apple/
+
+# abbrlink: &apos;banana&apos;
+src/content/posts/apple.md           -&amp;gt;  example.com/es/posts/banana/
+src/content/posts/guide/apple.md     -&amp;gt;  example.com/es/posts/banana/
+src/content/posts/2025/03/apple.md   -&amp;gt;  example.com/es/posts/banana/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;自动化配置介绍&lt;/h3&gt;
+&lt;p&gt;自动计算文章阅读时间。自动为每篇文章生成 Open Graph 图片。相同 abbrlink 的文章会自动共享 Waline 评论，且不受 lang 配置影响。&lt;/p&gt;
+</content:encoded></item><item><title>怎么写简历</title><link>https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/life/%E6%80%8E%E4%B9%88%E5%86%99%E7%AE%80%E5%8E%86/</guid><description>简历格式 首先你要准备的是简历。简历很重要，这是别人了解你的第一个地方，所以简历要好好写。当然，我们知道真正的好简历是要用自己的经历去写的，...</description><pubDate>Fri, 23 Aug 2024 02:46:50 GMT</pubDate><content:encoded>&lt;h2&gt;简历格式&lt;/h2&gt;
+&lt;p&gt;首先你要准备的是简历。简历很重要，这是别人了解你的第一个地方，所以简历要好好写。当然，我们知道真正的好简历是要用自己的经历去写的，比如，有人的简历就是一句话：我发明了 Unix。&lt;/p&gt;
+&lt;p&gt;当然，并不是所有的人都有这样的经历，但这依然告诉我们，自己的经历才是简历最大的亮点。所以，你要去那些能让你的简历有更多含金量的公司工作，要做那些能让你的简历更闪亮的工作。这是写简历的最佳实践——用自己的经历聊，而不是用文字写。&lt;/p&gt;
+&lt;p&gt;但从另一方面来说，简历这个文本也是要好好写的，况且，我们不是每个人都会有很耀眼的经历，所以，还是要好好写简历。基本上来说，简历上的信息不要写太多，信息太多相当于没有信息，不要单纯地罗列，要突出自己的长处和技能。一般来说，简历需要包括以下几项内容。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;自我简介。这个自我简介是用最简单的话来说明自己的情况，不超过 200 字。比如：10+ 年的软件开发经验 ( 说明你的主业 ) ，4+ 年的团队 leader 经验 ( 说明你的领导力 ) ，擅长高可用高性能的分布式架构 ( 说明你的专业和专攻 ) ，多年互联网和金融行业背景 ( 说明你的行业背景 ) ，任职于 XXX 公司的 XX 职位 ( 说明你的职业 ) ，负责 XXX 平台或系统 ( 说明你的业务场景 ) ……&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;个人信息。这里有几点需要注意。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基本信息。电子邮箱建议用 Gmail，千万不要用 QQ 邮箱，要让人感觉职业化一些。&lt;/li&gt;
+&lt;li&gt;个人网站。如果你有个人主页、博客、GitHub 或是 Stack Overflow，请一定附上，这是加分项。如果个人主页或博客有独立域名，那更好，这会给人一种你爱动手做事的感觉。页面也要干净有美感，这样会让人感觉你有品味。&lt;/li&gt;
+&lt;li&gt;网站内容。一般来说这些项都会被面试官点看浏览，所以，里面的内容你需要小心组织和呈现，千万不要造假。另外，除了技术上的一些知识总结 ( 不要太初级，要有深度的、原理型的、刨根问底型的文章 ) ，你也可以秀一秀自己的技术价值观 ( 比如，对代码整洁的追求，对一些技术热点事件的看法 ) ，这会让你更容易获得面试官的好感。面试官的好感很重要。&lt;/li&gt;
+&lt;li&gt;作品展。如果你有一些作品展现，会更好。当然，对于前端程序员来说，这是比较容易的。而对于后端程序员来说，这会比较难一些，只能展示一下自己的 GitHub 了。如果你有一些比较不错的证书或奖项 ( 如微软的认证、Oracle 的认证 ) ，也可以展示一下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;个人技能。个人信息下面你应该罗列几条个人的技能。这些内容要能很明显地让对方了解你掌握的技术和熟悉的领域。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术技能栈。其中包括你擅长和会用的编程语言 ( 如 Java、Go、Python 等 ) ，编程框架或一些重要的库 ( 如 Spring Boot、Netty、React.js、gRPC 等 ) ，熟悉的一些技术软件 ( 如 Redis、Kafka、Docker 等 ) ，设计或架构 ( 如面向对象设计、分布式系统架构、异步编程、高性能调优等 ) 。&lt;/li&gt;
+&lt;li&gt;技术领域。前端、算法、机器学习、分布式、底层、数据库等。&lt;/li&gt;
+&lt;li&gt;业务领域。一方面是行业领域，如金融、电商、电信等，另一方面是业务领域，如 CRM、支付、物流、商品等。&lt;/li&gt;
+&lt;li&gt;经验和软技能。带过多少人的团队、有多少年的项目管理经验、学习能力如何、执行力怎么样、设计过什么样的系统。 ( 不要太多，几句话就好 )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实和用人单位发布的招聘信息中的职位技能需求很相似。有时候我都在想，明明用人单位的职位需求里写成那样，为什么应聘人还不依葫芦画瓢呢？所以，对应于你的简历，如果能和职位需求看齐有相类似的描述，这样可以快速地让人觉得你和要应聘的职位很匹配。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;工作经历和教育经历
+&lt;ul&gt;
+&lt;li&gt;列一下你的工作经历。每份工作完成的主要项目 ( 不要列一大堆项目，挑重要的 ) ，主要突出项目的难度、规模、挑战、职责，以及获得的认可和荣誉。&lt;/li&gt;
+&lt;li&gt;工作经历和教育经历，主要是对上述的个人技能的印证。不要东拉西扯，要紧紧地围绕着你的技能、特长和亮点来展开。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一般来说，你简历中的内容最好控制在两页 A4 纸以内，最好有中英文版，简历不要是 Word 版的，最好是 PDF 版，然后简历的格式和风格请参考 LinkedIn 上的 ( 在 微软的 Office 模板网站 上也能找到一些不错的简历模板 ) 。简历的内容不要太多，内容太多，重点就不明显了。写简历的目的是呈现自己的特长、亮点和特点。只要你能呈现出 2-3 个亮点和特长，就可以吸引到人了。&lt;/p&gt;
+&lt;p&gt;简历只是一块敲门砖。一些热门的公司和项目能够吸引到很多很多人的简历，所以，你要在众多的简历中脱颖而出。除了自己的经历和能力有亮点外，你还需要有吸引用人单位的方法。&lt;/p&gt;
+&lt;p&gt;有很多公司都是 HR 先来筛一遍简历，HR 其实并不懂技术，她们只会看你的过往经历、能力是否和职位描述上的匹配。如果简历上的经历和技术亮点不足的话，那么你可以在简历的版式和形式的制作上花些心思，以及在简历的自我描述中加上一些「虚」的东西。&lt;/p&gt;
+&lt;p&gt;比如「工作态度积极，不分份内和份外的事，只要对公司和个人有利，都会努力做好；勤奋踏实，热爱学习，喜欢做一个全栈工程师；善于发现问题，并解决问题……」表示我虽然现在的经历和技能不足以打动你，但是我的态度端正，潜力巨大，你不能错过……&lt;/p&gt;
+&lt;h2&gt;技术知识准备&lt;/h2&gt;
+&lt;p&gt;一般来说，你的简历上写什么，面试官就会问什么，所以，不要打自己的脸，精通就是精通，熟悉就是熟悉，了解就是了解。然后对于你列出来的这些技术，你一定要把其最基本的技术细节给掌握了。面试官一般也会逐步加大问题的难度和深度，看看你到底在哪个层次上。所以，你还是需要系统地看看书，才能应对面试官的问题。比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;你写上了 Java，那么 Java 的基本语法都要了解，并发编程、NIO、JVM 等，你多少要有点儿了解，Spring、Netty 这些框架也要了解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你写上了 Go，那么至少得把官网上的 Effective Go 给看了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你写上了 Redis，那么除了 Redis 的数据结构，Redis 的性能优化、高可用配置、分布式锁什么的，你多少也要把官网上的那几篇文章读一读。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你写上了面向对象，那么怎么着也得把《设计模式》中的 23 个模式了解一下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你写上了分布式架构，那么 CAP 理论、微服务架构、弹力设计、Spring Cloud、Cloud Native 这些架构就要做到心里有数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你写上网络编程，那么 TCP/IP 的三次握手，四次挥手，两端的状态变化你得知道吧，Socket 编程的那几个系统调用，还有 select、poll、epoll 这些异步 IO 多路复用的东西，你得知道。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总之，无论你在简历里写什么技术，这些技术的基础知识你都得学一下。本质上来说，这跟考试一样啊。你想想你是怎样准备期末考试的，是不是得把教科书上所有章节中的关键知识点都过一下？你不见得要记住所有的知识点，但是 80% 以上的关键知识点，你多少得知道吧。&lt;/p&gt;
+&lt;h2&gt;算法题准备&lt;/h2&gt;
+&lt;p&gt;国外的公司一般还会面算法题，他们用算法题来过滤掉那些非计算机专业出身的人。国内的一些公司也一样，尤其是一些校招面试，也有很多算法题。所以，算法是很重要的，是你需要努力学习和准备的。&lt;/p&gt;
+&lt;p&gt;LeetCode 是一个不错的地方。如果你能完成其中 50% 的题，那么你基本上可以想面哪里就面哪里了。这里，你要知道，一些面试官也是新手，他们也是从网上找一些算法题来考你。所以，你不用太害怕算法题，都是有套路的。比如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;如果是数据排序方面的题，那基本上是和二分查找有关系的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是在一个无序数组上的搜索或者统计，基本上来说需要动用 O ( 1 ) 时间复杂度的 hash 数据结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在一堆无序的数据中找 top n 的算法，基本上来说，就是使用最大堆或是最小堆的数据结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是穷举答案相关的题 ( 如八皇后、二叉树等 ) ，基本上来说，需要使用深度优先、广度优先或是回溯等递归的思路。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;动态规划要重点准备一下，这样的题很多，如最大和子数组、买卖股票、背包问题、爬楼梯、改字符……这里有一个 Top 20 的动态规划题的列表 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一些经典的数据结构算法也要看一下，比如，二叉树、链表和数组上的经典算法，LRU 算法，Trie 树，字符串子串匹配，回文等，这些常见的题都是经常会被考到的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本上来说，算法题主要是考察应聘者是否是计算机专业出身的，对于基本的数据结构和算法有没有相应的认识。你做得多了，就是能感觉得到其中的套路和方法的。所以，本质来说，还是要多练多做。&lt;/p&gt;
+&lt;h2&gt;工作项目准备&lt;/h2&gt;
+&lt;p&gt;无论什么公司的面试，都会让你说一个你做过的项目，或是你过去解决过的一个难题。但我很好奇怪，这种必问的题，为什么很多应聘者都没有好好准备一下。&lt;/p&gt;
+&lt;p&gt;一般来说，会有下面这样的几个经典的面试问题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;说一个你做过的最自豪的项目，或是最近做过的一个项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说一个你解决过的最难的技术问题，或是最有技术含量的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说一个你最痛苦的项目，或最艰难的项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说一个犯过的最大的技术错误，或是引发的技术故障。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于上面这四个问题：第一个问题，主要是想看看你过去工作中做过的最高级的事是什么，还有你的兴趣点和兴奋点是什么；第二和第三个问题，主要是想看看你解决难题的能力，以及面对压力和困难时的心态；第四个问题，主要是想了解一下你面对错误时的态度，还要了解你是否会对错误有所总结和改进。&lt;/p&gt;
+&lt;p&gt;这些问题都会伴随着对各种细节的不停追问，因为这样的问题太容易造假了。所以，面试官会不停地追问细节，就像审问一样。因为一个谎言需要用更多的谎言来掩盖，如果没有经过高强度和专业的训练的话，最好不要撒谎。因此对于业余的不是做特工或是间谍的人来说，谎言是经不起追问的。&lt;/p&gt;
+&lt;p&gt;怎样准备这样的题，我这里有几个提示。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;要有框架。讲故事要学会使用 STAR. Situation - 在什么样的环境和背景下，Task - 你要干什么样的事，Action - 你采取了什么样的行动和努力，Result - 最终得到了什么样的效果。这是整个语言组织的框架，不要冗长啰嗦。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要有细节。没有细节的故事听起来就很假，所以，其中要有很多细节。因为是技术方面的，所以，一定要有很多技术细节。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要有感情。讲这些故事一定要带感情。要让面试官感受到你的热情、骄傲、坚韧和顽强。一定要是真实的，只有真实的事才会有真实的感情。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要有思考。只有细节和故事还不够，还要有自己的思考和得失总结，以及后续的改进。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;要做到上述，是不容易的。一般来说，你也是需要训练的。首先，你要形成及时总结的习惯，对自己的日常工作和经历做总结，否则难免会有「书到用时方恨少」的感觉。另外，你还需要训练自己的语言组织能力。最后，你还要有对这些事件的思考，这需要和其他人进行讨论和总结。&lt;/p&gt;
+&lt;p&gt;对此，如果你想有一个比较好的面试回答效果，这不是你能临时准备出来的，工夫都是花在平时的。而训练这方面能力的最好方式就是在工作中写文档 ，在工作之余写博客。只有写得多了，写得好了，你这样的能力才能训练出来。&lt;/p&gt;
+</content:encoded></item><item><title>程序员路在何方</title><link>https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/life/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/</guid><description>前言 程序员的未来在哪里？作为一个写了六年代码程序员，我对这个问题有亲身体会，也是我一直思考的问题。 程序员 35 岁后大概有这么几个方向：...</description><pubDate>Sat, 07 Jan 2023 07:50:34 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;程序员的未来在哪里？作为一个写了六年代码程序员，我对这个问题有亲身体会，也是我一直思考的问题。&lt;/p&gt;
+&lt;p&gt;程序员 35 岁后大概有这么几个方向：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;管理方向，CTO/技术总监&lt;/li&gt;
+&lt;li&gt;技术方向，架构师&lt;/li&gt;
+&lt;li&gt;自由职业/副业&lt;/li&gt;
+&lt;li&gt;创业&lt;/li&gt;
+&lt;li&gt;得过且过 ( 大部分人 )&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;管理方向&lt;/h3&gt;
+&lt;p&gt;如果我们在一个公司待的比较久，老板对工作能力和工作态度比较认可，就有可能提拔到管理岗位，负责技术团队的管理工作。&lt;code&gt;title&lt;/code&gt; 可能是 CTO 或技术总监，不论 &lt;code&gt;title&lt;/code&gt; 是什么，总是做管理方面的工作。&lt;/p&gt;
+&lt;p&gt;管理工作包括招聘人员，培养团队，规划项目进度 ( 如果没有项目经理岗位 ) ，梳理业务需求 ( 辅助产品经理 ) ，决定技术方案等。&lt;/p&gt;
+&lt;p&gt;做管理重心不是在技术，而在沟通协作。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ps:管理岗是否需要写代码？这点不同公司情况不一样，后续将讨论这个问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;技术方向&lt;/h3&gt;
+&lt;p&gt;当我们在技术上持续精进，从网络协议到分布式算法，从前端到后端，从数据库到缓存，一个人能扛起整个公司架构设计，同时你也对公司业务非常熟悉，你就可以往架构方向努力。小公司一般没有专门的架构师岗位，由技术负责人兼任架构工作。&lt;/p&gt;
+&lt;p&gt;架构要求在技术和业务两个维度都有深刻理解。有业务壁垒的行业甚至业务比技术更重要，比如医疗。国内的互联网公司靠业务赚钱而不是靠技术，程序员的话语权不高。小公司里，老板不会关心你用到的编程是 &lt;code&gt;PHP/Java&lt;/code&gt;，框架是 &lt;code&gt;Laravel/SpringBoot&lt;/code&gt;，他关心的是按时甚至提前交付项目给客户，项目稳定没有 Bug，公司收到钱。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;后续也会专门讨论一个合格的架构师需要具备哪些能力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;自由职业/副业&lt;/h3&gt;
+&lt;p&gt;结婚生娃，养家糊口的经济压力推动我们去思考和实践更多收入渠道，这就是副业。如果副业收入赶上甚至超过主业，有可能放弃主页转去做副业 ( 这种情况很少，大部分人做不好副业 ) 。
+我了解和接触的副业有以下几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;接外包单
+这里的外包指小型项目外包，创业公司要做个产品，你用业余时间写代码，做完收钱。看起来很简单，实际上最坑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;找人做外包的老板自己是不懂技术的，一开始可能连他自己也不知道自己想要什么产品，或者给你个竞品要求你照着实现。做着做着你发现需求越来越多，老板想法越来越多，你疲于奔命，一边写代码一边沟通确认需求，远比在公司上班累 ( 是不是很想念产品经理的大脸 ) 。而且，不懂技术的老板可能觉得这个需求很简单，&quot;就是购物下单，照着淘宝京东的来，3000 块，不能再多了&quot;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;做个人产品
+对程序员而言，在互联网浪潮中，最大的优势是能独立生产一个产品。代码？那是我你饭的本事。产品经理提需求？那是你天天撕逼的对象。运营推广产品？坐旁边的运营小姐姐每天上班干了啥你还不知道吗。很有可能一个想法就改变世界，下一个乔布斯就是你哦。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;投资
+在街上大妈都在讨论股市的时代，不懂投资似乎已经落伍了。看着别人在股市大杀特杀，你也心动了，拿着多年的积蓄一把砸进股市。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;听小道消息，研究 K 线涨跌，看别人买你也赶紧买，上班第一件事看买的股票涨跌，红了沾沾自喜，「我可真厉害」，绿了捶胸顿足，「应该早点抛」。不割你割谁，你就是鲜嫩的韭菜。&lt;/p&gt;
+&lt;p&gt;投资是一门学问，跟编程一样要持续学习。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知识付费&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当我们在互联网行业有一定经验和知名度时，可以通过一些方式将知识变现。录制视频课、写技术文章、出书等等。现在知名的知识付费平台有，极客时间，有利于打造个人 IP。&lt;/p&gt;
+&lt;h3&gt;创业&lt;/h3&gt;
+&lt;p&gt;做个人产品进一步就是创业，也有可能是和朋友几个人合伙。自己当老板。创业风险更大，不适合普通人。&lt;/p&gt;
+&lt;h3&gt;得过且过 ( 大部分人 )&lt;/h3&gt;
+&lt;p&gt;如果不持续学习，努力提升自我，35 岁危机是无法避免的。35 岁，你靠什么和年轻人竞争呢？拼加班？上有老下有小。拼体力？多年坐在电脑前不运动。&lt;/p&gt;
+&lt;p&gt;与君共勉。&lt;/p&gt;
+</content:encoded></item><item><title>极限网关初探（2）配置</title><link>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A22%E9%85%8D%E7%BD%AE/</guid><description>配置 上一篇我们先学习了极限网关的安装和启动，今天学习配置。 读写分离 配置文档 现在我们遇到读写分离的需求，用网关该怎么做呢？ 假设服务端...</description><pubDate>Sat, 07 May 2022 07:50:34 GMT</pubDate><content:encoded>&lt;h2&gt;配置&lt;/h2&gt;
+&lt;p&gt;上一篇我们先学习了极限网关的安装和启动，今天学习配置。&lt;/p&gt;
+&lt;h3&gt;读写分离&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://xn--d6q905cs0q16u.com/zh/docs/overview/&quot;&gt;配置文档&lt;/a&gt;
+现在我们遇到读写分离的需求，用网关该怎么做呢？
+假设服务端现在从 http://127.0.0.1:8000 写入数据，从 http://127.0.0.1:9000 读取数据，怎么设计呢？&lt;/p&gt;
+&lt;p&gt;我们在 gateway.yml 中定义两个 entry，分别绑定不同的端口，配置不同的 router&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;entry:
+  - name: write_es
+    enabled: true
+    router: write_router
+    network:
+      binding: 0.0.0.0:8000
+  - name: read_es
+    enabled: true
+    router: read_router
+    network:
+      binding: 0.0.0.0:9000
+
+router:
+  - name: write_router
+    default_flow: default_flow
+    tracing_flow: logging
+  - name: read_router
+    default_flow: default_flow
+    tracing_flow: logging
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了演示效果，只配置一个 Elasticsearch&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;elasticsearch:
+- name: dev
+  enabled: true
+  schema: http
+  hosts:
+    - 192.168.3.188:9206
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动项目&lt;/p&gt;
+&lt;p&gt;我们从 http://127.0.0.1:8000 写入一条数据，再从 http://127.0.0.1:9000 读取该条数据&lt;/p&gt;
+&lt;h3&gt;添加接口&lt;/h3&gt;
+&lt;h4&gt;返回字符串&lt;/h4&gt;
+&lt;p&gt;我们想自定义添加一个接口，怎么在不写代码的情况下通过配置实现返回字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flow:
+  - name: hello_flow
+    filter:
+      - echo:
+          message: &quot;hello flow&quot;
+
+router:
+  - name: read_router
+    default_flow: hello_flow
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改配置后启动&lt;/p&gt;
+&lt;h4&gt;返回 json 数据&lt;/h4&gt;
+&lt;p&gt;返回字符串不符合标准的 restful 接口规范，怎么返回给调用方标准 json 数据？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;filter:
+  - set_response:
+      content_type: application/json
+      body: &apos;{&quot;message&quot;:&quot;hello world&quot;}&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改配置后启动&lt;/p&gt;
+&lt;h3&gt;修改路由&lt;/h3&gt;
+&lt;p&gt;我们已经新加了接口，返回 json 数据，但是接口是直接定义在 http://127.0.0.1:9000 中，之前网关的接口就无法使用，所以我们需要单独为自定义的接口指定单独的路由&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;router:
+  - name: read_router
+    default_flow: default_flow
+    tracing_flow: logging
+    rules:
+      - method:
+          - GET
+        pattern:
+          - &quot;/hello&quot;
+        flow:
+          - hello_flow
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;default_flow: 默认的处理流，也就是业务处理的主流程，请求转发、过滤、缓存等操作都在这里面进行&lt;/p&gt;
+&lt;p&gt;tracing_flow：用于追踪请求状态的流，用于记录请求日志、统计等&lt;/p&gt;
+&lt;p&gt;如果我们有过开发经验，了解 MVC 模式，flow 就类似 MVC 中的 Controller，rules 中类似路由规则，当请求匹配到配置中的路由规则时，由配置的 flow 处理业务逻辑。&lt;/p&gt;
+&lt;p&gt;数据整体流向，从服务端发到网关，网关为每个 Elasticsearch 绑定不同的 IP 地址，每个 Elasticsearch 都有唯一一个 router 和它对应，根据请求的 method 和 path 匹配到 router 中的一个 flow，flow 中包含多个 filter 处理对数据进行&lt;strong&gt;流式处理&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如下图所示&lt;/p&gt;
+&lt;p&gt;流式处理是什么，假设水从一个管子里面流出来，管子旁边每一段依次站了几个人，第一个人往水里放点鱼，鱼和水到了第二个人，第二个人往水里放点草，鱼、水和草到了第三人等等，每个人对水做一定的操作，水经过这些操作后最后到达水池里。&lt;/p&gt;
+&lt;p&gt;我们可以把数据当成水，filter 是管子旁边的人，水池就是 Elasticsearch&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;在学习了router/flow/filter后，我们已经对极限网关的配置有了初步的了解，后续开发的时候直接查阅文档就行了&lt;/p&gt;
+</content:encoded></item><item><title>极限网关初探（1） 安装启动</title><link>https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/elasticsearch/%E6%9E%81%E9%99%90%E7%BD%91%E5%85%B3%E5%88%9D%E6%8E%A21-%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/</guid><description>产品介绍 极限网关（INFINI Gateway）是一个面向 Elasticsearch 的高性能应用网关。特性丰富，使用简单。 它和其他业...</description><pubDate>Thu, 07 Apr 2022 07:57:34 GMT</pubDate><content:encoded>&lt;h2&gt;产品介绍&lt;/h2&gt;
+&lt;p&gt;极限网关（INFINI Gateway）是一个面向 Elasticsearch 的高性能应用网关。特性丰富，使用简单。&lt;/p&gt;
+&lt;p&gt;它和其他业务型网关最大的区别是业务网关把请求转发给各个底层微服务，而它把请求转发给 Elasticsearch，更多是类似 Mycat 的中间件的作用。&lt;/p&gt;
+&lt;p&gt;没有使用网关之前，服务端请求多个节点&lt;/p&gt;
+&lt;p&gt;使用网关后&lt;/p&gt;
+&lt;h2&gt;下载地址&lt;/h2&gt;
+&lt;p&gt;打开 &lt;a href=&quot;http://release.infinilabs.com/gateway/stable/&quot;&gt;下载地址&lt;/a&gt;，根据操作系统版本选择。&lt;/p&gt;
+&lt;h2&gt;Windows 安装和启动&lt;/h2&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载 gateway-1.6.0_SNAPSHOT-597-windows-amd64.zip，解压如下。&lt;/p&gt;
+&lt;p&gt;gateway-windows-amd64.exe 是启动文件，gateway.yml 是默认配置文件。&lt;/p&gt;
+&lt;h3&gt;启动失败&lt;/h3&gt;
+&lt;p&gt;当 gateway.yml 的 elasticsearch 选项中的 hosts 不能正常响应请求的时候，启动界面如下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么 elasticsearch 不能访问的时候，网关还要继续提供服务呢，为什么不像业务接口启动时在基础业务组件如 MySQL/Redis 不能正常响应就直接 panic？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一方面网关作为 elasticsearch 抵挡流量冲击的城墙，在 elasticsearch 不能提供服务的时候，对之前成功的请求缓存结果，继续提供有限度的服务，为 elasticsearch 修复后上线争取时间。&lt;/p&gt;
+&lt;p&gt;另一方面业务接口和基础组件是强耦合关系，没有基础组件就完全无法对外提供数据读写服务，而网关与 elasticsearch 是松耦合关系，网关在没有 elasticsearch 的情况下也能对外提供有限度的服务。&lt;/p&gt;
+&lt;p&gt;在 gateway.yml 的 elasticsearch 选项中的 hosts 改成能够正常响应的 elasticsearch 请求地址。&lt;/p&gt;
+&lt;h3&gt;启动成功&lt;/h3&gt;
+&lt;p&gt;双击 gateway-windows-amd64.exe 文件，启动成功界面如下&lt;/p&gt;
+&lt;h3&gt;访问&lt;/h3&gt;
+&lt;h4&gt;API 访问&lt;/h4&gt;
+&lt;p&gt;由启动后终端显示可知，网关的 API 接口地址是 http://localhost:2900&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[api.go:262] api listen at: http://0.0.0.0:2900
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开浏览器输入 http://localhost:2900，显示所有可以对外提供的 API 接口&lt;/p&gt;
+&lt;p&gt;我们选择其中一个，在浏览器中输入 http://localhost:2900/_framework/api/_version 从路由上看该接口是查询产品的版本信息，显示如下&lt;/p&gt;
+&lt;p&gt;gateway.yml 中可以看到有被注释掉的一段配置，看起来应该是配置 api 地址的地方。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#api:
+#  enabled: true
+#  network:
+#    binding: 127.0.0.1:2900
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;把注释去掉后尝试把端口改成 2901。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;api:
+  enabled: true
+  network:
+    binding: 127.0.0.1:2901
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;改完后启动
+打开浏览器先输入 http://localhost:2900，无法正常响应请求，再输入 http://localhost:2901，可以正常响应，界面和修改配置前访问 http://localhost:2900 的界面一样，说明 API 请求地址成功修改&lt;/p&gt;
+&lt;h4&gt;Elasticsearch 访问&lt;/h4&gt;
+&lt;p&gt;启动日志中显示监听 8000 端口，猜测应该是 elasticsearch 请求地址，打开浏览器输入 http://127.0.0.1:8000/&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; entry [my_es_entry] listen at: http://0.0.0.0:8000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;gateway.yml 中可以看到 my_es_entry 的 network 绑定 8000 端口，显而易见的这部分就是配置代理转发给 elasticsearch 的地址，所以安装后只需要把以前请求 elasticsearch 的地址修改为该地址。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;entry:
+  - name: my_es_entry
+    enabled: true
+    router: my_router
+    max_concurrency: 10000
+    network:
+      binding: 0.0.0.0:8000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;我们成功安装和启动极限网关，接下来我们学习怎么根据需求修改配置。&lt;/p&gt;
+</content:encoded></item><item><title>Go并发编程</title><link>https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/go/go%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</guid><description>Mutex Mutex几种状态 mutexLocked 互斥锁的锁定状态 mutexWoken 从正常模式被唤醒 mutexStarving...</description><pubDate>Mon, 03 Jan 2022 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;Mutex&lt;/h2&gt;
+&lt;h3&gt;Mutex几种状态&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mutexLocked
+互斥锁的锁定状态&lt;/li&gt;
+&lt;li&gt;mutexWoken
+从正常模式被唤醒&lt;/li&gt;
+&lt;li&gt;mutexStarving
+当前的互斥锁进入饥饿状态&lt;/li&gt;
+&lt;li&gt;waitersCount
+当前互斥锁上等待的Goroutine个数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mutex正常模式和饥饿模式&lt;/h3&gt;
+&lt;h4&gt;正常模式（非公平锁）&lt;/h4&gt;
+&lt;p&gt;正常模式下，使用等待锁的goroutine按照先进先出的顺序等待。唤醒的Gorotine不会直接拥有锁，而是会和新请求goroutine竞争锁。新请求的goroutine更容易抢占，因为它正在CPU上执行，所以刚刚唤醒的goroutine有很大可能在锁竞争中失败，在这种情况下，这个被唤醒的goroutine会加入到等待队列的前面&lt;/p&gt;
+</content:encoded></item><item><title>错误处理</title><link>https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/go/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid><description>Sentinel Error 预定义的特定错误，我们叫为 sentinel error，这个名字来源于计算机编程中使用一个特定值来表示不可能...</description><pubDate>Sat, 01 Jan 2022 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;Sentinel Error&lt;/h2&gt;
+&lt;p&gt;预定义的特定错误，我们叫为 &lt;em&gt;sentinel error&lt;/em&gt;，这个名字来源于计算机编程中使用一个特定值来表示不可能进行进一步处理的做法。所以对于 Go，我们使用特定的值来表示错误。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;if err == ErrSomething{ … }&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;类似的 &lt;em&gt;io.EOF&lt;/em&gt;，更底层的 &lt;em&gt;syscall.ENOENT&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;使用 sentinel 值是最不灵活的错误处理策略，因为调用方必须使用 == 将结果与预先声明的值进行比较。当您想要提供更多的上下文时，这就出现了一个问题，因为返回一个不同的错误将破坏相等性检查。&lt;/em&gt;
+&lt;em&gt;甚至是一些有意义的 fmt. Errorf 携带一些上下文，也会破坏调用者的 ==，调用者将被迫查看 error. Error() 方法的输出，以查看它是否与特定的字符串匹配。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;不依赖检查 &lt;em&gt;error.Error&lt;/em&gt; 的输出。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;不应该依赖检测 error. Error 的输出，Error 方法存在于 error 接口主要用于方便程序员使用，但不是程序编写测试可能会依赖这个返回。这个输出的字符串用于记录日志、输出到 stdout 等。&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Sentinel errors 成为你 API 公共部分。&lt;/h3&gt;
+&lt;p&gt;如果您的公共函数或方法返回一个特定值的错误，那么该值必须是公共的，当然要有文档记录，这会增加 API 的表面积。
+如果 API 定义了一个返回特定错误的 interface，则该接口的所有实现都将被限制为仅返回该错误，即使它们可以提供更具描述性的错误。
+比如 io. Reader。像 io. Copy 这类函数需要 reader 的实现者比如返回 io. EOF 来告诉调用者没有更多数据了，但这又不是错误。&lt;/p&gt;
+&lt;h3&gt;Sentinel errors 在两个包之间创建了依赖。&lt;/h3&gt;
+&lt;p&gt;sentinel errors 最糟糕的问题是它们在两个包之间创建了源代码依赖关系。例如，检查错误是否等于 io. EOF，您的代码必须导入 io 包。这个特定的例子听起来并不那么糟糕，因为它非常常见，但是想象一下，当项目中的许多包导出错误值时，存在耦合，项目中的其他包必须导入这些错误值才能检查特定的错误条件。&lt;/p&gt;
+&lt;h3&gt;结论：尽可能避免 sentinel errors。&lt;/h3&gt;
+&lt;p&gt;我的建议是避免在编写的代码中使用 sentinel errors。在标准库中有一些使用它们的情况，但这不是一个您应该模仿的模式。&lt;/p&gt;
+&lt;h2&gt;Error Type&lt;/h2&gt;
+&lt;p&gt;Error type 是实现了 error 接口的自定义类型。例如 MyError 类型记录了文件和行号以展示发生了什么。&lt;/p&gt;
+&lt;h2&gt;Error&lt;/h2&gt;
+&lt;p&gt;Go error  就是普通的一个接口，普通的值。
+&lt;a href=&quot;http://golang.org/pkg/builtin/#error&quot;&gt;http://golang.org/pkg/builtin/#error&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type error interface {
+    Error() string
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们经常使用 errors.New() 来返回一个 error 对象。
+&lt;a href=&quot;https://golang.org/src/errors/errors.go&quot;&gt;https://golang.org/src/errors/errors.go&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type errorString struct {
+	s string
+}
+
+func (e *errorString) Error() string {
+	return e.s
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;基础库中大量自定义的 error。
+&lt;a href=&quot;https://golang.org/src/bufio/bufio.go&quot;&gt;https://golang.org/src/bufio/bufio.go&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var (
+	ErrInvalidUnreadByte = errors.New(&quot;bufio: invalid use of UnreadByte&quot;)
+	ErrInvalidUnreadRune = errors.New(&quot;bufio: invalid use of UnreadRune&quot;)
+	ErrBufferFull        = errors.New(&quot;bufio: buffer full&quot;)
+	ErrNegativeCount     = errors.New(&quot;bufio: negative count&quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;errors.New() 返回的是 内部 errorString 对象的指针。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func New(text string) error {
+	return &amp;amp;errorString{text}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+)
+
+type errorString string
+
+func (e errorString) Error() string {
+	return string(e)
+}
+
+func New(text string) error {
+	return errorString(text)
+}
+
+var ErrNamedType = New(&quot;EOF&quot;)
+var ErrStructType = errors.New(&quot;EOF&quot;)
+func main()  {
+	if ErrNamedType == New(&quot;EOF&quot;){
+		fmt.Println(&quot;Named Type Error&quot;)
+	}
+	if ErrStructType == errors.New(&quot;EOF&quot;){
+		fmt.Println(&quot;Struct Type Error&quot;)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Error vs Exception&lt;/h2&gt;
+&lt;p&gt;各个语言的演进历史：&lt;/p&gt;
+&lt;h3&gt;C&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;单返回值，一般通过传递指针作为入参，返回值为 int 表示成功还是失败。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    ngx_int_t ngx_create_path(ngx_file_t *file, ngx_path_t *path);
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;C++&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;引入了 exception，但是无法知道被调用方会抛出什么异常。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;引入了 checked exception，方法的所有者必须申明，调用者必须处理。在启动时抛出大量的异常是司空见惯的事情，并在它们的调用堆栈中尽职地记录下来。Java 异常不再是异常，而是变得司空见惯了。它们从良性到灾难性都有使用，异常的严重性由函数的调用者来区分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Go 的处理异常逻辑是不引入 exception，支持多参数返回，所以你很容易的在函数签名中带上实现了 error interface 的对象，交由调用者来判定。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果一个函数返回了 value, error，你不能对这个 value 做任何假设，必须先判定 error。唯一可以忽略 error 的是，如果你连 value 也不关心。&lt;/strong&gt;
+Go 中有 panic 的机制，如果你认为和其他语言的 exception 一样，那你就错了。当我们抛出异常的时候，相当于你把 exception 扔给了调用者来处理。
+&lt;strong&gt;比如，你在 C++ 中，把 string 转为 int，如果转换失败，会抛出异常。或者在 java 中转换 string 为 date 失败时，会抛出异常。&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;throw new exception();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Go panic 意味着 fatal error（就是挂了）。不能假设调用者来解决 panic，意味着代码不能继续运行。&lt;/p&gt;
+&lt;p&gt;使用多个返回值和一个简单的约定，Go 解决了让程序员知道什么时候出了问题，并为真正的异常情况保留了 panic。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;panic(&quot;this is a error&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对于真正意外的情况，那些表示不可恢复的程序错误，例如索引越界、不可恢复的环境问题、栈溢出，我们才使用 panic。对于其他的错误情况，我们应该是期望使用 error 来进行判定。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简单。&lt;/li&gt;
+&lt;li&gt;考虑失败，而不是成功 (Plan for failure, not success)。&lt;/li&gt;
+&lt;li&gt;没有隐藏的控制流。&lt;/li&gt;
+&lt;li&gt;完全交给你来控制 error。&lt;/li&gt;
+&lt;li&gt;Error are values。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>代码重构之图片上传</title><link>https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/go/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E4%B9%8B%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</guid><description>背景 用户头像上传功能中，服务端上传流程如下： base64 解码成字符串 图片写入服务器本地临时目录 上传到 阿里云 OSS/七牛云存储...</description><pubDate>Tue, 01 Jun 2021 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;背景&lt;/h2&gt;
+&lt;p&gt;用户头像上传功能中，服务端上传流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;base64&lt;/code&gt; 解码成字符串&lt;/li&gt;
+&lt;li&gt;图片写入服务器本地临时目录&lt;/li&gt;
+&lt;li&gt;上传到 &lt;code&gt; 阿里云 OSS&lt;/code&gt;/七牛云存储&lt;/li&gt;
+&lt;li&gt;图片审核&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type Parms struct {
+    Head string //客户端发送 base64 字符串
+}
+func Upload ( p Params ) {
+    if p.Head == &quot;&quot;{
+        return errors.New ( &quot;img is empty&quot; )
+ }
+    str,err := Base64Decode ( p.Head )
+    if err != nil{
+        return err
+ }
+    filename := makeUniqueName ( )
+    if err := FileWrite ( filename,str ) ;err != nil{
+         return err
+ }
+    err := UploadAliOss ( filename )
+    if err != nil{
+        return err
+ }
+    err := VerifyImg ( filename )
+    if err != nil{
+        return err
+ }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;问题&lt;/h2&gt;
+&lt;p&gt;以前多个项目通过 &lt;code&gt;jenkins&lt;/code&gt; 发布不同的上线指令，每新建一个项目，运维需要单独写一套 &lt;code&gt;shell&lt;/code&gt; 命令，无法复用之前的，维护成本比较高。后来我们升级部署方式，只需要修改项目部署目录配置文件，具体后续再介绍。&lt;/p&gt;
+&lt;p&gt;一直以来稳定运行，周末收到反馈出现问题，用户无法上传头像。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查代码的 &lt;code&gt;git&lt;/code&gt; 历史提交记录，近期没有修改代码，排除代码 &lt;code&gt;bug&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;报错提示只在调用 &lt;code&gt;FileWrite&lt;/code&gt; 和 &lt;code&gt;UploadAliOss&lt;/code&gt; 两个方法时出现&lt;/li&gt;
+&lt;li&gt;在打包镜像的时候没有在容器中创建临时目录，所以无法写入文件，用户头像无法上传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;临时解决&lt;/h2&gt;
+&lt;p&gt;手动在容器中创建一个临时目录，保存图片文件。&lt;/p&gt;
+&lt;h2&gt;完全解决&lt;/h2&gt;
+&lt;p&gt;我认为，图片文件全部保存在第三方对象存储中，服务器保存一份是完全没必要的，只会占用磁盘空间。&lt;/p&gt;
+&lt;p&gt;我们可以创建 &lt;code&gt;Reader&lt;/code&gt; 对象把图片文件读取到缓冲区，再上传到第三方对象存储。&lt;/p&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func Upload ( p Params ) {
+    if p.Head == &quot;&quot;{
+        return errors.New ( &quot;img is empty&quot; )
+ }
+    str,err := Base64Decode ( p.Head )
+    if err != nil{
+        return err
+ }
+    filename := makeUniqueName ( )
+    buf := bytes.NewReader ( []byte ( str ))
+    err := UploadAliOssBuff ( filename,buf )
+    if err != nil{
+        return err
+ }
+    err := VerifyImg ( filename )
+    if err != nil{
+        return err
+ }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;在接手维护老项目时候，避免不了遇到坑。除了吐槽前人写的糟糕外，我们可以尽我所能提升代码维护质量，让后来者更容易维护。&lt;/p&gt;
+&lt;p&gt;一片空地，可能开始只有几片垃圾。如果一直不清理，你来丢，他也丢，很快就会变成垃圾堆。&lt;/p&gt;
+&lt;h2&gt;微信公众号&lt;/h2&gt;
+</content:encoded></item><item><title>重学 C 语言 HelloWorld 篇</title><link>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6c%E8%AF%AD%E8%A8%80helloworld%E7%AF%87/</guid><description>前言 按照编程界的惯例，学习一门语言第一件事就是输出“Hello World”，这大概是专属程序员的情节（类似格子衫和植发）。 以下就是各个...</description><pubDate>Wed, 03 Mar 2021 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;按照编程界的惯例，学习一门语言第一件事就是输出“Hello World”，这大概是专属程序员的情节（类似格子衫和植发）。&lt;/p&gt;
+&lt;p&gt;以下就是各个主流编程语言的 HelloWorld 写法，为什么要列出各个语言的 HelloWorld？我们比较他们的不同之处，从中学到语言设计哲学和编程理念。&lt;/p&gt;
+&lt;p&gt;网上各个入门教程中只会告诉你 HelloWorld 的每一行代码是什么意思，然后你一脸懵逼，为什么要这么写，为什么要引入包，而你的疑问得到的解答可能是以后学到了你就明白了。等你学完后上手实践一段时间你确实明白，开头要引入包，Java 要写 Class，你认为你明白了，但是你真的理解每一行代码后面得编程理念吗？&lt;/p&gt;
+&lt;h2&gt;示例&lt;/h2&gt;
+&lt;p&gt;C&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+#include &amp;lt;stdio.h&amp;gt;
+
+int main(void)
+{
+
+   printf(&quot;Hello, World! \n&quot;);
+
+   return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Go&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import &quot;fmt&quot;
+
+func main() {
+
+    fmt.Println(&quot;Hello, World!&quot;)
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Java&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import static java.lang.System.out;
+
+public class HelloWorld {
+
+    public static void main(String[] args) {
+
+        System.out.println(&quot;Hello World&quot;);
+
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;PHP&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+echo &quot;Hello World!&quot;;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Python&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+print(&quot;Hello, World!&quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;说明&lt;/h2&gt;
+&lt;p&gt;以上主流编程语言大部分人都接触过，前 3 种都是编译型语言，后 2 种是解释型语言。&lt;/p&gt;
+&lt;p&gt;我们观察下前 3 种第一行，Java 和 Go 都有 &lt;code&gt;import xx&lt;/code&gt;，C 有&lt;code&gt;include&lt;/code&gt;，都是包含、引入的意思。&lt;/p&gt;
+&lt;p&gt;编程语言中，不同功能划分到不同模块中去，字符串、网络、http 等等，在不同的编程语言有不同的命名。Java 和 Go 中叫包，C 语言叫头文件。设计包目的是降低代码耦合度，提高代码复用性和可维护性。假设你要处理字符串，就只要在字符串的包中查找对应的方法。&lt;/p&gt;
+&lt;p&gt;为什么 PHP 和 Python 没有 import 包呢，因为它们为了提高开发者开发效率，把很多函数在语言内部实现了，你可以直接调用。&lt;/p&gt;
+&lt;p&gt;两者孰优孰劣，后面我们在讲编译型语言和解释型语言时会详细分析。&lt;/p&gt;
+&lt;h3&gt;代码解析&lt;/h3&gt;
+&lt;h4&gt;第一行&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+#include &amp;lt;stdio.h&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;C 语言后缀名 h 的文件就是头文件，它包含了函数声明和定义，没有具体实现的代码。&lt;/p&gt;
+&lt;p&gt;这句话的意思是你不用管也不用看这个方法怎么实现，代码细节是什么。你只需要按头文件中指定的函数的名字，传入的参数，返回的结果调用。&lt;/p&gt;
+&lt;p&gt;为什么要这样？比方说 A 写的函数 a 调用 B 写的的一个方法 b，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a 直接依赖 b，如果 B 修改了 b 的返回结果类型，a 也需要修改。&lt;/li&gt;
+&lt;li&gt;a 依赖 b 的头文件，b 修改返回结果类型后，为了兼容头文件，内部转换成头文件定义的返回类型，a 就不需要修改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;第二行&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+int main(void)
+{
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;C 语言程序都需要包含 main() 函数， 代码从 main() 函数开始执行。main 函数就是进入一个房间的大门，所有函数执行的起点。Go 和 Java 也是这样设计的。&lt;/p&gt;
+&lt;p&gt;为什么需要 main 函数？一个文件中可以定义多个函数，编程语言怎么知道要从哪个开始执行呢？就像进入一个房间，肯定要先找大门，从门进入（别抬杠走窗户）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;int&lt;/code&gt;是函数的返回值数据类型关键字，每个函数都要定义返回值类型，如果类型不符合要求，编译就无法通过，无法执行。有些函数执行所需的操作而不返回值，在这种情况下，关键字是&lt;code&gt;void&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;是函数名，文件中函数名不能重复。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;void&lt;/code&gt;是参数，当函数被调用时，向参数传递一个值，这个值被称为实际参数。如果函数不包含参数，就传入&lt;code&gt;void&lt;/code&gt;。&lt;/p&gt;
+&lt;h4&gt;第三行&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+printf(&quot;Hello, World! \n&quot;);
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;printf&lt;/code&gt; 用于格式化输出到屏幕。printf() 函数在 &lt;code&gt;&quot;stdio.h&quot;&lt;/code&gt; 头文件中声明。&lt;/p&gt;
+&lt;h4&gt;第四行&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+return 0;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用于表示退出程序。在程序逻辑执行完后，如果返回类型不是&lt;code&gt;void&lt;/code&gt;，就必须返回指定类型数据，这里要求必须返回&lt;code&gt;int&lt;/code&gt;类型数据，就返回&lt;code&gt;0&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;在介绍 C 语言 HelloWorld 后，和其他语言 HelloWorld 比较。介绍了语言本身的设计理念。详细解释 HelloWorld 中每一行代码的意义。万丈高楼平地起，这还只是学习 C 语言的第一步。&lt;/p&gt;
+&lt;p&gt;与君共勉。&lt;/p&gt;
+&lt;h2&gt;微信公众号&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;加好友深入交流，解答问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>重学 C 语言</title><link>https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/c/%E9%87%8D%E5%AD%A6-c-%E8%AF%AD%E8%A8%80/</guid><description>前言 近几年一直在做 Web 开发，从PHP到Go，从数据库到缓存。随着技术的深入，越发感到非科班转行写代码的我在理解源码和技术细节的力不从...</description><pubDate>Wed, 03 Feb 2021 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;近几年一直在做 Web 开发，从&lt;code&gt;PHP&lt;/code&gt;到&lt;code&gt;Go&lt;/code&gt;，从数据库到缓存。随着技术的深入，越发感到非科班转行写代码的我在理解源码和技术细节的力不从心。万丈高楼平地起，基础知识不牢固很难继续提升。我计划近期重学 &lt;code&gt;C&lt;/code&gt; 语言，夯实基础知识。&lt;/p&gt;
+&lt;h2&gt;步骤&lt;/h2&gt;
+&lt;p&gt;我不是为了应付学校考试，不会花太多时间在记忆语法上。过一遍语法后开始动手写代码，遇到问题后再去查资料解决。有其他语言语法基础不用在语法上过多纠结，专注于 &lt;code&gt;C&lt;/code&gt; 语言和其他语言相比的不同特性上。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;视频教程
+可能有人觉得看视频比看书花时间更多，而我个人更喜欢看视频教程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一方面是因为看视频能产生具体形象，加深记忆。另一方面每天通勤时间很长，在地铁上近 50 分钟，这段时间不能浪费，我随身携带 &lt;code&gt;Kindle&lt;/code&gt; 看电子书，但是嘈杂喧闹的地铁上无法集中注意力，尤其看比较枯燥的技术类书籍。当然并不只是看了视频就会了，书籍是后续补充。&lt;/p&gt;
+&lt;p&gt;B 站各类自学视频资源非常多，可以充分利用起来。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;代码实战
+&quot;光说不念假把式&quot;。编程是一门偏实践的学科，只有在不断实践的过程中才能真正烂熟于心，不断挖坑踩坑填坑中成长。用 &lt;code&gt;C&lt;/code&gt; 语言写个简单的 &lt;code&gt;web&lt;/code&gt; 服务器，支持&lt;code&gt;HTTP&lt;/code&gt;和&lt;code&gt;Tcp&lt;/code&gt;协议。后续阅读开源项目比如&lt;code&gt;Redis&lt;/code&gt;的源代码，加深理解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;记录心得体会
+在实践和学习过程中，以文章的形式持续输出。把C语言的特点和高级语言做对比，也会推荐比价好的教程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;重点目标&lt;/h2&gt;
+&lt;h3&gt;第一阶段：内存分区、函数调用模型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据类型、变量的含义&lt;/li&gt;
+&lt;li&gt;内存四区特点&lt;/li&gt;
+&lt;li&gt;函数调用模型&lt;/li&gt;
+&lt;li&gt;内存操作函数&lt;/li&gt;
+&lt;li&gt;宏定义与预处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第二阶段：指针高级&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;指针基本使用&lt;/li&gt;
+&lt;li&gt;指针的步长的概念&lt;/li&gt;
+&lt;li&gt;指针简介赋值&lt;/li&gt;
+&lt;li&gt;指针以及多级指针做函数参数的特性与使用&lt;/li&gt;
+&lt;li&gt;通过指针操作字符串&lt;/li&gt;
+&lt;li&gt;const 类型修饰符&lt;/li&gt;
+&lt;li&gt;位的逻辑运算符&lt;/li&gt;
+&lt;li&gt;移位运算符&lt;/li&gt;
+&lt;li&gt;数组指针与指针数组&lt;/li&gt;
+&lt;li&gt;多维数组做函数参数&lt;/li&gt;
+&lt;li&gt;结构体嵌套一级指针&lt;/li&gt;
+&lt;li&gt;结构体嵌套二级指针浅&lt;/li&gt;
+&lt;li&gt;拷贝深拷贝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第三阶段：函数指针与回调函数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;封装和设计思想&lt;/li&gt;
+&lt;li&gt;函数指针定义的三种方式&lt;/li&gt;
+&lt;li&gt;回调函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第四阶段：数据结构与链表&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;链表的基本概念&lt;/li&gt;
+&lt;li&gt;单链表的相关操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第五阶段：递归函数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;递归函数的概念&lt;/li&gt;
+&lt;li&gt;递归的使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第六阶段：数据结构与算法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;大 O 表示法基本概念&lt;/li&gt;
+&lt;li&gt;线性表顺序存储和链式存储概念&lt;/li&gt;
+&lt;li&gt;线性表的顺序存储（数组）&lt;/li&gt;
+&lt;li&gt;线性表的链式存储（链表）&lt;/li&gt;
+&lt;li&gt;队列的顺序与链式存储&lt;/li&gt;
+&lt;li&gt;栈的顺序与链式存储&lt;/li&gt;
+&lt;li&gt;二叉树基本操作&lt;/li&gt;
+&lt;li&gt;常用排序算法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;第七阶段：接口的封装和设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;函数的封装设计&lt;/li&gt;
+&lt;li&gt;解耦合的设计理念&lt;/li&gt;
+&lt;li&gt;模块实现与业务分离的思想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;本阶段可以掌握的核心能力：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握 C 语言当中的字符串、一堆数组、二维数组的用法；&lt;/li&gt;
+&lt;li&gt;掌握一级指针，二级指针，三级指针的高级用法，理解 N 级指针概念，指针数组和数组指针；&lt;/li&gt;
+&lt;li&gt;学会结构体、文件的使用 C 语言接口封装设计&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;可解决的显示问题：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;可以实现自己开发小程序，例如贪吃蛇一类的用 C 语言写的程序；&lt;/li&gt;
+&lt;li&gt;应用 C 语言接口封装设计的方法，进行企业项目开发&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;我学 C 语言的目的不是要在工作中用它开发web应用，而是要帮助我更加深刻理解计算机工作原理。以前的技术老大说过一句话，“C语言开发者看其他语言都是语法糖”。&lt;/p&gt;
+&lt;p&gt;与君共勉。&lt;/p&gt;
+</content:encoded></item><item><title>Go 1.13版本 xerrors 包装错误</title><link>https://xushuhui.github.io/posts/go/xerrors/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/go/xerrors/</guid><description>翻译自 https://crawshaw.io/blog/xerrors Go 1.13: xerrors Go 2 系列语言更改的一部分...</description><pubDate>Sun, 03 Jan 2021 13:59:58 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;翻译自 https://crawshaw.io/blog/xerrors&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Go 1.13: xerrors&lt;/h1&gt;
+&lt;p&gt;Go 2 系列语言更改的一部分是新的&lt;a href=&quot;https://go.googlesource.com/proposal/+/master/design/29934-error-values.md&quot;&gt;错误检查提案&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;错误检查提案为其他地方（在 github.com/pkg/errors 等包中）尝试过的错误添加了几个功能，并带有一些新的实现技巧。 该提案已在提示中实施，为 Go 1.13 做准备。 您今天可以通过使用 Go from tip 或使用包 golang.org/x/xerrors 和 Go 1.12 来尝试一下。&lt;/p&gt;
+&lt;p&gt;额外的功能完全基于库，不涉及对编译器或运行时的更改。 一个重要的新功能是错误包装。&lt;/p&gt;
+&lt;h2&gt;一个工作示例：包装“key not found” 错误&lt;/h2&gt;
+&lt;p&gt;我们正在为 &lt;a href=&quot;https://tailscale.io/&quot;&gt;Tailscale&lt;/a&gt;  构建的产品包括一个名为 taildb 的简单键值存储。 与许多简单的 KV 存储一样，您可以读取键值。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Get fetches and unmarshals the JSON blob for the key k into v.
+// If the key is not found, Get reports a &quot;key not found&quot; error.
+func (tx *Tx) Get(k string, v interface{}) (err error)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;让我们来谈谈 &quot;key not found.&quot;&lt;/p&gt;
+&lt;h3&gt;版本 1&lt;/h3&gt;
+&lt;p&gt;第一个 API 版本将&quot;key not found&quot;错误定义为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var ErrNotFound = errors.New(&quot;taildb: key not found&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用taildb的代码可以轻松使用:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var val Value
+if err := tx.Get(&quot;my-key&quot;, &amp;amp;val); err == taildb.ErrNotFound {
+	// no such key
+} else if err != nil {
+	// something went very wrong
+} else {
+	// use val
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这很好，直到我进行一些调试并遇到一个归结为:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;my_http_handler: taildb: key not found
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这不是一个非常有用的错误消息.&lt;/p&gt;
+&lt;h3&gt;版本 2&lt;/h3&gt;
+&lt;p&gt;鉴于 &lt;code&gt;Get&lt;/code&gt; 方法具有键名，最好将其包含在错误消息中。&lt;/p&gt;
+&lt;p&gt;所以我遵循了 Go 中的一个常见策略，即在 taildb 包中引入错误类型：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;type KeyNotFoundError struct {
+	Name string
+}
+
+func (e KeyNotFoundError) Error() string {
+	return fmt.Errorf(&quot;taildb: key %q not found&quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这很好用！检查此特定错误的代码有点混乱，但它可以工作:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var val Value
+err := tx.Get(&quot;my-key&quot;, &amp;amp;val)
+if err != nil {
+	if _, isNotFound := err.(taildb.KeyNotFoundError); isNotFound {
+		// no such key
+	} else {
+		// something went very wrong
+	}
+} else {
+	// use val
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但这种直接搭配的风格有一个缺陷。如果任何中间代码将信息添加到错误中，我们将无法再检查错误的类型。考虑如下函数:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func accessCheck(tx *taildb.Tx, key string) error {
+	var val Value
+	if err := tx.Get(key, &amp;amp;val); err != nil {
+		return fmt.Errorf(&quot;access check: %v&quot;, err)
+	}
+	if !val.AccessGranted {
+		return errAccessDenied
+	}
+	return nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在这里，我们在数据库之上实现逻辑，检查用户是否具有某种访问权限。报告 nil 错误将授予访问权限，否则访问将被拒绝。拒绝访问的原因可能是 &lt;code&gt;!AccessGranted&lt;/code&gt; 或一些底层数据库错误。所有关于错误的文本信息都被保留了，但是使用 &lt;code&gt;fmt.Errorf&lt;/code&gt; 意味着我们不能再检查访问错误是否是 &lt;code&gt;KeyNotFoundError&lt;/code&gt;。&lt;/p&gt;
+&lt;h3&gt;版本 3&lt;/h3&gt;
+&lt;p&gt;新的 xerrors 库通过提供一个版本的 Errorf 来解决此问题，该版本保留了新错误中的底层错误对象:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	if err := tx.Get(key, &amp;amp;val); err != nil {
+		return xerrors.Errorf(&quot;access check: %w&quot;, err)
+	}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;%w for wrap.&lt;/p&gt;
+&lt;p&gt;从表面上看，Errorf 的这种实现与 fmt 中的实现完全一样。在底层，保留类型意味着我们现在可以检查 KeyNotFoundError 的原因链:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var val Value
+if err := accessCheck(tx, &quot;my-key&quot;); err != nil {
+	var notFoundErr taildb.KeyNotFoundError
+	if xerrors.As(err, &amp;amp;notFoundErr) {
+		// no such key
+	} else {
+		// something went very wrong
+	}
+} else {
+	// use val
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Great!&lt;/p&gt;
+&lt;h3&gt;版本 4&lt;/h3&gt;
+&lt;p&gt;我们可以做得更好。我们替换导出的 KeyNotFoundError 的唯一原因是我们可以在错误消息中添加一些额外的文本，同时使类型可测试。新的 xerrors 为我们提供了一种更简单的方法来做到这一点。&lt;/p&gt;
+&lt;p&gt;所以让我们回到第一个定义:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var ErrNotFound = errors.New(&quot;key not found&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在taildb里面我们可以写:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;func (tx *Tx) Get(k string, v interface{}) (err error) {
+	// ...
+	if noSuchKey {
+		return xerrors.Errorf(&quot;taildb: %q: %w&quot;, k, ErrNotFound)
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们想要的所有信息都在这里。当我们将错误打印到日志时，我们会看到 &lt;code&gt;taildb: &quot;my-key&quot;: key not found&lt;/code&gt;。要检查从 &lt;code&gt;accessCheck&lt;/code&gt; 返回的错误，我们可以编写:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var val Value
+if err := accessCheck(tx, &quot;my-key&quot;); xerrors.Is(err, taildb.ErrNotFound) {
+	// no such key
+} else if err != nil {
+	// something went very wrong
+} else {
+	// use val
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;简单！&lt;/p&gt;
+&lt;h2&gt;Go 1.13&lt;/h2&gt;
+&lt;p&gt;新的 xerrors 将在 Go 1.13 中升级到标准库的错误包中。&lt;/p&gt;
+&lt;p&gt;链接不是 xerrors.Errorf，而是直接构建到我们今天使用的 &lt;a href=&quot;https://tip.golang.org/pkg/fmt/#Errorf&quot;&gt;fmt.Errorf&lt;/a&gt; 函数中：&lt;/p&gt;
+&lt;p&gt;如果最后一个参数是错误的并且格式字符串以“: %w”结尾，
+返回的错误实现 errors.Wrapper 并带有返回它的 Unwrap 方法。&lt;/p&gt;
+&lt;p&gt;当然，这看起来不错。然而，距离 Go 1.13 仅三个月之遥！在那之后，所有这些新的变化（这篇文章只介绍一个）将在[Go 1 兼容性承诺]（https://golang.org/doc/go1compat）下的标准库中被永久冻结。对于如此高的标准，这个包[可悲地测试不足]（https://godoc.org/golang.org/x/xerrors?importers）。&lt;/p&gt;
+&lt;p&gt;我鼓励你从今天开始使用 golang.org/x/xerrors，或者更好的是，通过 &lt;a href=&quot;https://golang.org/doc/install/source&quot;&gt;从源代码安装&lt;/a&gt; 直接针对 Go 提示开始开发。更多的人需要尝试一下。&lt;/p&gt;
+</content:encoded></item><item><title>Redis非阻塞模式</title><link>https://xushuhui.github.io/posts/redis/8redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/8redis%E9%9D%9E%E9%98%BB%E5%A1%9E%E6%A8%A1%E5%BC%8F/</guid><description>非阻塞模式 设置socket网络模型的非阻塞模式，需要三个关键函数socket()、listen()和accept() 在socket模型中...</description><pubDate>Fri, 11 Sep 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h2&gt;非阻塞模式&lt;/h2&gt;
+&lt;p&gt;设置socket网络模型的非阻塞模式，需要三个关键函数socket()、listen()和accept()&lt;/p&gt;
+&lt;p&gt;在socket模型中，不同操作调用后会返回不同套接字类型。socket()方法返回主动套接字，然后调用listen()方法将主动套接字转化为监听套接字，监听客户端的连接请求，最后调用accept()方法接收到达的客户端连接，并返回已连接的套接字。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;调用方法&lt;/th&gt;
+&lt;th&gt;返回套接字类型&lt;/th&gt;
+&lt;th&gt;非阻塞模式&lt;/th&gt;
+&lt;th&gt;效果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;socket()&lt;/td&gt;
+&lt;td&gt;主动套接字&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;listen()&lt;/td&gt;
+&lt;td&gt;监听套接字&lt;/td&gt;
+&lt;td&gt;可设置&lt;/td&gt;
+&lt;td&gt;accept()非阻塞&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accept()&lt;/td&gt;
+&lt;td&gt;已连接套接字&lt;/td&gt;
+&lt;td&gt;可设置&lt;/td&gt;
+&lt;td&gt;send()/recv()非阻塞&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Redis套接字类型与非阻塞设置&lt;/h2&gt;
+&lt;p&gt;针对监听套接字，我们可以设置非阻塞模式：当 Redis 调用 accept() 但一直未有连接请求到达时，Redis 线程可以返回处理其他操作，而不用一直等待。但是，你要注意的是，调用 accept() 时，已经存在监听套接字了。虽然 Redis 线程可以不用继续等待，但是总得有机制继续在监听套接字上等待后续连接请求，并在有请求时通知 Redis。&lt;/p&gt;
+&lt;p&gt;类似的，我们也可以针对已连接套接字设置非阻塞模式：Redis 调用 recv() 后，如果已连接套接字上一直没有数据到达，Redis 线程同样可以返回处理其他操作。我们也需要有机制继续监听该已连接套接字，并在有数据达到时通知 Redis。这样才能保证 Redis 线程，既不会像基本 IO 模型中一直在阻塞点等待，也不会导致 Redis 无法处理实际到达的连接请求或数据。&lt;/p&gt;
+&lt;h3&gt;基于多路复用的高性能 I/O 模型&lt;/h3&gt;
+&lt;p&gt;Linux 中的 IO 多路复用机制是指一个线程处理多个 IO 流，就是我们经常听到的 select/epoll 机制。&lt;/p&gt;
+&lt;p&gt;在 Redis 只运行单线程的情况下，该机制允许内核中，同时存在多个监听套接字和已连接套接字。内核会一直监听这些套接字上的连接请求或数据请求。一旦有请求到达，就会交给 Redis 线程处理，这就实现了一个 Redis 线程处理多个 IO 流的效果。
+下图就是基于多路复用的 Redis IO 模型。图中的多个 FD 就是刚才所说的多个套接字。Redis 网络框架调用 epoll 机制，让内核监听这些套接字。此时，Redis 线程不会阻塞在某一个特定的监听或已连接套接字上，也就是说，不会阻塞在某一个特定的客户端请求处理上。正因为此，Redis 可以同时和多个客户端连接并处理请求，从而提升并发性。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;Redis 单线程是指它对网络 IO 和数据读写的操作采用了一个线程，而采用单线程的一个核心原因是避免多线程开发的并发控制问题。
+单线程的 Redis 也能获得高性能，跟多路复用的 IO 模型密切相关，因为这避免了 accept() 和 send()/recv() 潜在的网络 IO 操作阻塞点。&lt;/p&gt;
+</content:encoded></item><item><title>Redis单线程</title><link>https://xushuhui.github.io/posts/redis/7redis%E5%8D%95%E7%BA%BF%E7%A8%8B/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/7redis%E5%8D%95%E7%BA%BF%E7%A8%8B/</guid><description>Redis 单线程本质 Redis 的单线程，指的是 Redis 的网络 IO 和键值对读写由一个线程完成，这是 Redis 对外提供键值存...</description><pubDate>Sat, 01 Aug 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h2&gt;Redis 单线程本质&lt;/h2&gt;
+&lt;p&gt;Redis 的单线程，指的是 Redis 的网络 IO 和键值对读写由一个线程完成，这是 Redis 对外提供键值存储服务的主要流程，但是 Redis 的其他功能，比如持久化、异步删除、集群数据同步都是由额外的线程执行。&lt;/p&gt;
+&lt;h3&gt;Redis 为什么用单线程&lt;/h3&gt;
+&lt;p&gt;我们先从多线程开销讲起。&lt;/p&gt;
+&lt;h4&gt;多线程开销&lt;/h4&gt;
+&lt;p&gt;一个多线程系统，在合理分配资源的前提下可以增加系统中处理请求操作的资源实体，进而提升系统能够同时处理的请求数，即吞吐率。&lt;/p&gt;
+&lt;p&gt;但是如果多线程系统中没有良好的系统设计，随着线程数增加而增长的系统吞吐率到一定瓶颈后增长迟缓甚至下降。&lt;/p&gt;
+&lt;p&gt;出现这个现象的原因是，系统中存在被多线程同时访问的共享资源，在多个线程要修改这个共享资源时候，要增加额外的机制来保证共享资源正确性，额外的机制带来额外的开销。&lt;/p&gt;
+&lt;p&gt;假设 Redis 采用多线程设计，如下图所示，现在有两个线程 A 和 B ，线程 A 对一个 List 做 LPUSH 操作， 并对队列长度加 1。同时，线程 B 对该 List 执行 LPOP 操作，并对队列长度减 1。为了保证队列长度的正确性，Redis 需要让线程 A 和 B 的 LPUSH 和 LPOP 串行执行， 只有这样，Redis 可以保证正确记录它们对 List 长度的修改。 否则，我们可能就会得到错误的长度结果。 这就是多线程编程模式面临的共享资源的并发访问控制问题。&lt;/p&gt;
+&lt;p&gt;并发访问控制是多线程开发的难点问题，如果只是对共享资源简单采用粗粒度互斥锁，就可能会出现即使增加线程，大部分线程只是在等待获取访问共享资源的互斥锁，并行变串行，系统吞吐率并没有随着线程增加而增加。&lt;/p&gt;
+&lt;p&gt;而且，采用多线程开发一般会引入同步原语来保护共享资源的并发访问，这也会降低系统 代码的易调试性和可维护性。 为了避免这些问题，Redis 直接采用了单线程模式。&lt;/p&gt;
+&lt;h3&gt;单线程 Redis 为什么快&lt;/h3&gt;
+&lt;p&gt;通常来说单线程处理能力比多线程差很大，但是 Redis 用单线程模型达到每秒数十万操作指令处理能力，这是 Redis 多方面设计作用下的综合结果。&lt;/p&gt;
+&lt;p&gt;一方面，Redis 操作键值对都在内存中完成，并且它还有高效的数据结构，比如哈希表和跳表。&lt;/p&gt;
+&lt;p&gt;另一方面，网络请求解析，Redis 采用多路复用机制，在网络 IO 中能并发处理大量客户端请求，实现高吞吐量。&lt;/p&gt;
+&lt;h4&gt;基本 IO 模型和阻塞点&lt;/h4&gt;
+&lt;p&gt;Redis 的基本执行流程就是依次执行如下操作：&lt;/p&gt;
+&lt;p&gt;以 Get 请求为例，Redis 为了处理一个 Get 请求，需要监听客户端请求 （ bind/listen ） ，和客户端建立连接（accept） ，从 socket 中读取请求（recv），解析客户端发送请求（parse） ，根据请求类型读取键值数据（get）  最后给客户端返回结果，即向 socket 中写回数据（send）。&lt;/p&gt;
+&lt;p&gt;bind/listen、accept、recv、parse 和 send 属于网络 IO 处理，而 get 属于键值数据操作。&lt;/p&gt;
+&lt;p&gt;在网络 IO 操作的 accept 和 recv 处理上，可能会出现阻塞。&lt;/p&gt;
+&lt;p&gt;当 Redis 监听到一个客户端的连接请求，但是未能成功建立连接就会阻塞在 accept 函数里，导致其他客户端无法和 Redis 建立连接。同样的，Redis 通过 recv 从客户端读取数据时，如果数据一直没有到达，也会一直阻塞在 recv 函数。&lt;/p&gt;
+&lt;p&gt;这就阻塞 Redis 整个工作线程，无法处理其他客户端请求，为了解决这个问题，要运用 socket 网络模型的非阻塞模式。&lt;/p&gt;
+</content:encoded></item><item><title>Rsa 通信原理</title><link>https://xushuhui.github.io/posts/java/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/java/rsa%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</guid><description>原理 A 和 B 通信，双方生成各自的公钥和私钥，把各自的公钥给对方。 A 向 B 发送消息，A 使用 B 的公钥加密消息，发给 B。 B...</description><pubDate>Fri, 24 Jul 2020 02:23:14 GMT</pubDate><content:encoded>&lt;h2&gt;原理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A 和 B 通信，双方生成各自的公钥和私钥，把各自的公钥给对方。&lt;/li&gt;
+&lt;li&gt;A 向 B 发送消息，A 使用 B 的公钥加密消息，发给 B。&lt;/li&gt;
+&lt;li&gt;B 收到消息，用 B 的私钥解密消息。&lt;/li&gt;
+&lt;li&gt;B 回复消息，用 A 的公钥加密消息，发送给 A。&lt;/li&gt;
+&lt;li&gt;A 收到消息，用 A 的私钥解密消息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;curl &apos;https://www.douyin.com/aweme/v1/web/channel/feed/?device_platform=webapp&amp;amp;aid=6383&amp;amp;channel=channel_pc_web&amp;amp;tag_id=&amp;amp;count=10&amp;amp;version_code=160100&amp;amp;version_name=16.1.0&amp;amp;_signature=_02B4Z6wo00f01JqNG5QAAIDBG-N4jKVOoLCajB8AAEZ3aa&apos; 
+-H &apos;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&apos; 
+-H &apos;Accept: application/json, text/plain, */*&apos; 
+-H &apos;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&apos; 
+--compressed -H &apos;withCredentials: true&apos; 
+-H &apos;Connection: keep-alive&apos; 
+-H &apos;Referer: https://www.douyin.com/&apos; 
+-H &apos;Cookie: ttwid=1%7CBiSfQKa4mBHj8ILfoXh4y0G_4pM1GRNRBOrMieRZr9c%7C1624347048%7Cdd6a2e488596fa1dc7a4de1691f5a58f9e9d8dc1e9c4303ed844235f11196ff9; douyin.com; MONITOR_WEB_ID=222cf879-7019-4458-bcc2-6a45c00364cf; s_v_web_id=verify_kq7qant4_Z8G4Jhqk_708o_4g5m_9Qjt_3HmGI4BX2QjZ; passport_csrf_token_default=2f4a83eea195e8eb919354b1f10e4946; passport_csrf_token=2f4a83eea195e8eb919354b1f10e4946&apos; 
+-H &apos;TE: Trailers&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;curl &apos;https://www.douyin.com/aweme/v1/web/channel/feed/?device_platform=webapp&amp;amp;aid=6383&amp;amp;channel=channel_pc_web&amp;amp;tag_id=&amp;amp;count=10&amp;amp;version_code=160100&amp;amp;version_name=16.1.0&amp;amp;_signature=_02B4Z6wo00f01Nppj2wAAIDBWwfsdtWK5WzaaIvAAFZRd0&apos; 
+-H &apos;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&apos; 
+-H &apos;Accept: application/json, text/plain, */*&apos; 
+-H &apos;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&apos; 
+--compressed -H &apos;withCredentials: true&apos; 
+-H &apos;Connection: keep-alive&apos; 
+-H &apos;Referer: https://www.douyin.com/&apos; -H &apos;Cookie: ttwid=1%7CBiSfQKa4mBHj8ILfoXh4y0G_4pM1GRNRBOrMieRZr9c%7C1624347048%7Cdd6a2e488596fa1dc7a4de1691f5a58f9e9d8dc1e9c4303ed844235f11196ff9; douyin.com; MONITOR_WEB_ID=222cf879-7019-4458-bcc2-6a45c00364cf; s_v_web_id=verify_kq7qant4_Z8G4Jhqk_708o_4g5m_9Qjt_3HmGI4BX2QjZ&apos; 
+-H &apos;TE: Trailers&apos;
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Redis集合操作</title><link>https://xushuhui.github.io/posts/redis/6redis%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/6redis%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/</guid><description>不同操作的复杂度 集合类型的操作类型很多，有读写单个集合元素的，例如 HGET、HSET，也有操作多个元素的，例如 SADD，还有对整个集合...</description><pubDate>Mon, 20 Jul 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h3&gt;不同操作的复杂度&lt;/h3&gt;
+&lt;p&gt;集合类型的操作类型很多，有读写单个集合元素的，例如 HGET、HSET，也有操作多个元素的，例如 SADD，还有对整个集合进行遍历操作的，例如 SMEMBERS。这么多操作，它们的复杂度也各不相同。 而复杂度的高低又是我们选择集合类型的重要依据。&lt;/p&gt;
+&lt;h4&gt;1. 单元素操作，指每一种集合类型对单个数据实现的增删改查操作&lt;/h4&gt;
+&lt;p&gt;比如 Hash 类型的 HGET、HSET 和 HDEL，Set 类型的 SADD、SREM 和 SRANDMEMBER 等。这类操作的时间复杂度由集合底层的数据结构决定，例如，HMSET 增加 M 个元素时，复杂度就从 O(1) 变成 O(M) 了。&lt;/p&gt;
+&lt;h4&gt;2. 范围操作，指集合类型的遍历操作，返回集合所有数据&lt;/h4&gt;
+&lt;p&gt;比如 Hash 类型的 HGETALL 和 Set 类型的 SMEMBERS，或者返回一个范围内的部分数据，比如 List 类型的 LRANGE 和 ZSet 类型的 ZRANGE。这类操作的复杂度一般是 O(N)。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Redis 从 2.8 版本增加 SCAN 系列操作，包括 HSCAN，SSCAN 和 ZSCAN），这类操作实现了渐进式遍历，每次只返回有限数量的数据。相比于 HGETALL、SMEMBERS 这类操作来说，就避免了一次性返回所有元素而导致的 Redis 阻塞。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;3. 统计操作，指集合类型对集合中所有元素个数的记录&lt;/h4&gt;
+&lt;p&gt;比如 LLEN 和 SCARD，它们操作时间复杂度 O(1)。当集合类型使用压缩列表、双向链表、整数数组等数据结构，这些数据结构专门有个字段记录元素个数统计。&lt;/p&gt;
+&lt;h4&gt;4. 例外情况&lt;/h4&gt;
+&lt;p&gt;一些数据结构的特殊记录，比如压缩列表和双向链表都会记录表头和表尾的偏移量。&lt;/p&gt;
+&lt;p&gt;List 类型的 LPOP、RPOP、LPUSH、RPUSH 操作是在列表头尾增删元素，可以通过偏移量直接定位，时间复杂度 O(1)。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;今天我们学习了 Redis 底层数据结构，包括保存所有键值的全局哈希表，以及实现集合类型的双向链表、压缩列表、整数数组、哈希表和跳表。&lt;/p&gt;
+&lt;p&gt;我们要注意底层实现结构是双向链表和压缩列表的 List 类型，时间复杂度是 O(N)。它的 POP/PUSH 效率很高，所以更适合 FIFO 队列业务场景，而不是作为随机读写存储数据的集合。&lt;/p&gt;
+&lt;p&gt;我们应该掌握原理，以不变应万变，掌握底层数据结构原理后就能从原理推断出不同操作的时间复杂度，然后根据业务场景选择合适的集合类型。&lt;/p&gt;
+</content:encoded></item><item><title>Redis底层数据结构</title><link>https://xushuhui.github.io/posts/redis/5redis%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/5redis%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid><description>数据操作效率 在 String 类型，查找到哈希桶就能直接对 value 增删改查，它的实际复杂度就是哈希表的时间复杂度 O(1)。而集合类...</description><pubDate>Fri, 03 Jul 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h2&gt;数据操作效率&lt;/h2&gt;
+&lt;p&gt;在 String 类型，查找到哈希桶就能直接对 value 增删改查，它的实际复杂度就是哈希表的时间复杂度 O(1)。而集合类型中找到哈希桶后还要在集合中进行下一步操作。&lt;/p&gt;
+&lt;h3&gt;集合操作效率受哪些因素影响？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;首先和集合底层数据结构有关，使用哈希表实现的集合比链表实现的集合访问效率更高&lt;/li&gt;
+&lt;li&gt;其次和操作本身执行特点有关，读写一个元素显而易见比读写所有元素效率高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;集合的底层数据结构&lt;/h3&gt;
+&lt;p&gt;集合类型的底层数据结构主要有 5 种：整数数组，双向链表、哈希表、压缩列表和跳表。&lt;/p&gt;
+&lt;p&gt;之前介绍过哈希表，整数数组和双向链表的操作特征都是顺序读写，即通过数组下标或链表指针逐个元素访问，操作时间复杂的 O(N)，操作效率比较低。&lt;/p&gt;
+&lt;h4&gt;压缩列表&lt;/h4&gt;
+&lt;p&gt;压缩列表其实类似数组，数组每一个元素都对应保存一个数据。和数组不同的是压缩列表在表头有三个字段 zlbytes、 zltail 和 zllen ， 分别表示列表长度、 列表尾的 偏移量和列表中的 entry 个数；压缩列表在表尾还有一个 zlend，表示列表结束。&lt;/p&gt;
+&lt;p&gt;在压缩列表中，如果我们要查找定位第一个元素和最后一个元素，可以通过表头三个字段的长度直接定位，复杂度是 O(1)。在查找其他元素时，只能逐个访问，时间复杂度 O(N)&lt;/p&gt;
+&lt;h4&gt;跳表&lt;/h4&gt;
+&lt;p&gt;有序链表只能逐个查找元素，效率很低，为了优化查询效率，出现了跳表。&lt;/p&gt;
+&lt;p&gt;跳表就是在链表的基础上增加多级索引，通过索引位置的快速跳转，实现数据的快速定位。当数据量很大时，跳表的查找时间复杂度是 O(logN)&lt;/p&gt;
+&lt;p&gt;如图所示，如果我们要在链表中查找 33 这个元素，只能从头开始遍历链表，查找 6 次，直到找到 33 为止。 此时，复杂度是 O(N)，查找效率很低。&lt;/p&gt;
+&lt;p&gt;为了提高查找速度，我们来增加一级索引：从第一个元素开始，每两个元素选一个出来作为索引。 这些索引再通过指针指向原始的链表。 例如，从前两个元素中抽取元素 1 作为一 级索引，从第三、 四个元素中抽取元素 11 作为一级索引。 此时，我们只需要 4 次查找就能定位到元素 33 了。&lt;/p&gt;
+&lt;p&gt;如果我们还想再快，可以再增加二级索引：从一级索引中，再抽取部分元素作为二级索引。例如，从一级索引中抽取 1、27、100 作为二级索引，二级索引指向一级索引。 这样，我们只需要 3 次查找，就能定位到元素 33。&lt;/p&gt;
+&lt;p&gt;以下是各个数据结构的时间复杂度：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;时间复杂度&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;哈希表&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;跳表&lt;/td&gt;
+&lt;td&gt;O(logN)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;双向链表&lt;/td&gt;
+&lt;td&gt;O(N)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;压缩列表&lt;/td&gt;
+&lt;td&gt;O(N)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;整数数组&lt;/td&gt;
+&lt;td&gt;O(N)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;今天我们学习了 Redis 集合类型的底层数据结构。Redis 能快速操作键值对，一方面是在 String、Hash 和 Set 中广泛使用时间复杂度 O(1) 的哈希表，另一方面 SortedSet 使用时间复杂度 O(logN) 的跳表。但是在范围操作要遍历底层数据结构的时候时间复杂度是 O(N)。优化方法可以用其他命令代替，比如 SCAN，减少耗时。&lt;/p&gt;
+</content:encoded></item><item><title>Node 开发 cms</title><link>https://xushuhui.github.io/posts/node/node%E5%BC%80%E5%8F%91cms/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E5%BC%80%E5%8F%91cms/</guid><description>简介 所有的互联网产品都需要 CMS（内容管理系统），也就是我们常说的后台管理系统。它用于展示用户数据和产品信息，以及运营和推广产品。 曾经...</description><pubDate>Wed, 01 Jul 2020 07:57:34 GMT</pubDate><content:encoded>&lt;h2&gt;简介&lt;/h2&gt;
+&lt;p&gt;所有的互联网产品都需要 CMS（内容管理系统），也就是我们常说的后台管理系统。它用于展示用户数据和产品信息，以及运营和推广产品。&lt;/p&gt;
+&lt;p&gt;曾经，CMS 是世界上最好的编程语言 --PHP 的天下。帝国、织梦、wordpress、phpcms 风靡一时，他们以易上手、部署方便、插件众多扛起了 CMS 的大旗。而近些年，其他语言开发的 CMS 也如雨后春笋般冒出来，为不会 PHP 的开发者提供更多选择。&lt;/p&gt;
+&lt;p&gt;今天就给大家介绍一个用 nodejs 开发的 CMS&lt;/p&gt;
+&lt;h2&gt;DoraCMS&lt;/h2&gt;
+&lt;p&gt;开源地址：https://github.com/doramart/DoraCMS&lt;/p&gt;
+&lt;p&gt;DoraCMS 是基于 Nodejs+eggjs+mongodb 编写的一套内容管理系统，结构简单，较目前一些开源的 cms，易于拓展，特别适合前端开发工程师做二次开发。&lt;/p&gt;
+&lt;p&gt;它设计思想很简单，以简洁为原则，结构清晰，非常容易定制和二次开发，当然在开发过程中也吸取了优秀框架一些可取之处。&lt;/p&gt;
+&lt;p&gt;它还支持 docker 部署和源码安装部署。&lt;/p&gt;
+&lt;h3&gt;说明&lt;/h3&gt;
+&lt;p&gt;技术栈：&lt;code&gt;`nodejs 12 + eggjs 2 +  vue-cli + mongodb 4+`&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;文档： https://www.doracms.com/&lt;/p&gt;
+&lt;p&gt;API： https://www.html-js.cn/static/apidoc/index.html&lt;/p&gt;
+&lt;p&gt;演示地址： https://www.html-js.cn/&lt;/p&gt;
+&lt;p&gt;后台登录： https://www.html-js.cn/dr-admin&lt;/p&gt;
+&lt;p&gt;测试账号：doracms/123456&lt;/p&gt;
+&lt;p&gt;视频教程：https://www.bilibili.com/video/av77251989/&lt;/p&gt;
+&lt;h4&gt;后台界面&lt;/h4&gt;
+&lt;p&gt;常用的 CMS 功能都有，包括系统日志、权限管理、用户管理、角色管理等。我们就不用自己再造一遍轮子，能够节省工作时间，提升工作效率。&lt;/p&gt;
+&lt;p&gt;从前端页面到数据接口，前端工程师直接上手完成，开拓了我们的职业边界，提升了竞争力。&lt;/p&gt;
+&lt;p&gt;迄今为止，它在 github 已经有了 2500 多个 star，当前最新版本是 2.1.6，作者也一直在更新和维护代码。推荐大家开发 CMS 的时候使用，Let&apos;s go !&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（19）项目打包和部署</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE19%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E9%83%A8%E7%BD%B2/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE19%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E9%83%A8%E7%BD%B2/</guid><description>上节课我们讲了首页列表，我们所有开发功能模块就已经讲完了，今天是最后一课，我们来讲项目部署到服务器。 需求 把项目部署到云服务器上，能够对外...</description><pubDate>Thu, 25 Jun 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了首页列表，我们所有开发功能模块就已经讲完了，今天是最后一课，我们来讲项目部署到服务器。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;把项目部署到云服务器上，能够对外网提供接口服务。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;1）在云服务器上安装 nodejs 环境。&lt;/p&gt;
+&lt;p&gt;2） 将我们写好的 koa2 项目就是 sir-koa 目录 全部放到服务器上 （除了 node_modules 文件夹）。&lt;/p&gt;
+&lt;p&gt;3）云服务切换到你项目所在路径，以 /home/sir-koa 目录为例。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd /home/sir-koa
+$ npm install  //安装相关依赖文件
+$ npm run start //测试下你的 koa2 项目能不能跑起来
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ps：这样还不够，因为退出服务器后 node 进程就自动关了，项目也就自动关闭了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以我们需要 pm2 来守护进程。&lt;/p&gt;
+&lt;p&gt;4）安装 pm2&lt;/p&gt;
+&lt;p&gt;我们选择全局安装 pm2。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install pm2 -g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后云服务切换到项目所在路径 /home/sir-koa。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pm2 start ./bin/www --watch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一般我们都是通过 npm start 启动应用，其实就是调用 node ./bin/www。那么，换成 pm2 就是&lt;code&gt;`pm2 start`&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意，这里用了 --watch 参数，意味着当你的 koa2 应用代码发生变化时，pm2 会帮你重启服务。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;node 教程已经全部更新完，大家可以在教程基础上根据需求扩展新功能。
+青山不改，绿水长流，江湖再见，后会有期。&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（18）首页列表</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE18%E9%A6%96%E9%A1%B5%E5%88%97%E8%A1%A8/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE18%E9%A6%96%E9%A1%B5%E5%88%97%E8%A1%A8/</guid><description>上节课我们讲了点赞，今天我们来讲查询首页列表。 需求 用户打卡小程序的首页就以列表的形式展示所有用户打卡发布的图片和内容。用户可以点赞某一条...</description><pubDate>Wed, 17 Jun 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了点赞，今天我们来讲查询首页列表。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户打卡小程序的首页就以列表的形式展示所有用户打卡发布的图片和内容。用户可以点赞某一条打卡。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;查询数据库中 card 表的所有记录，后期可以扩展加入分页或分类、标签等功能。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;router.get(&apos;/card&apos;, async (ctx, next) =&amp;gt; {
+  return indexApi.getCard(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const getCard = async(ctx) =&amp;gt; {
+    const list = await cardModel.getCards()
+    ctx.body = resp.setData(list)
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/cardmodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const getCards = async()=&amp;gt;{
+    let sql = &quot;select id,content,image from `card` &quot;
+    const res = await mysql.exec(sql)
+    return res
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/card
+
+{
+    &quot;content&quot;:&quot;content&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;响应数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &quot;message&quot;: &quot;OK&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;content&quot;: &quot;111&quot;,
+            &quot;image&quot;: &quot;&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;content&quot;: &quot;13012341234&quot;,
+            &quot;image&quot;: &quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1593516228269&amp;amp;di=b24a61eb023e7b2d324c77921960d1f7&amp;amp;imgtype=0&amp;amp;src=http%3A%2F%2Fa3.att.hudong.com%2F14%2F75%2F01300000164186121366756803686.jpg&quot;
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;查询首页列表就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解项目部署上线，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Redis哈希表</title><link>https://xushuhui.github.io/posts/redis/4redis%E5%93%88%E5%B8%8C%E8%A1%A8/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/4redis%E5%93%88%E5%B8%8C%E8%A1%A8/</guid><description>前言 我们对 Redis 的深刻印象就是&quot;快&quot;，它在接收到一个键值对操作指令后在微妙内完成操作。 为什么它能这么快，一方面它是在内存中进行操...</description><pubDate>Wed, 10 Jun 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;我们对 Redis 的深刻印象就是&quot;快&quot;，它在接收到一个键值对操作指令后在微妙内完成操作。
+为什么它能这么快，一方面它是在内存中进行操作，内存访问本身速度快，另一方面是它有高效的数据结构。键值对是按一定的数据结构存储，操作键值对就是对数据结构增删改查，高效的数据结构是 Redis 快速处理数据的基础。&lt;/p&gt;
+&lt;h2&gt;底层数据结构&lt;/h2&gt;
+&lt;p&gt;Redis 的底层数据结构有六种，简单动态字符串、双向链表、压缩列表、哈希表、跳表和整数数组，String 的底层实现是简单动态字符串，List、Hash、Set 和 SortedSet 都有两种底层实现结构，这四种类型被称为集合类型，特点是一个 key 对应一个集合数据&lt;/p&gt;
+&lt;h3&gt;键和值的数据结构是什么&lt;/h3&gt;
+&lt;p&gt;Redis 用一个哈希表保存所有键值对，实现 key-value 快速访问。&lt;/p&gt;
+&lt;p&gt;一个哈希表就是一个数组，数组每个元素叫哈希桶，每个哈希桶保存键值对数据。然而哈希桶中的元素不是 value 本身，而是指向 value 的指针，即 value 存储的内存地址。&lt;/p&gt;
+&lt;p&gt;如图，这个哈希表保存了所有键值对，哈希桶中的 entry 元素保存&lt;em&gt;key 和&lt;/em&gt;value 指针，哈希表能在 O(1) 时间复杂度快速查找键值对，所以我们只需要计算 key 的哈希值就能找到对应的哈希桶位置，进而找到对应的 entry 元素。不同类型的 value 都能被找到，不论是 String、List、Set、Hash。&lt;/p&gt;
+&lt;p&gt;这种查找方式只需要进行一次哈希计算，不论数据规模多少，然而，在 Redis 中写入大量数据后，操作有时候会变慢，因为出现了哈希表的冲突以及 rehash 带来的操作阻塞。&lt;/p&gt;
+&lt;h3&gt;哈希冲突&lt;/h3&gt;
+&lt;p&gt;当哈希表中数据增加，新增的数据 key 哈希计算出的哈希值和老数据 key 的哈希值会在同一个哈希桶中，也就是说多个 key 对应同一个哈希桶。&lt;/p&gt;
+&lt;h4&gt;链式哈希&lt;/h4&gt;
+&lt;p&gt;Redis 中，同一个哈希桶中多个元素用一个链表保存，它们之间用指针连接，这就是链式哈希。&lt;/p&gt;
+&lt;p&gt;如图所示，entry1、entry2 和 entry3 都保存在哈希桶 3 中，导致哈希冲突。entry1 增加个&lt;em&gt;next 指针指向 entry2，entry2 增加&lt;/em&gt;next 指针指向 entry3，不论哈希桶 3 元素有多少个，都可以通过指针连接起来，形成一个链表，叫做哈希冲突链。&lt;/p&gt;
+&lt;p&gt;链式哈希会产生一个问题，随着哈希表数据越来越多，哈希冲突越来越多，单个哈希桶链表上数据越来越多，查找时间复杂度退化到 O(n)，查找耗时增加，效率降低。&lt;/p&gt;
+&lt;h4&gt;rehash&lt;/h4&gt;
+&lt;p&gt;为解决这个问题，Redis 会对哈希表做 rehash 操作。rehash 也就是增加现有的哈希桶数量，让逐渐增多的 entry 元素能在更多的桶之间分散保存，减少单个桶中的元素数量，从而减少单个桶中的冲突。&lt;/p&gt;
+&lt;p&gt;Redis 使用两个全局哈希表：哈希表 1 和哈希表 2，最开始新增数据默认存到哈希表 1，哈希表 2 没有被分配空间，当数据增加，Redis 开始执行 Rehash 操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;给哈希表 2 分配更大空间，可以是当前哈希表 1 大小的两倍&lt;/li&gt;
+&lt;li&gt;把哈希表 1 的数据重新映射并拷贝到哈希表 2&lt;/li&gt;
+&lt;li&gt;释放哈希表 1 空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;rehash 后，从哈希表 1 切换到哈希表 2，哈希表 2 空间更多，哈希冲突更少，原来哈希表 1 留做下次 rehash 扩容备用，按同样的步骤把哈希表 2 的数据迁移到哈希表 1。&lt;/p&gt;
+&lt;p&gt;在第二步涉及大量数据拷贝，如果一次性把哈希表 1 迁移完，耗时很长，会造成线程阻塞，无法处理其他请求，Redis 是怎么处理这个问题呢？它采用渐进式 rehash&lt;/p&gt;
+&lt;h4&gt;渐进式 rehash&lt;/h4&gt;
+&lt;p&gt;在第二步中，Redis 正常处理客户端请求，每处理一个请求，从哪哈希表 1 的第一个索引位置开始，把这个位置上的所有 entry 拷贝到哈希表 2 中。处理下一个请求时，把下一个索引位置的 entry 做同样操作。&lt;/p&gt;
+&lt;p&gt;渐进式 rehash 把一次性大量拷贝的开销，分摊到了多次处理请求的过程中，避免了耗时操作，保证了数据的快速访问。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;今天我们学习了全局哈希表，哈希冲突和链式哈希，rehash 等，哈希表是 Redis 中一种非常重要的数据结构，掌握它对学习 Redis 有非常重要的作用。&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（17）点赞</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE17%E7%82%B9%E8%B5%9E/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE17%E7%82%B9%E8%B5%9E/</guid><description>上节课我们讲了讲和打卡，今天我们来讲点赞。 需求 用户对信息列表中的信息进行点赞操作。 功能流程 前端传到后端信息 card_id，后端根据...</description><pubDate>Mon, 08 Jun 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了讲和打卡，今天我们来讲点赞。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户对信息列表中的信息进行点赞操作。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;前端传到后端信息 card_id，后端根据 card_id 和 token 解析出来的 user_id，查询 card_praise 表，如果记录存在说明已经点赞过了，返回给前端提示。否则插入 card_praise，再更新 card 表的 praise 字段的值。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;//点赞
+router.post(&apos;/praise&apos;, auth,async (ctx, next) =&amp;gt; {
+  return indexApi.praise(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const praise = async(ctx) =&amp;gt; {
+    const cardId = ctx.request.body.card_id
+    const userId = ctx.state.userId
+    let id =  await cardModel.getCardPraise(cardId,userId)
+    if(id &amp;gt; 0){
+        ctx.body = resp.fail(20001,&quot;不要重复点赞&quot;)
+        return
+    }
+    await cardModel.createCardPraise(cardId,userId)
+    await cardModel.incrCardPraise(cardId)
+    ctx.body = resp.succeed()
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/cardmodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const createCardPraise = async(cardId,userId)=&amp;gt;{
+    let sql = &quot;insert into `card_praise` (card_id,user_id)values(?,?) &quot;
+    const insertData = await mysql.exec(sql,[cardId,userId])
+    return insertData.insertId
+}
+const getCardPraise = async(cardId,userId)=&amp;gt;{
+    let sql = &quot;select id from `card_praise` where card_id=? and user_id=?&quot;
+    const res = await mysql.queryOne(sql,[cardId,userId])
+    return res.id
+}
+const incrCardPraise = async(cardId)=&amp;gt;{
+    let sql = &quot;update `card` set praise=praise+1 where id=?&quot;
+    const res = await mysql.exec(sql,[cardId])
+    return res.affectedRows
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/praise
+
+{
+    &quot;card_id&quot;:1
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;点赞功能就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解查询首页列表，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（16）打卡</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE16%E6%89%93%E5%8D%A1/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE16%E6%89%93%E5%8D%A1/</guid><description>上节课我们讲了图片上传，今天我们来讲打卡。 需求 用户填写文字内容，上传图片，发送后首页列表可以展示出来。 功能流程 上传图片后前端获得图片...</description><pubDate>Mon, 25 May 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了图片上传，今天我们来讲打卡。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户填写文字内容，上传图片，发送后首页列表可以展示出来。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;上传图片后前端获得图片地址，再把用户输入的文字内容 content 和 image 发到后端，后端插入记录到 card 表。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;//打卡
+router.post(&apos;/card&apos;,auth, async (ctx, next) =&amp;gt; {
+  return indexApi.addCard(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const addCard = async(ctx) =&amp;gt; {
+    const userId = ctx.state.userId
+    const content =ctx.request.body.content
+    const image = ctx.request.body.image
+    await cardModel.addCard(userId,content,image)
+    ctx.body = resp.succeed()
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/cardmodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const addCard = async(userId,content,image)=&amp;gt;{
+    let sql = &quot;insert into `card` (user_id,content,image)values(?,?,?) &quot;
+    const insertData = await mysql.exec(sql,[userId,content,image])
+    return insertData.insertId
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/card
+
+{
+    &quot;content&quot;:&quot;test&quot;,
+    &quot;image&quot;:&quot;https://cdn.guojiang.club/Fo6qftIGMQq8uM7ANRdWs9Kskow5&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;打卡功能就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解点赞，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（15）图片上传</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE15%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE15%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</guid><description>上节课我们讲了修改用户信息功能，今天我们来讲图片上传。 需求 用户在打卡功能中，选择图片上传。类似微信发朋友圈的功能。 功能流程 安装 ko...</description><pubDate>Fri, 15 May 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了修改用户信息功能，今天我们来讲图片上传。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户在打卡功能中，选择图片上传。类似微信发朋友圈的功能。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;安装 koa-body 包，用来接收图片上传的文件流。然后保存到 public 目录。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ npm i koa-body --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;app.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const koaBody = require(&apos;koa-body&apos;);
+
+app.use(koaBody({
+    multipart: true,
+    formidable: {
+        maxFileSize: 1200*1024*1024,	// 设置上传文件大小最大限制，默认2M
+    }
+}));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;router.post(&apos;/upload&apos;, async (ctx, next) =&amp;gt; {
+  return indexApi.upload(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;  const file = ctx.request.files.file;
+    const fileName = file.name;
+    // 创建可读流
+    const render = fs.createReadStream(file.path);
+    let filePath = path.join(&apos;public/images&apos;,fileName);
+    const fileDir = path.join(&apos;public/images&apos;);
+    if (!fs.existsSync(fileDir)) {
+      fs.mkdirSync(fileDir, err =&amp;gt; {
+        console.log(&apos;创建失败&apos;,err)
+      });
+      return
+    }
+    // 创建写入流
+    const upStream = fs.createWriteStream(filePath);
+    render.pipe(upStream);
+    ctx.body = resp.succeed()
+    return
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/upload
+
+{
+    &quot;message&quot;: &quot;OK&quot;,
+    &quot;data&quot;: {
+        &quot;url&quot;: &quot;http://localhost:3000/public\\images\\f9a15976ab.jpg&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;图片上传就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解打卡，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（14）修改用户信息</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE14%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE14%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/</guid><description>上节课我们讲了用户信息展示，今天我们来讲修改用户信息功能。 需求 用户修改自己的信息，如头像，昵称，手机号等，我们以修改昵称为例。 功能流程...</description><pubDate>Thu, 07 May 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了用户信息展示，今天我们来讲修改用户信息功能。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户修改自己的信息，如头像，昵称，手机号等，我们以修改昵称为例。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;通过用户凭据 token 获取到用户 id，在数据库 user 表中找到用户记录，把前端传来的昵称更新到记录中。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;//更新个人信息
+userrouter.put(&apos;/info&apos;,auth, function (ctx, next) {
+  return userApi.info(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const info = async(ctx) =&amp;gt; {
+    const nickname = ctx.request.body.nickname
+    await userModel.updateUserInfo(userId,nickname)
+    ctx.body = resp.succeed()
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/usermodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const updateUserInfo = async(userId,nickname)=&amp;gt;{
+    let sql = &quot;update `user` set nickname=? where id=?&quot;
+    const res = await mysql.exec(sql,[nickname,userId])
+    return res.affectedRows
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;PUT http://localhost:3000/user/info
+
+{
+    &quot;nickname&quot;:&quot;test&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;修改用户信息功能就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解图片上传，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Redis查找数据</title><link>https://xushuhui.github.io/posts/redis/3redis%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/3redis%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE/</guid><description>如何查找键值对 Redis 网络访问模块解析客户端的请求，获得要执行的操作，针对键值对的操作就先要查找键值对是否存在。这就要用到 Redis...</description><pubDate>Fri, 01 May 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h2&gt;如何查找键值对&lt;/h2&gt;
+&lt;p&gt;Redis 网络访问模块解析客户端的请求，获得要执行的操作，针对键值对的操作就先要查找键值对是否存在。这就要用到 Redis 的索引模块。在索引模块，&lt;strong&gt;Redis 根据 key 查找到 value 的存储位置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;常见的索引有哈希表 (hash)，B+ 树，字典树等。不同的索引性能、内存空间、并发控制等都有不同。不同键值数据库用的索引不相同，Memcached 和 Redis 的键值对的索引是哈希表 (hash)，RocksDB 键值对索引是跳表（skip-list）&lt;/p&gt;
+&lt;p&gt;Redis 采用哈希表作为索引，因为它的键值数据保存在内存中，内存中随机访问性能很高，和哈希表随机访问 O(1) 时间复杂度匹配。&lt;/p&gt;
+&lt;p&gt;Redis 中查找 key 对应的 value 分为两步，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按照哈希表索引找到 key 对应的 value 的存储位置&lt;/li&gt;
+&lt;li&gt;value 有多种类型（集合 / 列表），还要在 value 中查找实际需要的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;不同操作的具体逻辑&lt;/h2&gt;
+&lt;p&gt;索引模块查找到 key 对应的 value 存储位置后，Redis 的操作模块按照不同的操作命令执行不同的逻辑&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GET/SCAN，查找 value，找到 value 位置返回 value 的值&lt;/li&gt;
+&lt;li&gt;PUT，新增一个键值对，Redis 为该键值对分配内存空间&lt;/li&gt;
+&lt;li&gt;DELETE，Redis 删除键值对，释放相应的内存空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PUT 和 DELETE 操作中除了写入和删除键值对，还要分配和释放内存，这就依赖 Redis 的存储模块的内存分配器。
+键值数据库的键值对大小不一，一旦保存的键值对数据规模过大，可能会造成严重内存碎片问题。
+对于 Redis 这样的内存键值数据库，内存分配器尤为重要。不同的内存分配器分配效率不一样。&lt;/p&gt;
+&lt;h2&gt;持久化&lt;/h2&gt;
+&lt;p&gt;Redis 的持久化是把键值对通过调用本地文件系统操作接口保存到磁盘，重启后快速重新提供服务。持久化有两种方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对操作的每个键值对都进行保存，保证了数据的可靠，但是每次操作都要写入磁盘，降低性能&lt;/li&gt;
+&lt;li&gt;定时把键值数据保存到文件，避免频繁写入的性能问题，但是数据还是有丢失风险&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;对比 simpleKV 和 Redis&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Redis 作为一个基础网络服务，给客户端提供网络框架进行访问，扩大 Redis 应用范围&lt;/li&gt;
+&lt;li&gt;Redis 中的 value 数据类型丰富，提供多种操作接口&lt;/li&gt;
+&lt;li&gt;Redis 不同的持久化方式 AOF 和 RDB，它们有不同的优劣势，影响 Redis 的访问性能和可靠性&lt;/li&gt;
+&lt;li&gt;Redis 支持高可靠集群和可扩展集群&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;通过学习 SimpleKV，我们对键值数据库的基本结构和重要模块有了整体认知和深刻理解，这是 Redis 单机版的核心基础。&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（13）用户信息</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE13%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE13%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF/</guid><description>上节课我们讲了手机号登录，今天我们来讲展示用户信息接口。 需求 用户查看自己的信息，如头像，昵称，手机号等。 功能流程 通过用户凭据 tok...</description><pubDate>Fri, 01 May 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了手机号登录，今天我们来讲展示用户信息接口。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户查看自己的信息，如头像，昵称，手机号等。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;通过用户凭据 token 获取到用户 id，在数据库 user 表中找到用户记录，返回前端用户的昵称和手机号。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;router.get(&apos;/me&apos;, auth,function (ctx, next) {
+  return userApi.me(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const me = async(ctx) =&amp;gt; {
+    const userId = ctx.state.userId
+    const user = await userModel.getUserById(userId)
+    ctx.body = resp.setData(user)
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/usermodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const getUserById = async(id)=&amp;gt;{
+    let sql = &quot;select nickname,phone from user where id=?&quot;
+    let user = await mysql.queryOne(sql,[id])
+    return user ? user : []
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;GET http://localhost:3000/user/me
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;响应数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &quot;message&quot;:&quot;OK&quot;,
+    &quot;data&quot;:{
+        &quot;nickname&quot;:&quot;昵称&quot;,&quot;phone&quot;:&quot;13012341236&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;用户信息展示接口就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解修改用户信息，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（12）手机登录</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE12%E6%89%8B%E6%9C%BA%E7%99%BB%E5%BD%95/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE12%E6%89%8B%E6%9C%BA%E7%99%BB%E5%BD%95/</guid><description>上节课我们讲了微信小程序登录，今天我们来讲绑定手机号。 需求 用户微信登录后绑定自己的手机号。 功能流程 通过用户凭据 token 获取到用...</description><pubDate>Wed, 22 Apr 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了微信小程序登录，今天我们来讲绑定手机号。&lt;/p&gt;
+&lt;h2&gt;需求&lt;/h2&gt;
+&lt;p&gt;用户微信登录后绑定自己的手机号。&lt;/p&gt;
+&lt;h2&gt;功能流程&lt;/h2&gt;
+&lt;p&gt;通过用户凭据 token 获取到用户 id，在数据库 user 表中找到用户记录，把前端传来的手机号更新到记录中。&lt;/p&gt;
+&lt;h2&gt;中间件&lt;/h2&gt;
+&lt;p&gt;sir-koa 目录下新建 middleware 目录，存放项目的中间件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;middleware/auth.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const response = require(&apos;../app/core/response&apos;)
+const Redis = require(&apos;../app/model/redis&apos;)
+const redis = new Redis()
+const resp = new response()
+module.exports = async (ctx, next) =&amp;gt; {
+     let token = ctx.request.headers[&quot;token&quot;];
+    // 解码
+    let user = await redis.get(token)
+    if (!token || !user) {
+        //过期
+        ctx.body = resp.fail(10001, &quot;请重新登录&quot;)
+        return
+    }
+
+    ctx.state.userId = user.userId
+    // 未过期
+    await next();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;middleware/jsonHeader.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = async (ctx, next) =&amp;gt; {
+    ctx.response.type = &apos;application/json&apos;;
+    await next();
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;绑定中间件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;app.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const jsonHeader = require(&apos;./middleware/jsonHeader&apos;)
+app.use(jsonHeader);
+// routes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const auth = require(&apos;../middleware/auth&apos;)
+// 手机号登录
+router.post(&apos;/login&apos;, auth,function (ctx, next) {
+  return userApi.login(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;手机号登录&lt;/h2&gt;
+&lt;p&gt;客户端传手机号给到服务端，服务端更新用户信息。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/usermodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const updateUser = async(userId,phone)=&amp;gt;{
+    let sql = &quot;update `user` set phone=? where id=?&quot;
+    return await mysql.exec(sql,[phone,userId])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const login = async(ctx) =&amp;gt; {
+    const phone = ctx.request.body.phone
+    const userId = ctx.state.userId
+    await userModel.updateUser(userId,phone)
+    ctx.body = resp.succeed()
+    return
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/user/login
+
+{
+    &quot;phone&quot;:&quot;&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;绑定手机号就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解用户信息展示接口，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Redis操作接口</title><link>https://xushuhui.github.io/posts/redis/2redis%E6%93%8D%E4%BD%9C%E6%8E%A5%E5%8F%A3/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/2redis%E6%93%8D%E4%BD%9C%E6%8E%A5%E5%8F%A3/</guid><description>前言 上一节我们学习了系统学习法的原理和作用，后续 Redis 的学习我们将按照系统学习法的方式学习，提升学习效率。 我们还学习了键值数据库...</description><pubDate>Wed, 15 Apr 2020 19:01:42 GMT</pubDate><content:encoded>&lt;h3&gt;前言&lt;/h3&gt;
+&lt;p&gt;上一节我们学习了系统学习法的原理和作用，后续 Redis 的学习我们将按照系统学习法的方式学习，提升学习效率。
+我们还学习了键值数据库关键功能数据模型和操作接口，了解不同键值数据库的数据模型的作用和意义，本节我们继续学习键值数据库&lt;/p&gt;
+&lt;h2&gt;操作接口&lt;/h2&gt;
+&lt;p&gt;键值数据库的基本操作就是增删改查，分别是 PUT、GET、DELETE、SCAN&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PUT：新写入或更新一个 key-value 对&lt;/li&gt;
+&lt;li&gt;GET：根据一个 key 读取相应的 value 值&lt;/li&gt;
+&lt;li&gt;DELETE：根据一个 key 删除整个 key-value 对&lt;/li&gt;
+&lt;li&gt;SCAN：查询一段时间内所有 key-value 对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Redis 的新建和更新操作都是同一个操作接口 Set，实际执行时会根据 key 是否存在执行相应的新建或更新操作流程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;实际业务场景中我们会遇到这样一些需求，查询用户一段时间内的访问记录，要用到 SCAN 操作，在判断用户是否处于白名单或黑名单的业务中，我们还会用到 EXIST 操作接口，判断某个 key 是否存在，对于不同键值数据库操作接口，我们可以查阅相关的文档学习。&lt;/p&gt;
+&lt;p&gt;综上所述，PUT/GET/DELETE/SCAN 是一个键值数据库的基本操作集合。&lt;/p&gt;
+&lt;h2&gt;数据存储&lt;/h2&gt;
+&lt;p&gt;键值数据库的数据应该存储在内存还是外存？这要根据键值数据库的主要应用场景。&lt;/p&gt;
+&lt;p&gt;比如缓存场景下数据能快速访问且允许丢失，用于这个场景的键值数据库 Memcached/Redis 都是内存键值数据库，它们的数据存储在内存中，优势是读写速度非常快，内存的访问速度在百 ns 级别，劣势是一旦断电所有数据都会丢失。保存在外存磁盘中，虽然避免数据丢失，但是由于磁盘读写速度很慢，通常在 ms 级别，键值数据库整体性能会下降。&lt;/p&gt;
+&lt;p&gt;SimpleKV 和 Redis 一样适用缓存业务场景，用内存保存键值数据，我们来了解下它的基本组件。&lt;/p&gt;
+&lt;p&gt;一个键值数据库包括访问模式，索引模块，操作模块和存储模块，如图&lt;/p&gt;
+&lt;h2&gt;访问模式&lt;/h2&gt;
+&lt;p&gt;键值数据库访问模式分两种&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过函数库调用的方式供外部调用，上图中的 libsimplekv.so，就是以动态链接库的形式链接到我们自己的程序中，提供键值存储功能，比如 RocksDB&lt;/li&gt;
+&lt;li&gt;通过网络框架以 Socket 通信的形式对外提供键值对操作，这种形式可以提供广泛的键值存储服务。网络框架中包括 Socket Server 和协议解析，比如 Memcached 和 Redis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不同的键值数据库服务器和客户端交互的协议并不相同，我们在二次开发键值数据库时，必须了解和掌握键值数据库的通信协议。&lt;/p&gt;
+&lt;p&gt;通过网络框架提供键值存储服务，一方面扩大键值数据库应用场景，适配多种不同编程语言调用，另一方面在设计选择运行模型和性能方面会产生一定的影响。&lt;/p&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当客户端发送一个命令&lt;code&gt;PUT hello world&lt;/code&gt;后，命令会被封装在网络包中发送给键值数据库&lt;/li&gt;
+&lt;li&gt;键值数据库接收网络包，按照协议解析后，客户端要写入一个 key=hello，value=world 的键值对，开始执行数据写入流程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;网络 I/O 模型&lt;/h3&gt;
+&lt;p&gt;在处理网络连接，解析网络请求，存取数据的时候，我们需要对不同的解决方案做选择。用一个线程 / 多个线程 / 多个进程处理？这个问题就是 I/O 模型设计，不同 I/O 模型影响键值数据库性能和拓展性。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;假设我们只用一个线程处理网络连接，解析请求，存取数据，只要其中一个步骤因为某个问题阻塞，整个线程就被阻塞，降低系统响应速度，无法处理更多请求。&lt;/li&gt;
+&lt;li&gt;假设我们用多线程处理，某个线程被阻塞其他线程正常运行，但是在访问共享资源时，不同线程要保证串行操作，加锁处理，也会影响系统性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;本节我们讲解了键值数据库的基本操作接口、数据存储、访问模式、网络 I/O 模型，我们已经对 Redis 的整体架构设计有了大概印象。&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（11）微信小程序登录</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE11%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE11%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</guid><description>上节课我们讲了 nodejs 操作 redis，今天我们来讲解微信小程序登录。 代码 微信服务端接口文档地址 https://develop...</description><pubDate>Tue, 07 Apr 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了 nodejs 操作 redis，今天我们来讲解微信小程序登录。&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;p&gt;微信服务端接口文档地址&lt;/p&gt;
+&lt;p&gt;https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;简而言之，小程序前端调用 wx.login 获取 code, 传给服务端。服务端携带 code 和 appid，secret 发给微信服务器，获取到用户 openid 和 sessionkey。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;新增小程序的配置文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;router.post(&apos;/wechatlogin&apos;,function (ctx, next) {
+  return userApi.wechatLogin(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;config/miniapp.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const appid = &apos;&apos;
+const secret = &apos;&apos;
+
+module.exports={
+    appid,secret
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;api/user.js 文件，里面写用户 api 的相关方法。model/usermodel.js 文件，里面写用户模型相关方法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;api/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const miniappConfig = require(&apos;../../config/miniapp&apos;)
+const koa2Req = require(&apos;koa2-request&apos;)
+const response = require(&apos;../core/response&apos;)
+const userModel = require(&apos;../model/usermodel&apos;)
+const request = require(&apos;koa2-request&apos;)
+const { md5 } = require(&apos;../util/cryp&apos;)
+const Redis = require(&apos;../model/redis&apos;)
+const redis = new Redis()
+const resp = new response()
+
+const wechatLogin = async (ctx) =&amp;gt; {
+
+    const code = ctx.request.body.code
+    const body = await wxUser(code)
+
+    if (body.errcode &amp;gt; 0) {
+        ctx.body = resp.fail(10001, body.errmsg)
+        return
+    }
+    let userId = await userModel.getUserByOpenid(body.openid)
+    if(userId == 0){
+        userId = await userModel.createUser(body.openid)
+    }
+    const token = md5(body.openid)
+    redis.set(token,{ &quot;openid&quot;: body.openid,&quot;userId&quot;:userId })
+    ctx.body = resp.setData({ &quot;token&quot;: token })
+    return
+}
+const wxUser = async (code) =&amp;gt; {
+    const appid = miniappConfig.appid
+    const secret = miniappConfig.secret
+    const loginUrl = &quot;https://api.weixin.qq.com/sns/jscode2session?appid=&quot; + appid + &quot;&amp;amp;secret=&quot; + secret + &quot;&amp;amp;js_code=&quot; + code + &quot;&amp;amp;grant_type=authorization_code&quot;
+    const wxresult = await koa2Req(loginUrl).catch((err) =&amp;gt; {
+        console.log(&quot;err&quot;, err);
+    });
+    return JSON.parse(wxresult.body)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/usermodel.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const mysql = require(&quot;./mysql&quot;)
+
+const getUserByOpenid = async(openid)=&amp;gt;{
+    let sql = &quot;select id from user where openid=?&quot;
+    return await mysql.exec(sql,[openid])
+}
+const createUser= async(openid)=&amp;gt;{
+    let sql = &quot;insert into `user` (openid)values(?) &quot;
+    const insertData = await mysql.exec(sql,[openid])
+    return insertData.insertId
+}
+module.exports = {
+    getUserByOpenid,createUser
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;POST http://localhost:3000/user/wechatlogin
+
+{
+    &quot;code&quot;:&quot;&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;token 是客户端调用用户相关接口需要携带的凭据，服务端通过 token 识别用户身份信息，相当于 session。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;微信小程序登录就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解手机号登录，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Redis基础架构</title><link>https://xushuhui.github.io/posts/redis/1redis%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/redis/1redis%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</guid><description>前言 我们应该怎样学习 Redis，大部分网上的教程从安装部署、介绍 API 开始，字符串、列表、集合等等。然后是发布订阅、持久化，再到主从...</description><pubDate>Fri, 03 Apr 2020 19:03:42 GMT</pubDate><content:encoded>&lt;h3&gt;前言&lt;/h3&gt;
+&lt;p&gt;我们应该怎样学习 Redis，大部分网上的教程从安装部署、介绍 API 开始，字符串、列表、集合等等。然后是发布订阅、持久化，再到主从复制，集群部署。这样的好处是我们能立刻掌握一个具体的知识点，甚至能马上解决一些现实业务场景中遇到的问题，但是这样我们也很容易陷入一些具体的技术细节中，忘记本来学习的目的。&lt;/p&gt;
+&lt;h2&gt;系统学习法&lt;/h2&gt;
+&lt;p&gt;在学习一个新知识点时，我们首先要站在全局的角度看待它，对这个知识点的总体架构和关键模块有清晰的认知，了解它的系统脉络，然后深入到每个具体的技术点，学完一个知识点后再回头看系统架构，理解这个知识点在系统中的作用和地位，分析它和其它模块的联系和不同点。我把这种学习法叫做系统学习法。&lt;/p&gt;
+&lt;p&gt;我们学习 Redis 也可以用系统学习法，我们在遇到和解决实际问题的时候，分析出问题点所属模块，按照系统中各模块的关联关系，能更快定位到问题出现的原因，更快解决问题。当然，我们还可以把系统学习法用到学习其他知识点中，让学习事半功倍。&lt;/p&gt;
+&lt;h2&gt;键值数据库&lt;/h2&gt;
+&lt;p&gt;我们都知道 Redis 是一个键值数据库，它具有键值数据库都有的特性，所以我们可以通过剖析一个最简单的键值数据库 simpleKV 来学习 Redis。simpleKV 是我们虚拟的，并不是真正存在。我们可以把 simpleKV 看成 Redis 和 Memcached 这类键值数据库的共有特点的本质抽象，比方说 simpleKV 就是 Java 的类，Redis/Memcached 就是 Java 类实例化后的对象。&lt;/p&gt;
+&lt;p&gt;我们都知道关系型数据库 Mysql，它的核心功能就是存储和操作数据，也就是数据模型和操作接口。simpleKV 也是数据库，数据模型和操作接口是我们理解 Redis 的应用场景的重要基础，基础牢固，万丈高楼才能平地而起。&lt;/p&gt;
+&lt;p&gt;在存储用户信息（用户 ID、姓名、年龄、性别等）通常用关系型数据库保存，建立一个用户表，ID 做主键，姓名、年龄、性别等多列字段，一个用户就是一行数据。我们也可以用键值数据库存储，用户 ID 作为 Key，用户信息作为 Value。&lt;/p&gt;
+&lt;p&gt;当我们要对多个用户进行性别分组统计时，键值数据库就无法做到，它只提供简单操作接口，不支持复杂的聚合计算。&lt;/p&gt;
+&lt;h3&gt;数据模型&lt;/h3&gt;
+&lt;p&gt;键值数据库的基本数据模型是 key-value 模型，simpleKV 中，key 是 string 类型，value 可以是任意基本数据类型，例如字符串、整型。&lt;/p&gt;
+&lt;p&gt;键值数据库支持的 key 类型普遍都是 string，而 value 类型不同键值数据库有很大差别。Memcached 的 Value 只支持 String 类型，Redis 的 Value 支持包括字符串、哈希、列表、有序集合、无序集合等。&lt;/p&gt;
+&lt;p&gt;从使用的角度来说，不同 value 类型的实现，不仅可以支撑不同业务的数据需求，而且也隐含着不同数据结构在性能、空间效率等方面的差异，从而导致不同的 value 操作之间存在着差异。&lt;/p&gt;
+&lt;p&gt;我们在进行键值数据库的技术选型时，一个重要的考虑元素就是它支持的 value 类型。&lt;/p&gt;
+&lt;p&gt;Redis 之所以能在各类不同的业务场景中广泛使用，就是因为它支持各种不同类型的 value。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;今天我们简单介绍了系统学习法的原理和作用，后续 Redis 的学习我们将按照系统学习法的方式学习，提升学习效率&lt;/li&gt;
+&lt;li&gt;我们还学习了键值数据库关键功能数据模型和操作接口，了解不同键值数据库的数据模型的作用和意义，下节我们会继续以 simpleKV 作为示例详细学习键值数据库&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded></item><item><title>Node 新手课（10）nodejs 操作 redis</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE10nodejs%E6%93%8D%E4%BD%9Credis/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE10nodejs%E6%93%8D%E4%BD%9Credis/</guid><description>上节课我们讲了 nodejs 操作 mysql，今天我们来讲解 nodejs 操作 redis 安装 redis 包 在 sir-koa 目...</description><pubDate>Fri, 27 Mar 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了 nodejs 操作 mysql，今天我们来讲解 nodejs 操作 redis&lt;/p&gt;
+&lt;h2&gt;安装 redis 包&lt;/h2&gt;
+&lt;p&gt;在 sir-koa 目录下执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm i ioredis --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;redis 配置和操作&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;config/redis.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const Config = {
+    host: &quot;127.0.0.1&quot;, // Redis host
+    port: 6379, // Redis port
+    password: &quot;&quot;,
+    db: 0,
+}
+exports = {
+    Config
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/redis.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const ioRedis = require(&apos;ioredis&apos;);
+const { Config } = require(&apos;../../config/redis&apos;) //redis 配置
+class Redis {
+    constructor() {
+        this.redis = new ioRedis(Config);//创建 redis 连接
+    }
+    async get(key) {
+        const data = await this.redis.get(key);
+        return JSON.parse(data);
+    }
+    async set(key, value) {
+        await this.redis.set(
+            key,
+            JSON.stringify(value)
+        );
+    }
+    async destroy(key) {
+        return await this.redis.del(key);
+    }
+}
+
+module.exports = Redis;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在我们可以在项目中使用 redis 做数据缓存了。当然只是针对简单的字符串操作，你也可以拓展，加入对其他数据结构的操作方法&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;nodejs 操作 redis 就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解微信小程序登录，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（9）nodejs 操作 mysql</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE9nodejs%E6%93%8D%E4%BD%9Cmysql/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE9nodejs%E6%93%8D%E4%BD%9Cmysql/</guid><description>上节课我们讲了 koa2 的路由，今天我们来讲解 nodejs 操作 mysql 导入 sql 文件 sql 文件地址 https://gi...</description><pubDate>Tue, 17 Mar 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲了 koa2 的路由，今天我们来讲解 nodejs 操作 mysql&lt;/p&gt;
+&lt;h2&gt;导入 sql 文件&lt;/h2&gt;
+&lt;p&gt;sql 文件地址
+https://github.com/guojiangclub/sir-node/blob/master/sir.sql&lt;/p&gt;
+&lt;p&gt;安装 navicat，打开 navicat, 选择连接 - 新建连接，输入本地数据库地址，用户名和密码，成功连接到数据库。&lt;/p&gt;
+&lt;p&gt;右键点击连接，选择新建数据库 sir&lt;/p&gt;
+&lt;p&gt;右键点击 sir 数据库，选择运行数据库，导入 sql 文件。&lt;/p&gt;
+&lt;h2&gt;mysql 测试&lt;/h2&gt;
+&lt;p&gt;新建 mysql-test 目录，新建 index.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const mysql = require(&apos;mysql&apos;)
+
+// 创建链接对象
+ const con = mysql.createConnection({
+    host: &apos;localhost&apos;,
+    user: &apos;数据库用户名&apos;,
+    password: &apos;数据库密码&apos;,
+    port: &apos;数据库端口，默认 3306&apos;,
+    database: &apos;sir&apos;
+})
+
+// 开始连接
+ con.connect()
+
+// 执行 sql 语句
+const sql = `insert into test (title, content, author) values (&apos; 标题 C&apos;, &apos; 内容 C&apos;,&apos;zhangsan&apos;);`
+con.query(sql, (err, result) =&amp;gt; {
+    if (err) {
+        console.error(err)
+        return
+    }
+    console.log(result)
+})
+
+// 关闭连接
+ con.end()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行如下操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd mysql-test/
+$ npm init -y
+$ npm i mysql --save
+$ node index.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开 sir 数据库，查看 test 表，现在已经新增了一条记录。&lt;/p&gt;
+&lt;h2&gt;项目添加 mysql 包&lt;/h2&gt;
+&lt;p&gt;在 sir-koa 目录执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm i mysql --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 sir-koa 目录下新建 config 目录，用来存放所有项目配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;config/mysql.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const Config = {
+    host     : &apos;localhost&apos;,
+    user     : &apos;数据库用户名&apos;,
+    password : &apos;数据库密码&apos;,
+    port:3306,
+    database : &apos;sir&apos;,
+
+}
+module.exports= {
+    Config
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;model 目录中新建 mysql.js，用来在项目中调用 mysql&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;model/mysql.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const mysql = require(&apos;mysql&apos;)
+const { Config } = require(&apos;../../config/mysql&apos;)
+
+// 创建链接对象
+ const con = mysql.createConnection(Config)
+
+// 开始链接
+ con.connect()
+
+// 统一执行 sql 的函数
+ function exec(sql,params) {
+    const promise = new Promise((resolve, reject) =&amp;gt; {
+        con.query(sql,params, (err, result) =&amp;gt; {
+            if (err) {
+                reject(err)
+                return
+            }
+            resolve(result)
+        })
+    })
+    return promise
+}
+
+module.exports = {
+    exec,
+    escape: mysql.escape
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;nodejs 操作 mysql 就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解微信小程序注册和登录，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（8）路由</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE8%E8%B7%AF%E7%94%B1/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE8%E8%B7%AF%E7%94%B1/</guid><description>上节课我们来搭建项目架构，koa2 和 mysql。这节课我们讲解 koa2 的路由 路由 路由就是客户端的请求发送到服务端的的 url。我...</description><pubDate>Tue, 10 Mar 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们来搭建项目架构，koa2 和 mysql。这节课我们讲解 koa2 的路由&lt;/p&gt;
+&lt;h3&gt;路由&lt;/h3&gt;
+&lt;p&gt;路由就是客户端的请求发送到服务端的的 url。我们打开浏览器输入 http://www.baidu.com 进入百度，这个网址就是路由。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据功能划分路由，把路由和数据处理分离，符合单一职责的设计原则&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上节课我们搭建的项目的 routes 目录就是用来存放所有路由文件。&lt;/p&gt;
+&lt;p&gt;我们在 sir-koa 目录下新建 app 目录，在 app 目录中新建 api 和 model 目录，分别作为控制层和模型层。&lt;/p&gt;
+&lt;p&gt;路由调用控制层的方法。控制层接收前端传过来的参数，调用模型层的方法进行数据库操作，处理后返回结果给前端。&lt;/p&gt;
+&lt;p&gt;入口文件 app.js 中调用了路由模块&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// routes
+app.use(index.routes(), index.allowedMethods())
+app.use(users.routes(), users.allowedMethods())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;功能模块&lt;/h2&gt;
+&lt;p&gt;功能分为用户模块和卡片模块，我们把列表每条信息当成一个卡片。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/user.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const router = require(&apos;koa-router&apos;)()
+const userApi = require(&apos;../app/api/user&apos;)
+
+router.prefix(&apos;/user&apos;)
+//微信登录
+router.post(&apos;/wechatlogin&apos;, function (ctx, next) {
+  userApi.wechatLogin(ctx)
+})
+// 手机号登录
+router.post(&apos;/login&apos;, function (ctx, next) {
+  userApi.login(ctx)
+})
+//更新个人信息
+router.put(&apos;/info&apos;, function (ctx, next) {
+  userApi.info(ctx)
+})
+//查询个人信息
+router.get(&apos;/me&apos;, function (ctx, next) {
+  userApi.me(ctx)
+})
+
+module.exports = router
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;routes/index.js&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;
+const indexApi = require(&apos;../app/api/index&apos;)
+//首页列表
+router.get(&apos;/card&apos;, async (ctx, next) =&amp;gt; {
+  indexApi.getCard(ctx)
+})
+//打卡
+router.post(&apos;/card&apos;, async (ctx, next) =&amp;gt; {
+  indexApi.addCard(ctx)
+})
+//点赞
+router.post(&apos;/praise&apos;, async (ctx, next) =&amp;gt; {
+  indexApi.praise(ctx)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;接口文档&lt;/h3&gt;
+&lt;p&gt;https://note.youdao.com/ynoteshare1/index.html?id=ae97d2c2bc96012409533ab7679061d2&amp;amp;type=note&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;koa2 的路由就讲完了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解 nodejs 操作 mysql，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（7）搭建项目，配置开发环境</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE7%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE7%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid><description>上节课我们讲解了项目技术架构和项目展示，这节课我们来搭建项目架构，koa2 和 mysql koa2 介绍 为什么使用 koa2，框架给我们...</description><pubDate>Tue, 25 Feb 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲解了项目技术架构和项目展示，这节课我们来搭建项目架构，koa2 和 mysql&lt;/p&gt;
+&lt;h3&gt;koa2&lt;/h3&gt;
+&lt;h4&gt;介绍&lt;/h4&gt;
+&lt;p&gt;为什么使用 koa2，框架给我们节省很多时间，制定了流程和标准，降低了我们开发难度。使我们遵循标准，专心开发我们的业务，
+写更少的代码完成更多的功能。&lt;/p&gt;
+&lt;p&gt;前端同学应该都经历过从 jquery 到 vue/react 的过程，vue/react 就是为了减少前端开发的工作量，让开发专注业务和实现功能。&lt;/p&gt;
+&lt;p&gt;框架封装了基本的工具和 API（解析请求参数，路由，session/cookie，日志，操作数据库，中间件），以及一些插件。&lt;/p&gt;
+&lt;h4&gt;安装&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install koa-generator -g
+$ Koa2 sir-koa
+$ cd sir-koa &amp;amp;&amp;amp; npm install
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;目录结构&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sir-koa
+├─bin                   可执行目录
+│  ├─www                执行命令
+│
+├─node_modules          node 依赖包目录
+│
+├─routes                路由定义目录
+│  ├─index.js           路由定义文件
+│  └─...                更多
+│
+├─public                静态资源目录
+│  ├─images             图片目录
+│  ├─javascripts        js 文件目录
+│  └─stylesheets        css 文件目录
+│
+├─views                 视图文件目录
+│
+├─app.js                应用启动文件
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们先安装 nodemon 包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm i -g nodemon
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在我们启动项目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm run dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开浏览器，输入&lt;code&gt;`http://localhost:3000/`&lt;/code&gt;，项目就启动了。&lt;/p&gt;
+&lt;h3&gt;mysql&lt;/h3&gt;
+&lt;p&gt;地址：https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
+&lt;h4&gt;windows 安装&lt;/h4&gt;
+&lt;p&gt;点击 https://dev.mysql.com/downloads/windows/installer/，直接点击 download&lt;/p&gt;
+&lt;p&gt;然后下一步又下一步安装就可以了&lt;/p&gt;
+&lt;h4&gt;linux 安装（推荐）&lt;/h4&gt;
+&lt;p&gt;我们在 Centos7 系统下使用 yum 命令安装 MySQL&lt;/p&gt;
+&lt;h4&gt;安装&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;
+$ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+$ rpm -ivh mysql-community-release-el7-5.noarch.rpm
+$ yum update
+$ yum install mysql-server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;设置权限和初始化&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ chown mysql:mysql -R /var/lib/mysql
+$ mysqld --initialize
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;启动 mysql&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ systemctl start mysqld
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;连接 mysql&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ mysql
+
+mysql&amp;gt; SHOW DATABASES;
++----------+
+| Database |
++----------+
+| mysql    |
+| test     |
++----------+
+2 rows in set (0.13 sec)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上命令执行后会输出 mysql &amp;gt; 提示符，这说明你已经成功连接到 Mysql 服务器上，你可以在 mysql&amp;gt; 提示符执行 SQL 命令。&lt;/p&gt;
+&lt;h3&gt;redis&lt;/h3&gt;
+&lt;h4&gt;安装和配置&lt;/h4&gt;
+&lt;p&gt;以 centos 为例，我们直接通过 yum 安装 redis。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ yum install redis
+$ vim /etc/redis.conf
+//把 daemonize no 改成 daemonize yes
+$ redis-server /etc/redis.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在 redis 就成功启动了&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;搭建项目架构就已经完成了，你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解 koa 的路由，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（6）项目需求分析和展示</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE6%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E5%B1%95%E7%A4%BA/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE6%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E5%92%8C%E5%B1%95%E7%A4%BA/</guid><description>上节课我们讲解了 js 中的 callback，promise，async 和 await。这节课我们介绍项目功能和技术架构。 项目介绍 果...</description><pubDate>Sat, 15 Feb 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲解了 js 中的 callback，promise，async 和 await。这节课我们介绍项目功能和技术架构。&lt;/p&gt;
+&lt;h2&gt;项目介绍&lt;/h2&gt;
+&lt;p&gt;果酱先生是一个男士穿搭推荐社区，分享当下男士生活穿搭，记录生活仪式感，手把手教你如何培养自己的穿搭理念。&lt;/p&gt;
+&lt;h2&gt;项目展示&lt;/h2&gt;
+&lt;h2&gt;功能模块&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;主要功能有用户注册、用户登陆、分享、用户打卡、查看衣品圈和点赞等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;项目架构&lt;/h2&gt;
+&lt;h3&gt;koa2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;koa2 是一个优美的微框架，你可以按照自己的习惯和想法来组织你的项目，因此我们提供了模板项目，它是我们团队从诸多项目开发中提炼而来的一种规范，它不仅仅是结构，风格还有诸多细节。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;mysql&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mysql 是最流行的关系型数据库，作为服务端开发，我们避免不了与 mysql 打交道，所以 mysql 是服务端开发人员的必备技能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;pm2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;nginx&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;轻量级 Web 服务器，它是一个高性能的 HTTP 和反向代理服务器，以事件驱动的方式编写。在性能上，它占用很少的系统资源，能支持更多的并发连接，达到更高的访问效率；在功能上，它是优秀的代理服务器和负载均衡服务器；在安装配置上，它安装简单、配置灵活。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;redis&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;redis 是最常用的非关系型数据库，它是开源的基于键值的存储服务系统，支持多种数据结构，支持多种编程语言，高性能、功能丰富。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;你有没有被项目的技术架构吓到呢？不用担心，我们一步一个脚印，不断坚持，终将会成为更优秀的自己。&lt;/p&gt;
+&lt;p&gt;有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们搭建项目结构，配置开发环境，是不是期待已久呢？继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（5）callback-promise 和 async-await</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE5callback-promise%E5%92%8Casync-await/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE5callback-promise%E5%92%8Casync-await/</guid><description>上节课我们讲解了 nodejs 处理 http 请求，今天我们讲下 callback, promise 和 async, await cal...</description><pubDate>Mon, 10 Feb 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲解了 nodejs 处理 http 请求，今天我们讲下 callback, promise 和 async, await&lt;/p&gt;
+&lt;h3&gt;callback&lt;/h3&gt;
+&lt;p&gt;js 代码处理逻辑都是异步，会造成 callback 层层嵌套。简称：回调地狱，非常不好维护，我们举例说明下
+我们在 sir-node 中新建个目录 callback-test, 里面新建个 callback.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir callback-test &amp;amp;&amp;amp; cd callback-test/
+$ touch callback.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;callback.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const fs = require(&apos;fs&apos;)
+const path  = require(&apos;path&apos;)
+//callback 方式获取文件内容
+function getFile(fileName,callback){
+    const fullName = path.resolve(__dirname,&quot;&quot;,fileName)
+    fs.readFile(fullName,(err,data)=&amp;gt;{
+        if(err){
+            console.error(err)
+            return
+        }
+        callback(JSON.parse(data.toString()))
+    })
+}
+// 测试
+getFile(&apos;a.json&apos;,aData=&amp;gt;{
+    console.log(&apos;aData&apos;,aData)
+    getFile(aData.next,bData=&amp;gt;{
+        console.log(&apos;bData&apos;,bData)
+        getFile(bData.next,cData=&amp;gt;{
+            console.log(&apos;cData&apos;,cData)
+        })
+    })
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再新建 3 个文件 a.json, b.json, c.json，内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// a.json
+
+{&quot;next&quot;:&quot;b.json&quot;}
+
+// b.json
+
+{&quot;next&quot;:&quot;c.json&quot;}
+
+// c.json
+
+{&quot;next&quot;:&quot;test&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;$ node callback.js
+aData { next: &apos;b.json&apos; }
+bData { next: &apos;c.json&apos; }
+cData { next: &apos;test&apos; }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由此可见，callback 层层嵌套。当然现在只有 3 层，实际项目中可能会有很多层，可想而知维护的难度，接下来就是解决方案。&lt;/p&gt;
+&lt;h3&gt;promise&lt;/h3&gt;
+&lt;p&gt;新建个 promise.js 文件，代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const fs = require(&apos;fs&apos;)
+const path  = require(&apos;path&apos;)
+//promise 方式获取文件内容
+function getFile(fileName){
+    const promise = new Promise((resolve,reject)=&amp;gt;{
+        const fullName = path.resolve(__dirname,&quot;&quot;,fileName)
+        fs.readFile(fullName,(err,data)=&amp;gt;{
+            if(err){
+                reject(err)
+                return
+            }
+            resolve(JSON.parse(data.toString()))
+        })
+    })
+    return promise
+}
+// 测试
+getFile(&apos;a.json&apos;).then(aData=&amp;gt;{
+    console.log(&apos;aData&apos;,aData)
+    return getFile(aData.next)
+}).then(bData=&amp;gt;{
+    console.log(&apos;bData&apos;,bData)
+    return getFile(bData.next)
+}).then(cData=&amp;gt;{
+    console.log(&apos;cData&apos;,cData)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表面看上去代码略微繁琐，但是使用起来很简洁，promise 把 callback 层层嵌套的方式变成了很多个 then 平铺，当然 promise 无法解决把异步代码写成同步的风格，我们来讲下异步写法的终极解决方案，async 和 await&lt;/p&gt;
+&lt;h3&gt;async 和 await&lt;/h3&gt;
+&lt;p&gt;新建个 async.js 文件，代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const fs = require(&apos;fs&apos;)
+const path  = require(&apos;path&apos;)
+//promise 方式获取文件内容
+function getFile(fileName){
+    const promise = new Promise((resolve,reject)=&amp;gt;{
+        const fullName = path.resolve(__dirname,&quot;&quot;,fileName)
+        fs.readFile(fullName,(err,data)=&amp;gt;{
+            if(err){
+                reject(err)
+                return
+            }
+            resolve(JSON.parse(data.toString()))
+        })
+    })
+    return promise
+}
+// 测试
+async function getFileContent(){
+    aData = await getFile(&apos;a.json&apos;)
+    console.log(&apos;aData&apos;,aData)
+    bData = await getFile(aData.next)
+    console.log(&apos;bData&apos;,bData)
+    cData = await getFile(bData.next)
+    console.log(&apos;cData&apos;,cData)
+}
+getFileContent()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;async 和 await 也是基于 promise 的，代码写法和同步一样了。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;今天我们讲了 callback, promise 和 async, await。你掌握了吗？在项目中我们使用的 koa2 框架完全支持 async 和 await。
+有问题欢迎到群里和志同道合的小伙伴一起交流。
+下节课我们介绍项目功能和技术架构，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（4）nodejs 处理 http 请求</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE4nodejs%E5%A4%84%E7%90%86http%E8%AF%B7%E6%B1%82/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE4nodejs%E5%A4%84%E7%90%86http%E8%AF%B7%E6%B1%82/</guid><description>上节课我们成功用开启了一个 http 服务，写了个 helloworld，今天我们讲解下 nodejs 是如何处理 http 的 get 和...</description><pubDate>Sat, 01 Feb 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们成功用开启了一个 http 服务，写了个 helloworld，今天我们讲解下 nodejs 是如何处理 http 的 get 和 post 请求。&lt;/p&gt;
+&lt;p&gt;我们先新建个 http-test 目录，该目录主要是用做测试 nodejs 代码，现在切换到这个目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir http-test
+$ cd http-test/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;get 请求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端向服务端获取数据，如查询用户信息&lt;/li&gt;
+&lt;li&gt;通过 querystring 传递数据，如 a.html?id=1&amp;amp;status=1&lt;/li&gt;
+&lt;li&gt;浏览器输入网址直接访问，就是发送 get 请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;代码示例&lt;/h4&gt;
+&lt;p&gt;我们新建个 get.js 文件，编辑以下内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const http = require(&quot;http&quot;)
+const querystring = require(&apos;querystring&apos;)
+
+http.createServer((request,response)=&amp;gt;{
+    const url =request.url // 获取完整 url
+    console.log(&quot;method &quot;,request.method) //GET
+    console.log(&quot;url &quot;,url)
+    const query = querystring.parse(url.split(&quot;?&quot;)[1])// 解析 querystring
+    response.end(JSON.stringify(query));// 把 querystring 返回到页面
+}).listen(3000)
+
+console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 get.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ node get.js
+Server running at http://127.0.0.1:3000/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开浏览器输入 http://127.0.0.1:3000/user/list?i=1&amp;amp;word=abc&lt;/p&gt;
+&lt;p&gt;控制台也打印出了 method 和 url&lt;/p&gt;
+&lt;h3&gt;post 请求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端向服务端发送数据，如用户注册&lt;/li&gt;
+&lt;li&gt;浏览器无法直接模拟 post 请求，需要写 js 代码或通过接口测试工具，比如 postman&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们新建个 post.js 文件，编辑以下内容。&lt;/p&gt;
+&lt;h4&gt;代码示例&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;const http = require(&quot;http&quot;)
+
+http.createServer((request,response)=&amp;gt;{
+    if(request.method === &quot;POST&quot;){
+        // 数据格式
+        console.log(&apos;content-type&apos;,request.headers[&apos;content-type&apos;]);
+        // 接收数据
+        let postData = &quot;&quot;
+        // 客户端请求传输数据的时候触发
+        request.on(&apos;data&apos;,chunk=&amp;gt;{
+            postData += chunk.toString()
+        })
+        // 客户端请求结束的时候触发
+        request.on(&apos;end&apos;,()=&amp;gt;{
+            console.log(postData)
+            response.end(&quot;post end ...&quot;)// 异步方法，在这里返回
+        })
+
+    }
+
+}).listen(3000)
+
+console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 post.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ node post.js
+Server running at http://127.0.0.1:3000/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用 postman 模拟发送 post 请求
+结果如下&lt;/p&gt;
+&lt;h3&gt;http 请求&lt;/h3&gt;
+&lt;p&gt;现在综合处理 get 和 post 请求，新建个 http.js，编辑以下内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const http = require(&quot;http&quot;)
+const querystring = require(&apos;querystring&apos;)
+
+http.createServer((request,response)=&amp;gt;{
+    const url =request.url // 获取完整 url
+    const path = url.split(&apos;?&apos;)[0]
+    const query = querystring.parse(url.split(&quot;?&quot;)[1])// 解析 querystring
+    const method = request.method
+
+    // 设置返回格式为 json
+    response.setHeader(&apos;content-type&apos;,&apos;application/json&apos;)
+    // 返回的数据
+    const resData = {
+        method,url,path,query
+    }
+    if(method === &apos;GET&apos;){
+        response.end(JSON.stringify(resData))
+    }
+    if(method === &apos;POST&apos;){
+        let postData = &apos;&apos;
+        request.on(&apos;data&apos;,chunk=&amp;gt;{
+            postData += chunk.toString()
+        })
+        request.on(&apos;end&apos;,()=&amp;gt;{
+            resData.postData = postData
+            response.end(JSON.stringify(resData))
+        })
+    }
+}).listen(3000)
+
+console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 http.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ node post.js
+Server running at http://127.0.0.1:3000/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在不管是 get 请求还是 post 请求，我们都可以处理了。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;今天的内容你掌握了吗？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们开始讲解 callback，promise，async 和 await，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（3）nodejs 和 javascript 区别</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE3nodejs-%E5%92%8C-javascript-%E5%8C%BA%E5%88%AB/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE3nodejs-%E5%92%8C-javascript-%E5%8C%BA%E5%88%AB/</guid><description>上节课我们成功用开启了一个 http 服务，写了个 helloworld，今天我们讲解下 nodejs 和 javascript 区别。 E...</description><pubDate>Mon, 27 Jan 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们成功用开启了一个 http 服务，写了个 helloworld，今天我们讲解下 nodejs 和 javascript 区别。&lt;/p&gt;
+&lt;h3&gt;ECMAScript&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;定义了语法，写 javascript 和 nodejs 必须遵守它的语法规范&lt;/li&gt;
+&lt;li&gt;变量定义、循环、判断、函数&lt;/li&gt;
+&lt;li&gt;原型和原型链、作用域和闭包、异步&lt;/li&gt;
+&lt;li&gt;不能操作 DOM，不能监听 click 事件，不能发送 ajax 请求&lt;/li&gt;
+&lt;li&gt;不能处理 http 请求，不能操作文件&lt;/li&gt;
+&lt;li&gt;如果只有 ECMAScript，几乎做不了任何实际的项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Javascript&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Javascript 由 ECMAScript 语法规范 +Web Api 组成，两者结合即可完成浏览器端的操作&lt;/li&gt;
+&lt;li&gt;Javascript 可以执行 DOM 操作，BOM 操作，事件绑定，Ajax 等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Nodejs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ECMAScript 语法规范 +Nodejs Api 组成，两者结合即可完成服务器端的操作&lt;/li&gt;
+&lt;li&gt;Nodejs 可以处理 http，处理文件等，具体参考 http://nodejs.cn/api/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;按类和对象比喻，ECMAScrpt 是类，Javascript 是对象&lt;/p&gt;
+&lt;h3&gt;前端和服务端的区别&lt;/h3&gt;
+&lt;p&gt;客户端可能有多个不同的版本，统一从服务端获取数据。&lt;/p&gt;
+&lt;h4&gt;稳定性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;当个客户端可以意外挂掉，服务端不能，因为服务端是给无数个客户端提供数据，一旦宕机，影响非常大。&lt;/li&gt;
+&lt;li&gt;nodejs 一般使用 PM2 管理进程，断开的进程自动重启&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;内存和 CPU&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端独占一个浏览器，无需考虑内存和 CPU 占用情况&lt;/li&gt;
+&lt;li&gt;服务端需要承载很多客户端请求，处理由客户端的大批量数据，内存和 CPU 比较稀缺&lt;/li&gt;
+&lt;li&gt;课程会使用 stream 写入日志，使用 redis 存储 session&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;日志记录&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端会参与日志写入，但只是发起方，不考虑后续影响和结果&lt;/li&gt;
+&lt;li&gt;服务端详细地记录日志，存储日志，分析日志&lt;/li&gt;
+&lt;li&gt;课程会解决多种日志记录方式，以及如何分析日志&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;安全&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;服务端可能会遭受各种恶意攻击和误操作，比如越权操作，SQL 注入等，前端就很少遇到&lt;/li&gt;
+&lt;li&gt;课程会讲解登录验证，预防 xss 攻击和 SQL 注入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;集群和服务拆分&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;产品发展速度快，流量可能会迅速增加。我们要通过扩展服务器集群和服务拆分承载更大流量。&lt;/li&gt;
+&lt;li&gt;课程虽然是单台机器部署，但是支持服务拆分，后续也会增加这部分内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;相关文档&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;https://es6.ruanyifeng.com/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;总结&lt;/h3&gt;
+&lt;p&gt;你了解了 nodejs 和 javascript 区别，有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解 nodejs 处理 http 请求，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（2）Hello World</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE2hello-world/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE2hello-world/</guid><description>上节课我们讲解了 node 环境的搭建，按照编程语言的惯例，我们首先开始个 HelloWorld 程序。 创建项目 创建 sir-node...</description><pubDate>Thu, 23 Jan 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们讲解了 node 环境的搭建，按照编程语言的惯例，我们首先开始个 HelloWorld 程序。&lt;/p&gt;
+&lt;h3&gt;创建项目&lt;/h3&gt;
+&lt;p&gt;创建 sir-node 文件夹，这个就是我们要开发的项目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+$ mkdir sir-node
+$ cd sir-node
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;新建 hello.js&lt;/h3&gt;
+&lt;p&gt;新建 hello.js，输入以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 引入 Http 模块：我们可以使用 require 指令来载入 Http 模块。
+const http = require(&quot;http&quot;)
+
+// 创建服务器：服务器可以监听客户端的请求，类似于 Apache 、Nginx 等 HTTP 服务器。
+http.createServer((request,response)=&amp;gt;{
+    // 设置响应的 http 头部信息
+    response.writeHead(200, {&apos;Content-Type&apos;: &apos;text/plain&apos;});
+    // 设置响应的 http 数据
+    response.end(&apos;Hello World\n&apos;);
+}).listen(3000)
+
+console.log(&apos;Server running at http://127.0.0.1:3000/&apos;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;启动 hello.js&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ node hello.js
+Server running at http://127.0.0.1:3000/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;客户端可以使用浏览器或终端发送 HTTP 请求，服务器接收请求后返回响应数据&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;现在我们成功开启了一个 http 服务，写了个 helloworld。&lt;/p&gt;
+&lt;p&gt;这是一个良好的开始，你学得怎么样呢？有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们讲解 nodejs 和 javascript 区别，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（1）nodejs 下载安装</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE1nodejs-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE1nodejs-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid><description>上节课我们介绍了项目和课程，俗话说：工欲善其事必先利其器，今天我们就开始搭建 node 环境。 普通安装 访问 http://nodejs....</description><pubDate>Fri, 17 Jan 2020 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;上节课我们介绍了项目和课程，俗话说：工欲善其事必先利其器，今天我们就开始搭建 node 环境。&lt;/p&gt;
+&lt;h2&gt;普通安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;访问 &lt;a href=&quot;http://nodejs.cn&quot;&gt;http://nodejs.cn&lt;/a&gt;，下载并且安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开 cmd 命令行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;# 查看 node 版本
+$ node -v
+$ v12.9.1
+# 查看 npm 版本
+$ npm -v
+$ 6.14.5
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;nvm(Node Version Manager) 安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm，nodejs 版本管理工具，可切换多个 nodejs 版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;mac&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;brew install nvm 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;windows&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;访问 &lt;a href=&quot;https://github.com/coreybutler/nvm/releases&quot;&gt;https://github.com/coreybutler/nvm/releases&lt;/a&gt;, 下载安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;linux&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;访问 &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot;&gt;https://github.com/nvm-sh/nvm&lt;/a&gt;, 执行以下命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;nvm 常用命令&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# 查看当前所有的 node 版本
+nvm list/nvm ls
+# 安装指定 10.13.0 版本
+nvm install 10.13.0
+# 切换到指定 10.13.0 版本
+nvm use  10.13.0 
+# 删除 10.13.0 版本的 node
+nvm uninstall 10.13.0   
+# 罗列远程的 node 版本
+nvm ls-remote   
+#  查看当前正在使用的 node 版本
+nvm current 
+# 切换 v.10.13.0 为默认版本，每次新建的命令行中就是默认的版本了
+nvm alias default v10.13.0   
+# 查看全局都安装了那些 np
+npm list --depth=0 -g  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;npm 下载加速&lt;/h2&gt;
+&lt;p&gt;npm 默认下载地址在国外，下载 npm 包会很慢，所以我们需要配置 npm 淘宝镜像，能大大提升下载速度&lt;/p&gt;
+&lt;h3&gt;配置淘宝镜像&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ npm config set registry https://registry.npm.taobao.org
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;恢复国外下载地址&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ npm config set registry https://registry.npmjs.org
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你需要同时使用多个 node 版本，推荐使用 nvm。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无论使用哪种方式安装 node, 版本要》=8.0。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;你的 node 环境搭建好了吗，有问题欢迎到群里和志同道合的小伙伴一起交流。&lt;/p&gt;
+&lt;p&gt;下节课我们开始第一个 node 程序 --hello world，继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Node 新手课（0）项目介绍</title><link>https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE0%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/node%E6%96%B0%E6%89%8B%E8%AF%BE0%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/</guid><description>简介 果酱团队历时一年精心打造，理论 + 实战打造前端全栈商业级应用开发课程 -《前端新星计划 - 果酱先生》，学完就能上手开发公司产品。...</description><pubDate>Tue, 07 Jan 2020 07:57:34 GMT</pubDate><content:encoded>&lt;h2&gt;简介&lt;/h2&gt;
+&lt;p&gt;果酱团队历时一年精心打造，理论 + 实战打造前端全栈商业级应用开发课程 -《前端新星计划 - 果酱先生》，学完就能上手开发公司产品。
+从前端到全栈，层层突破技术瓶颈，拓宽前端工程师职业边界，带你全栈开发上线产品。&lt;/p&gt;
+&lt;h2&gt;后端干货&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;nodejs 和 nvm 环境搭建&lt;/li&gt;
+&lt;li&gt;nodejs 处理 http 请求&lt;/li&gt;
+&lt;li&gt;koa2 框架路由和中间件详解&lt;/li&gt;
+&lt;li&gt;callback、promise 和 async、await&lt;/li&gt;
+&lt;li&gt;mysql+redis 安装和配置&lt;/li&gt;
+&lt;li&gt;jwt 和小程序用户注册登录&lt;/li&gt;
+&lt;li&gt;redis 缓存&lt;/li&gt;
+&lt;li&gt;日志记录&lt;/li&gt;
+&lt;li&gt;项目分层设计架构&lt;/li&gt;
+&lt;li&gt;sql 注入，xss 攻击和产品安全&lt;/li&gt;
+&lt;li&gt;nginx 配置&lt;/li&gt;
+&lt;li&gt;产品部署和 pm2 进程管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;授课形式和增值服务&lt;/h2&gt;
+&lt;p&gt;文章 + 代码 + 课程答疑服务，你将和志同道合的小伙伴一起学习，共同进步。欢迎小伙伴们在留言区进行留言提问，老师会集中时间一一回复解答。课程案例代码完全开放给你，你可以根据所学知识自行修改、优化。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;是不是很心动呢？学完课程后你将胜任公司小程序和 nodejs 开发工作。&lt;/p&gt;
+&lt;p&gt;从前端到全栈，开拓技术视野，为职场进阶提供更多可能。&lt;/p&gt;
+&lt;p&gt;有问题欢迎到群里和志同道合的小伙伴一起交流，下节课我们将正式开始实战课程，搭建 node 环境。继续加油吧，Let&apos;s go！&lt;/p&gt;
+</content:encoded></item><item><title>Go 搭建内网代理</title><link>https://xushuhui.github.io/posts/go/go%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E4%BB%A3%E7%90%86/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/go/go%E6%90%AD%E5%BB%BA%E5%86%85%E7%BD%91%E4%BB%A3%E7%90%86/</guid><description>前言 gitlab地址：gitlab.example.com:82 代理地址： test.com 修改host nginx配置 conf s...</description><pubDate>Fri, 03 Jan 2020 13:59:58 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;gitlab地址：gitlab.example.com:82
+代理地址： test.com&lt;/p&gt;
+&lt;h2&gt;修改host&lt;/h2&gt;
+&lt;h2&gt;nginx配置&lt;/h2&gt;
+&lt;h3&gt;conf&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen 80;
+    server_name www.test.com test.com;
+  
+    # ssl_certificate           ../cert/cert.crt; 
+    # ssl_certificate_key       ../cert/cert.key; 
+
+    error_log logs/error.log;   #指定错误日志文件路径
+    access_log logs/access.log; #指定访问日志文件路径
+      
+    if ($args ~* &quot;^go-get=1&quot;) {
+         return 200 &quot;&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta name=&apos;go-import&apos; content=&apos;test.com$uri git http://gitlab.example.com:82$uri.git&apos;&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;/html&amp;gt;&quot;;
+   }
+
+ 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;go环境变量配置&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;go env -w GONOPROXY=test.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;go get test.com/grestful/session&lt;/p&gt;
+</content:encoded></item><item><title>设计模式对我们的作用</title><link>https://xushuhui.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AF%B9%E6%88%91%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AF%B9%E6%88%91%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8/</guid><description>&quot;note/geektime/设计模式之美/1.md&quot;</description><pubDate>Wed, 01 Jan 2020 13:59:58 GMT</pubDate><content:encoded>&lt;p&gt;&quot;note/geektime/设计模式之美/1.md&quot;&lt;/p&gt;
+</content:encoded></item><item><title>PHP 和 Go 通过 jsonrpc 通信</title><link>https://xushuhui.github.io/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/php/php%E5%92%8Cgo%E9%80%9A%E8%BF%87jsonrpc%E9%80%9A%E4%BF%A1/</guid><description>说明 PHP 和 GO 通过 jsonrpc 通信 代码 package main import ( &quot;errors&quot; &quot;fmt&quot; &quot;log...</description><pubDate>Thu, 01 Aug 2019 16:19:27 GMT</pubDate><content:encoded>&lt;h2&gt;说明&lt;/h2&gt;
+&lt;p&gt;PHP 和 GO 通过 jsonrpc 通信&lt;/p&gt;
+&lt;h2&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+	&quot;log&quot;
+	&quot;net&quot;
+	&quot;net/rpc&quot;
+	&quot;net/rpc/jsonrpc&quot;
+	&quot;os&quot;
+)
+
+// 算数运算结构体
+type Arith struct {
+}
+
+// 算数运算请求结构体
+type ArithRequest struct {
+	A int
+	B int
+}
+
+// 算数运算响应结构体
+type ArithResponse struct {
+	Pro int // 乘积
+	Quo int // 商
+	Rem int // 余数
+}
+
+// 乘法运算方法
+func (this *Arith) Multiply(req ArithRequest, res *ArithResponse) error {
+	res.Pro = req.A * req.B
+	return nil
+}
+
+// 除法运算方法
+func (this *Arith) Divide(req ArithRequest, res *ArithResponse) error {
+	if req.B == 0 {
+		return errors.New(&quot;divide by zero&quot;)
+	}
+	res.Quo = req.A / req.B
+	res.Rem = req.A % req.B
+	return nil
+}
+
+func main() {
+	rpc.Register(new(Arith)) // 注册rpc服务
+	lis, err := net.Listen(&quot;tcp&quot;, &quot;127.0.0.1:8096&quot;)
+	if err != nil {
+		log.Fatalln(&quot;fatal error: &quot;, err)
+	}
+	fmt.Fprintf(os.Stdout, &quot;%s&quot;, &quot;wait connection&quot;)
+	for {
+		conn, err := lis.Accept() // 接收客户端连接请求
+		if err != nil {
+			continue
+		}
+
+		go func(conn net.Conn) { // 并发处理客户端请求
+			fmt.Fprintf(os.Stdout, &quot;%s&quot;, &quot;\n new client in coming\n&quot;)
+			jsonrpc.ServeConn(conn)
+		}(conn)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;class JsonRPC {
+
+    private $conn;
+
+    function __construct($host, $port) {
+        $this-&amp;gt;conn = fsockopen($host, $port, $errno, $errstr, 3);
+        if (!$this-&amp;gt;conn) {
+            return false;
+        }
+    }
+
+    public function Call($method, $params) {
+        if (!$this-&amp;gt;conn) {
+            return false;
+        }
+        $err = fwrite($this-&amp;gt;conn, json_encode(array(
+                &apos;method&apos; =&amp;gt; $method,
+                &apos;params&apos; =&amp;gt; array($params),
+                &apos;id&apos;     =&amp;gt; 0,
+            )).&quot;\n&quot;);
+        if ($err === false) {
+            return false;
+        }
+        stream_set_timeout($this-&amp;gt;conn, 0, 3000);
+        $line = fgets($this-&amp;gt;conn);
+        if ($line === false) {
+            return NULL;
+        }
+        return json_decode($line,true);
+    }
+}
+
+$client = new JsonRPC(&quot;127.0.0.1&quot;, 8096);
+$args = array(&apos;A&apos;=&amp;gt;9, &apos;B&apos;=&amp;gt;2);
+$r = $client-&amp;gt;Call(&quot;Arith.Multiply&quot;, $args);
+printf(&quot;%d * %d = %d\n&quot;, $args[&apos;A&apos;], $args[&apos;B&apos;], $r[&apos;result&apos;][&apos;Pro&apos;]);
+$r = $client-&amp;gt;Call(&quot;Arith.Divide&quot;, $args);
+printf(&quot;%d / %d, Quo is %d, Rem is %d\n&quot;, $args[&apos;A&apos;], $args[&apos;B&apos;], $r[&apos;result&apos;][&apos;Quo&apos;], $r[&apos;result&apos;][&apos;Rem&apos;]);
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Nginx 配置 Socket.IO 负载均衡</title><link>https://xushuhui.github.io/posts/node/nginx%E9%85%8D%E7%BD%AEsocketio%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/node/nginx%E9%85%8D%E7%BD%AEsocketio%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid><description>nginx 配置 upstream nodes { ip_hash; server 192.168.1.114:3000; server 1...</description><pubDate>Tue, 07 May 2019 07:57:34 GMT</pubDate><content:encoded>&lt;p&gt;nginx 配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;upstream nodes {
+  ip_hash;
+  server 192.168.1.114:3000;
+  server 192.168.1.114:3001;
+  server 192.168.1.114:3002;
+}
+server {
+    listen 80;
+    server_name ws;
+    index index.html index.htm index.php;
+
+    location /{
+		proxy_pass http://nodes; #反向代理集群
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Host $http_host;
+		proxy_set_header X-NginX-Proxy true;
+		proxy_redirect off;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection &quot;upgrade&quot;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;socket.io&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var express = require(&apos;express&apos;);
+var app = express();
+var path = require(&apos;path&apos;);
+var server = require(&apos;http&apos;).createServer(app);
+var io = require(&apos;socket.io&apos;)(server);
+var port = process.env.PORT || 3000;
+server.listen(port, () =&amp;gt; {
+    console.log(&apos;Server listening at port %d&apos;, port);
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Python 在类中实现 swith 功能</title><link>https://xushuhui.github.io/posts/python/python%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%AE%9E%E7%8E%B0swith%E5%8A%9F%E8%83%BD/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/python/python%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%AE%9E%E7%8E%B0swith%E5%8A%9F%E8%83%BD/</guid><description>问题 Python 中没有 switch 的语法，但是很多时候需要多重条件判断，又不想写多个 if，那只能手动实现了。 实现代码 class...</description><pubDate>Fri, 29 Mar 2019 14:51:12 GMT</pubDate><content:encoded>&lt;h2&gt;问题&lt;/h2&gt;
+&lt;p&gt;Python 中没有 switch 的语法，但是很多时候需要多重条件判断，又不想写多个 if，那只能手动实现了。
+实现代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class RunMethod:
+    def post(self,url=None,data=None,header=None):
+        print(url)
+    def get(self,url=None,data=None,header=None):
+        print(&quot;get&quot;)
+
+    def main(self,method):
+        method = getattr(self, method)
+        return method
+
+if __name__ == &apos;__main__&apos;:
+    client = RunMethod()
+    client.main(&quot;post&quot;)(&quot;http://www.baidu.com&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中主要用到 getattr 这个函数，用于返回一个对象属性值。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;getattr(object, name[, default])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;object -- 对象。&lt;/li&gt;
+&lt;li&gt;name -- 字符串，对象属性。&lt;/li&gt;
+&lt;li&gt;default -- 默认返回值，如果不提供该参数，在没有对应属性时，将触发 AttributeError。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>vscode 快捷键和扩展</title><link>https://xushuhui.github.io/posts/java/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/java/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>快捷键 文件资源管理器 Ctrl + Shift + E 跨文件搜索 Ctrl + Shift + F 源代码管理 Ctrl + Shift...</description><pubDate>Mon, 03 Apr 2017 14:39:39 GMT</pubDate><content:encoded>&lt;h2&gt;快捷键&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;文件资源管理器 Ctrl + Shift + E&lt;/li&gt;
+&lt;li&gt;跨文件搜索 Ctrl + Shift + F&lt;/li&gt;
+&lt;li&gt;源代码管理 Ctrl + Shift + G&lt;/li&gt;
+&lt;li&gt;启动和调试 Ctrl + Shift + D&lt;/li&gt;
+&lt;li&gt;管理扩展 Ctrl + Shift + X&lt;/li&gt;
+&lt;li&gt;查找并运行所有命令 Ctrl + Shift + P&lt;/li&gt;
+&lt;li&gt;跳转单词     Ctrl + ← / Ctrl + →&lt;/li&gt;
+&lt;li&gt;跳转行首 / 行末     Home / End&lt;/li&gt;
+&lt;li&gt;代码块之间移动    Ctrl + Shift + \&lt;/li&gt;
+&lt;li&gt;跳转首行 / 末行    Ctrl + Home/End&lt;/li&gt;
+&lt;li&gt;选中字符到左边 / 右边   Ctrl + Shift + &amp;lt;- /  Ctrl + Shift + -&amp;gt;&lt;/li&gt;
+&lt;li&gt;删除字符右边 Ctrl + Delete&lt;/li&gt;
+&lt;li&gt;删除字符左边 Ctrl + Backspace&lt;/li&gt;
+&lt;li&gt;删除一行代码 Ctrl + Shift + K&lt;/li&gt;
+&lt;li&gt;另起下一行 Ctrl + Enter&lt;/li&gt;
+&lt;li&gt;另起上一行 Ctrl + Shift + Enter&lt;/li&gt;
+&lt;li&gt;上下移动一行 Alt + ↓ / Alt +  ↑&lt;/li&gt;
+&lt;li&gt;复制当前行移动 Alt + shift + 上下方向键&lt;/li&gt;
+&lt;li&gt;单行注释 Ctrl + /&lt;/li&gt;
+&lt;li&gt;格式化代码 Alt + Shift + F&lt;/li&gt;
+&lt;li&gt;列出最近文件 Ctrl + Tab&lt;/li&gt;
+&lt;li&gt;跳转行 Ctrl + g&lt;/li&gt;
+&lt;li&gt;跳转定义 F12/ Alt + -&amp;gt;&lt;/li&gt;
+&lt;li&gt;跳转后回退 Alt + &amp;lt;-&lt;/li&gt;
+&lt;li&gt;跳转引用 Shift + F12&lt;/li&gt;
+&lt;li&gt;折叠 / 展开括号 Ctrl + Shift + [ / Ctrl + Shift + ]&lt;/li&gt;
+&lt;li&gt;折叠 / 展开所有括号 Ctrl + K , Ctrl + 0 / Ctrl + K , Ctrl + J&lt;/li&gt;
+&lt;li&gt;搜索当前页，由上往下跳转 F3&lt;/li&gt;
+&lt;li&gt;搜索当前页，由上往下跳转  Shift + F3&lt;/li&gt;
+&lt;li&gt;当前页搜索 Ctrl + F&lt;/li&gt;
+&lt;li&gt;全局搜索  Ctrl + Shift + F&lt;/li&gt;
+&lt;li&gt;当前页替换 Ctrl + H&lt;/li&gt;
+&lt;li&gt;全局替换 Ctrl + Shift + H&lt;/li&gt;
+&lt;li&gt;搜索框切换 Tab / Shift + Tab&lt;/li&gt;
+&lt;li&gt;最近打开的文件夹 Ctrl + R&lt;/li&gt;
+&lt;li&gt;跳转符号 Ctrl + Shift + O&lt;/li&gt;
+&lt;li&gt;命令面板 Ctrl + P&lt;/li&gt;
+&lt;li&gt;打开终端 Ctrl + `&lt;/li&gt;
+&lt;li&gt;隐藏左侧 Ctrl + B&lt;/li&gt;
+&lt;li&gt;隐藏面板  Ctrl + J&lt;/li&gt;
+&lt;li&gt;切换活动栏可见性（Toggle Activity Bar Visibility ）&lt;/li&gt;
+&lt;li&gt;切换状态栏可见性（Toggle Status Bar Visibility ）&lt;/li&gt;
+&lt;li&gt;切换禅模式 (Toggle Zen Mode)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;插件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Code Runner&lt;/li&gt;
+&lt;li&gt;GitLens — Git supercharged&lt;/li&gt;
+&lt;li&gt;Markdown Preview Enhanced&lt;/li&gt;
+&lt;li&gt;PHP Intelephense&lt;/li&gt;
+&lt;li&gt;PHP Namespace Resolver&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>swoole 异步 task</title><link>https://xushuhui.github.io/posts/php/swoole%E5%BC%82%E6%AD%A5task/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/php/swoole%E5%BC%82%E6%AD%A5task/</guid><description>记录 今天做了项目异常监控，本来是用 nodejs 调用企业微信 sdk, 后来发现发送 http 请求到腾讯接口总是报错，就换成用 swo...</description><pubDate>Wed, 29 Mar 2017 14:41:35 GMT</pubDate><content:encoded>&lt;h2&gt;记录&lt;/h2&gt;
+&lt;p&gt;今天做了项目异常监控，本来是用 nodejs 调用企业微信 sdk, 后来发现发送 http 请求到腾讯接口总是报错，就换成用 swoole 投递异步任务处理项目异常监控，记录一下代码。&lt;/p&gt;
+&lt;p&gt;服务端&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Server
+{
+    private $server;
+    public function __construct()
+    {
+        $this-&amp;gt;server = new \swoole_server(&quot;0.0.0.0&quot;, 9501);
+        $this-&amp;gt;server-&amp;gt;set([
+            &apos;worker_num&apos;      =&amp;gt; 2,
+            &apos;daemonize&apos;       =&amp;gt; true,
+            &apos;task_worker_num&apos; =&amp;gt; 2  # task 进程数
+        ]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Start&apos;, [$this, &apos;onStart&apos;]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Connect&apos;, [$this, &apos;onConnect&apos;]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Receive&apos;, [$this, &apos;onReceive&apos;]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Task&apos;, [$this, &apos;onTask&apos;]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Finish&apos;, [$this, &apos;onFinish&apos;]);
+        $this-&amp;gt;server-&amp;gt;on(&apos;Close&apos;, [$this, &apos;onClose&apos;]);
+        $this-&amp;gt;server-&amp;gt;start();
+    }
+    // 主进程启动时回调函数
+    public function onStart(\swoole_server $server)
+    {
+        echo &quot;开始、n&quot;;
+    }
+    // 建立连接时回调函数
+    public function onConnect(\swoole_server $server, $fd, $from_id)
+    {
+        echo &quot;连接上了、n&quot;;
+    }
+    public function onReceive(\swoole_server $server, $fd, $from_id, $data)
+    {
+        // 投递异步任务
+        $task_id = $server-&amp;gt;task($data);
+        // echo &quot;Dispath AsyncTask: id={$task_id}\n&quot;;
+        // 将受到的客户端消息再返回给客户端
+        $server-&amp;gt;send($fd, &quot;Message form Server: {$data}, task_id: {$task_id}&quot;);
+    }
+
+    // 异步任务处理函数
+    public function onTask(\swoole_server $server, $task_id, $from_id, $data)
+    {
+        echo &quot; \n {$task_id}, start task \n&quot;;
+        sleep(5);
+        echo &quot; \n {$task_id}, end task  \n&quot;;
+        $server-&amp;gt;finish(&apos;t&apos;);
+    }
+
+    public function onFinish(\swoole_server $server, $task_id, $data)
+    {
+        echo &quot;finish&quot;;
+    }
+    // 关闭连时回调函数
+    public function onClose(\swoole_server $server, $fd, $from_id)
+    {
+        echo &quot;close \n&quot;;
+    }
+}
+$server = new Server();
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;客户端&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Client
+{
+
+    private $client;
+    function __construct()
+    {
+        $this-&amp;gt;client = new \swoole_client(SWOOLE_SOCK_TCP);
+    }
+    public function send($data)
+    {
+        if (!$this-&amp;gt;client-&amp;gt;connect(&apos;127.0.0.1&apos;, 9501)) {
+            die(&apos;connect failed.&apos;);
+        }
+        return $this-&amp;gt;client-&amp;gt;send(json_encode($data));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>PHP 7 新特性</title><link>https://xushuhui.github.io/posts/php/php7%E6%96%B0%E7%89%B9%E6%80%A7/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/php/php7%E6%96%B0%E7%89%B9%E6%80%A7/</guid><description>1. 太空船运算符 echo 1&lt;=&gt;1; //0 echo 2&lt;=&gt;1; //1 echo 1&lt;=&gt;2; //-1 2. 类型声明 dec...</description><pubDate>Sun, 03 Apr 2016 09:03:42 GMT</pubDate><content:encoded>&lt;h2&gt;1. 太空船运算符&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;echo 1&amp;lt;=&amp;gt;1; //0
+echo 2&amp;lt;=&amp;gt;1; //1
+echo 1&amp;lt;=&amp;gt;2; //-1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;2. 类型声明&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;declare(strict_type=1)//strict_type=1表示开启严格模式
+function sumOfInts(int ...$ints):int{
+    return array_sum($ints);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;3.null 合并操作符&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$page = isset($_GET[&apos;page&apos;]) ? $_GET[&apos;page&apos;] : 0;
+$page = $_GET[&apos;page&apos;] ?? 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;4. 常量数组&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;define(&apos;ANIMALS&apos;,[&apos;dog&apos;,&apos;cat&apos;]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;5.namespace 批量导入&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;use Space\{ClassA,ClassB as B,ClassC}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;6.intdiv 函数&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;intdiv(10,3);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;7.list 方括号&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$arr = [1,2,3];
+list($a,$b,$c) = $arr;
+
+$arr = [1,2,3];
+[$a,$b,$c] = $arr;
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>PHP 运行模式</title><link>https://xushuhui.github.io/posts/php/php%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/php/php%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</guid><description>运行模式 php 分为五大运行模式 cgi（通用网关接口 Common Gateway Interface) fast-cgi(cgi 升级...</description><pubDate>Tue, 29 Mar 2016 14:52:24 GMT</pubDate><content:encoded>&lt;h2&gt;运行模式&lt;/h2&gt;
+&lt;p&gt;php 分为五大运行模式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cgi（通用网关接口 Common Gateway Interface)&lt;/li&gt;
+&lt;li&gt;fast-cgi(cgi 升级版本）&lt;/li&gt;
+&lt;li&gt;cli（命令行模式 Command Line Interface)&lt;/li&gt;
+&lt;li&gt;isapi(Internet Server Application Program Interface, 是微软提供的一套面向 Internet 服务的 API 接口）&lt;/li&gt;
+&lt;li&gt;apache2handler（将 php 作为 apache 的模块）&lt;/li&gt;
+&lt;li&gt;其他 (continuity, embed, litespeed, milter 等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本地查看运行模式的方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;phpinfo()
+php -r &quot;echo php_sapi_name()&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;选择运行模式前提&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解运行模式优缺点和应用场景&lt;/li&gt;
+&lt;li&gt;根据业务本身结合上一条&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;CLI 模式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Command Line Interface 的简称，支持 windows 和 Linux 平台&lt;/li&gt;
+&lt;li&gt;直接在命令行运行，不需要 http server, 例如 php test.php&lt;/li&gt;
+&lt;li&gt;应用场景
+&lt;ul&gt;
+&lt;li&gt;定时任务&lt;/li&gt;
+&lt;li&gt;开发桌面应用使用 PHP-CLI 和 GTK 包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;CGI 模式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Common Gateway Interface 的简称，连接网页和 web 服务器执行程序，把 http 服务器接受指令传给执行程序，把执行程序的结果返回给 http 服务器，支持跨平台&lt;/li&gt;
+&lt;li&gt;执行过程
+&lt;ul&gt;
+&lt;li&gt;http 服务器接收到用户请求，如 index.php，会通过它配置的 cgi 服务执行&lt;/li&gt;
+&lt;li&gt;生成一个 php-cgi 进程，并执行 php 程序&lt;/li&gt;
+&lt;li&gt;执行结果返回给 http 服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用场景
+&lt;ul&gt;
+&lt;li&gt;提供 http 服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优缺点
+&lt;ul&gt;
+&lt;li&gt;跨平台，几乎能在任何操作系统实现&lt;/li&gt;
+&lt;li&gt;web 和 server 是独立的，结构清晰，可控性强&lt;/li&gt;
+&lt;li&gt;性能比较差，每一个请求 fork 一个进程，消耗资源比较多 (fork-and-execute 模式）&lt;/li&gt;
+&lt;li&gt;逐渐少见&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;FastCGI 模式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;快速通用网关接口 (Fast Common Gateway Interface) 是 CGI 的增强版本，是一种让交互程序和 web 服务器通信的协议，致力于减少 web 服务器和 CGI 程序之间互动开销，使服务器可以同时处理更多的网页请求&lt;/li&gt;
+&lt;li&gt;执行过程
+&lt;ul&gt;
+&lt;li&gt;web 服务器启动时载入 Fast CGI 进程管理器 (php-fpm)&lt;/li&gt;
+&lt;li&gt;FastCGI 进程管理器会启动多个 CGI 进程等待 web 服务器的连接&lt;/li&gt;
+&lt;li&gt;当客户端请求到达 web 服务器时，FastCGI 进程管理器选择并连接到一个 CGI 解释器。web 服务器把环境变量和标准输入发送到 FastCGI 子进程 php-cgi&lt;/li&gt;
+&lt;li&gt;FastCGI 子进程完成处理后将标准输出和错误信息从同一连接返回 web 服务器。当 FastCGI 子进程关闭连接时，请求报告处理完成。FastCGI 子进程接着等待并处理来自 FastCGI 进程管理器的下一个连接。在 CGI 模式中，php-cgi 在此便退出了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用场景
+&lt;ul&gt;
+&lt;li&gt;提供 http 服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优缺点
+&lt;ul&gt;
+&lt;li&gt;跨平台，几乎能在任何操作系统实现&lt;/li&gt;
+&lt;li&gt;web 和 server 是独立的，结构清晰，可控性强&lt;/li&gt;
+&lt;li&gt;支持大并发&lt;/li&gt;
+&lt;li&gt;多进程，消耗较多内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;模块模式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;模块模式指把 PHP 作为 web 服务器的一个模块运行&lt;/li&gt;
+&lt;li&gt;IIS 的 ISAPI 和 Apache 的 apache2handler&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;apache2handler&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;apache 监听一个用户请求 index.php&lt;/li&gt;
+&lt;li&gt;apache 根据 conf 文件配置的 LoadModule php_module modules/mod_php5.so(windows 下面是 php5apache2_2.dll) 调用 PHP&lt;/li&gt;
+&lt;li&gt;在 mod_php5.so 注册一个 php 的钩子 php_ap2_register_hook&lt;/li&gt;
+&lt;li&gt;php_ap2_register_hook 钩子函数中包括 4 个挂钩以及对应的函数 ap_hook_pre_config，ap_hook_post_config，ap_hook_handler，ap_hook_child_init。其中 pre_config，post_config，child_init 是启动挂钩，在服务器启动时调用。handler 时请求挂钩，在服务器处理请求时调用。其中 post_config 挂钩中启动 php。&lt;/li&gt;
+&lt;li&gt;php 执行完成后数据通过。so 或 dll 返回给 apache&lt;/li&gt;
+&lt;li&gt;apache 将数据返回到客户端&lt;/li&gt;
+&lt;li&gt;应用场景
+&lt;ul&gt;
+&lt;li&gt;提供 http 服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优缺点
+&lt;ul&gt;
+&lt;li&gt;安装配置方便，不需要安装代码解析程序&lt;/li&gt;
+&lt;li&gt;支持多线程，占用资源少&lt;/li&gt;
+&lt;li&gt;支持大并发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;欢迎扫描下方二维码，&lt;a href=&quot;https://www.phpst.cn&quot;&gt;个人博客&lt;/a&gt;，持续关注：&lt;/h2&gt;
+&lt;p&gt;互联网工程师（id:phpstcn），我们一起学习，一起进步&lt;/p&gt;
+</content:encoded></item><item><title>编程书籍推荐</title><link>https://xushuhui.github.io/posts/book/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</link><guid isPermaLink="true">https://xushuhui.github.io/posts/book/%E7%BC%96%E7%A8%8B%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</guid><description>《编码：隐匿在计算机软硬件背后的语言》 书中有非常丰富和连贯的例子去讲述计算机的工作原理，用来辅助课程第一部分的学习，以及深化对课程内容的理...</description><pubDate>Thu, 07 Jan 2016 13:41:08 GMT</pubDate><content:encoded>&lt;h2&gt;《编码：隐匿在计算机软硬件背后的语言》&lt;/h2&gt;
+&lt;p&gt;书中有非常丰富和连贯的例子去讲述计算机的工作原理，用来辅助课程第一部分的学习，以及深化对课程内容的理解都是非常好的。&lt;/p&gt;
+&lt;h2&gt;《鸟哥的 linux 私房菜：基础学习篇》&lt;/h2&gt;
+&lt;p&gt;《鸟哥的 Linux 私房菜：基础学习篇》的内容非常丰富，并且实用，基本概念的讲解非常细致，深入浅出。各种功能和命令的介绍，都配以大量的实例操作和详尽的解析。是初学者学习 Linux 不可多得的一本入门好书。&lt;/p&gt;
+&lt;p&gt;也可通过本书作者的官方网站阅读书籍的电子版。&lt;a href=&quot;http://cn.linux.vbird.org/linux_basic/linux_basic.php&quot;&gt;电子版&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/4889838/&quot;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;《深入理解计算机系统（原书第 3 版）》&lt;/h2&gt;
+&lt;p&gt;《深入理解计算机系统（原书第 3 版）》这是一本非常出名的书，是理解计算机系统首选书目，是 10 余万程序员的共同选择。卡内基 - 梅隆、北京大学、清华大学、上海交通大学等国内外众多知名高校选用指定教材。从程序员视角全面剖析的实现细节，使读者深刻理解程序的行为，将所有计算机系统的相关知识融会贯通。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/26912767/&quot;&gt;豆瓣链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;《TCP/IP 详解 卷 1：协议》&lt;/h2&gt;
+&lt;p&gt;很经典的一本书籍，对 TCP/IP 四层模型进行了非常详细的介绍，内容非常丰富，但是讲解相对晦涩，有点难懂，建议在对网络有一定基础以后再阅读该书籍，可以达到更深层次学习的目的。&lt;/p&gt;
+</content:encoded></item></channel></rss>
